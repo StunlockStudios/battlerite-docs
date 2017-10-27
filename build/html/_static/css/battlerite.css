@@ -1,0 +1,556 @@
+@import url("../better.css");
+
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+input[type=search] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  color: #afb7b9;
+  font-size: 14px;
+  position: relative;
+  overflow-x: hidden;
+  background-color: #10090e;
+  background-image: url(../images/battlerite/main-bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+address,
+blockquote,
+pre,
+table {
+  margin-top: 0;
+  font-weight: 300;
+  line-height: 1.2em;
+  color: #949282; }
+  .vainglory h1, .vainglory
+  h2, .vainglory
+  h3, .vainglory
+  h4, .vainglory
+  h5, .vainglory
+  h6, .vainglory
+  p, .vainglory
+  address, .vainglory
+  blockquote, .vainglory
+  pre, .vainglory
+  table {
+    margin-bottom: 1em;
+    color: #afb7b9; }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "PT Serif", serif;
+  color: #f79d02;
+  letter-spacing: -0.01em; }
+
+h1 {
+  margin-bottom: .55em;
+  font-size: 36px;
+  color: #f79d02; }
+  @media (max-width: 950px) {
+    h1 {
+      font-size: 30px;} }
+
+h2 {
+  margin-bottom: .8em;
+  font-size: 24px;
+  font-weight: 300;
+  letter-spacing: 0.01em; }
+  @media (max-width: 950px) {
+    h2 {
+      font-size: 20px; } }
+
+h3 {
+  font-size: 26.91px;
+  margin-bottom: .8em;
+  letter-spacing: 0.1em;
+  font-size: 24px;
+}
+  @media (max-width: 950px) {
+    h3 {
+      font-size: 19px; } }
+
+h4 {
+  font-size: 22px;
+  letter-spacing: 0.01em; }
+  @media (max-width: 950px) {
+    h4 {
+      font-size: 17px;} }
+
+h5 {
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  letter-spacing: 0em;
+  margin-bottom: 1.2em; }
+  @media (max-width: 950px) {
+    h5 {
+      font-size: 14px;} }
+
+h6 {
+  font-size: 14px;
+}
+@media (max-width: 950px) {
+  h6 {
+    font-size: 14px;} }
+
+header {
+  z-index: 25;
+  position: relative;
+  width: 100%;
+  background-color: #1d191e;
+}
+
+#site-logo {
+  display: block;
+  margin: 0;
+  max-width: 100%;
+  float: left;
+  background-image: url(../images/logo.png);
+  background-repeat: no-repeat;
+  height: 38px;
+  width: 73px;
+  background-size: 73px 38px;
+  margin-top: 14px;
+  margin-bottom: 14px; }
+  @media (max-width: 950px) {
+    #site-logo {
+      margin-top: 13px;
+      margin-bottom: 13px; } }
+  #site-logo img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-left: 0; }
+
+
+#mainMenu {
+float: left;
+margin-left: 28px; }
+@media (max-width: 950px) {
+  #mainMenu {
+    margin-left: 0;
+    background-color: #1d191e; } }
+@media (max-width: 950px) {
+  #mainMenu {
+    overflow: hidden;
+    max-height: 0;
+    margin-left: 0;
+    width: 100%;
+    -webkit-transition: .25s;
+    -o-transition: .25s;
+    transition: .25s; }
+    .menu-open #mainMenu {
+      max-height: 1000px;
+      -webkit-transition: .5s;
+      -o-transition: .5s;
+      transition: .5s; } }
+
+.main-menu {
+margin: 0 auto;
+padding: 0;
+font-size: 0px;
+ }
+.main-menu li {
+  font-size: 14px;
+  line-height: 1em;
+  list-style-type: none;
+  position: relative;
+  margin-bottom: 0;
+  display: inline-block;
+  zoom: 1;
+  *display: inline; }
+  @media (max-width: 950px) {
+    .main-menu li {
+      display: block; } }
+  .main-menu li:hover > a, .main-menu li:focus > a {
+    color: #f79d02;
+    text-decoration: none; }
+  .main-menu li > a {
+    display: block;
+    vertical-align: middle;
+    padding: 0;
+    line-height: 1.2em;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "Ubuntu", sans-serif;
+    padding: 26px 10px;
+    font-size: 14.848px;
+    font-weight: 400;
+    color: white;
+    letter-spacing: .03em; }
+    @media (max-width: 950px) {
+      .main-menu li > a {
+        padding: 15px 5px;
+        font-size: 14px;
+         } }
+    .main-menu li > a.active, .main-menu li > a:hover, .main-menu li > a:focus {
+      color: #f79d02;
+      text-decoration: none; }
+
+main-wrapper:after,
+.pakery-grid:after,
+.gform_fields:after,
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+* html .clearfix {
+  height: 1%; }
+
+.main-wrapper,
+.pakery-grid,
+.gform_fields,
+.clearfix {
+  display: block; }
+
+  .wrapper {
+    margin: 0 auto;
+    width: 95.5%;
+    padding-bottom: 0;
+    max-width: 1190px;
+    position: relative;
+    clear: both; }
+    .wrapper-outer, .wrapper-inner {
+      margin: 0 auto;
+      width: 95.5%;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      position: relative; }
+      @media (max-width: 768px) {
+        .wrapper-outer.mob-wide, .wrapper-inner.mob-wide {
+          width: 100%; } }
+    .wrapper-outer {
+      width: 100%;
+      padding-top: 0;
+      padding-bottom: 0;
+      max-width: 100%; }
+    .wrapper-inner {
+      max-width: 1108px; }
+    @media (max-width: 768px) {
+      .wrapper.mob-wide {
+        width: 100%; } }
+
+        .menu-top-outer {
+          margin: 0;
+          position: relative;
+          z-index: 1; }
+          .menu-top-outer .wrapper {
+            padding-top: 0;
+            padding-bottom: 0;
+            max-width: 95.5%;
+            width: 100%;
+            max-width: 1190px;
+            width: 95.5%; }
+          .menu-top-outer .btn, .menu-top-outer *[type="submit"] {
+            float: right;
+            min-width: 0;
+            letter-spacing: 0.065em;
+            margin-right: -.7%;
+            margin-top: 13px;
+            margin-bottom: 13px; }
+            @media (max-width: 950px) {
+              .menu-top-outer .btn, .menu-top-outer *[type="submit"] {
+                font-size: 14px;
+                font-size: 1.4rem;
+                margin-top: 13px;
+                margin-bottom: 13px; } }
+          .menu-top-outer .user-drop {
+            float: right;
+            margin-top: 26px;
+            position: relative; }
+            @media (max-width: 950px) {
+              .menu-top-outer .user-drop {
+                margin-top: 24px; } }
+            .menu-top-outer .user-drop.open .name {
+              background-image: url(../images/battlerite/yellow-arrow-up.svg);
+              background-repeat: no-repeat; }
+              .lt-ie9 .menu-top-outer .user-drop.open .name {
+                background-image: url(../images/battlerite/yellow-arrow-up.png); }
+              .no-svg .menu-top-outer .user-drop.open .name {
+                background-image: url(../images/battlerite/yellow-arrow-up.png); }
+            .menu-top-outer .user-drop.open ul {
+              display: block; }
+            .menu-top-outer .user-drop .name {
+              color: #f79d02;
+              padding-right: 18px;
+              background-position: 100% 50%;
+              letter-spacing: 0.02em;
+              font-weight: 400;
+              cursor: pointer;
+              text-transform: uppercase;
+              background-image: url(../images/battlerite/yellow-arrow.svg);
+              background-repeat: no-repeat;
+              background-size: 9px 7px;
+              font-size: 14.848px;
+              font-size: 1.4848rem; }
+              .lt-ie9 .menu-top-outer .user-drop .name {
+                background-image: url(../images/battlerite/yellow-arrow.png); }
+              .no-svg .menu-top-outer .user-drop .name {
+                background-image: url(../images/battlerite/yellow-arrow.png); }
+            .menu-top-outer .user-drop ul {
+              display: none;
+              position: absolute;
+              right: 0;
+              top: 100%;
+              padding: 0 0 4px !important;
+              min-width: 100%;
+              background-color: #1d191e; }
+              .menu-top-outer .user-drop ul li {
+                list-style: none;
+                display: block; }
+                .menu-top-outer .user-drop ul li > a {
+                  display: block;
+                  vertical-align: middle;
+                  padding: 0;
+                  line-height: 1.2em;
+                  text-decoration: none;
+                  position: relative;
+                  text-align: right;
+                  text-transform: uppercase;
+                  font-family: "Ubuntu", sans-serif;
+                  padding: 15px 18px 15px 4px;
+                  font-size: 14.848px;
+                  font-size: 1.4848rem;
+                  font-weight: 400;
+                  color: white;
+                  letter-spacing: 0.02em; }
+                  @media (max-width: 950px) {
+                    .menu-top-outer .user-drop ul li > a {
+                      padding: 15px 18px 15px 4px;
+                      font-size: 14px;
+                      font-size: 1.4rem; } }
+                  .menu-top-outer .user-drop ul li > a:hover, .menu-top-outer .user-drop ul li > a:focus {
+                    color: #f79d02;
+                    text-decoration: none; }
+
+
+
+    /* stuff like float-left, clear-right, align-center */
+    button:focus,
+    .btn:focus,
+    [type="submit"]:focus {
+      outline: none; }
+
+    .btn, *[type="submit"] {
+      display: inline-block;
+      zoom: 1;
+      *display: inline;
+      text-decoration: none !important;
+      line-height: 1.5em;
+      background-color: transparent;
+      color: white !important;
+      border-radius: 0;
+      font-weight: 400;
+      position: relative;
+      width: auto;
+      min-width: 0;
+      text-align: center;
+      -webkit-transition: .15s;
+      -o-transition: .15s;
+      transition: .15s;
+      cursor: pointer;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      text-transform: uppercase;
+      background-size: 100% 100%;
+      min-width: 240px;
+      max-width: 100%;
+      background-image: url(../images/battlerite/btn-1.png);
+      border: none;
+      font-family: "Ubuntu", sans-serif;
+      font-size: 16px;
+      padding: 9px 17px;
+      letter-spacing: 0.19em; }
+      .btn:hover, [type="submit"]:hover, .btn:focus, [type="submit"]:focus {
+        border-color: transparent;
+        color: #0c9590 !important;
+        outline: none; }
+      .btn + .btn, *[type="submit"] + .btn, .btn + *[type="submit"], *[type="submit"] + *[type="submit"] {
+        margin-left: 4.9%; }
+      @media (max-width: 950px) {
+        .btn, *[type="submit"] {
+          font-size: 14px !important;
+          }
+        }
+      @media (max-width: 950px) {
+        .btn, *[type="submit"] {
+          padding: 7px 7px;
+          font-size: 14px;
+          font-size: 1.4rem;
+          min-width: 136px; } }
+      .btn.alt, .alt[type="submit"] {
+        background-image: url(../images/battlerite/btn-2.png); }
+        .btn.alt:hover, .alt[type="submit"]:hover, .btn.alt:focus, .alt[type="submit"]:focus {
+          color: #7e1a01 !important; }
+
+    ::-webkit-input-placeholder {
+      font-size: 16px;
+      font-size: 1.6rem;
+      color: #191a1b;
+      font-family: "PT Serif", serif;
+      font-weight: 700; }
+      @media (max-width: 950px) {
+        ::-webkit-input-placeholder {
+          font-size: 14px;
+          font-size: 1.4rem; } }
+
+    :-moz-placeholder {
+      /* Firefox 18- */
+      font-size: 16px;
+      font-size: 1.6rem;
+      color: #191a1b;
+      font-family: "PT Serif", serif;
+      font-weight: 700; }
+      @media (max-width: 950px) {
+        :-moz-placeholder {
+          font-size: 14px;
+          font-size: 1.4rem; } }
+
+    ::-moz-placeholder {
+      /* Firefox 19+ */
+      font-size: 16px;
+      font-size: 1.6rem;
+      color: #191a1b;
+      font-family: "PT Serif", serif;
+      font-weight: 700; }
+      @media (max-width: 950px) {
+        ::-moz-placeholder {
+          font-size: 14px;
+          font-size: 1.4rem; } }
+
+    :-ms-input-placeholder {
+      font-size: 16px;
+      font-size: 1.6rem;
+      color: #191a1b;
+      font-family: "PT Serif", serif;
+      font-weight: 700; }
+      @media (max-width: 950px) {
+        :-ms-input-placeholder {
+          font-size: 14px;
+          font-size: 1.4rem; } }
+
+
+
+
+header#pageheader, footer#pagefooter, .related, .document {
+  width: 100%;
+  max-width: 1190px;
+  margin: auto;
+}
+
+p {
+  font-size: 14px;
+  margin-bottom: 1.95em;
+  font-weight: 500;
+}
+
+.bodywrapper {
+    margin: 0 0 0 22rem;
+}
+
+.sphinxsidebar {
+    width: 20rem;
+}
+
+.sphinxsidebarwrapper ul {
+  padding: 0 0 0 0 !important;
+}
+
+.sphinxsidebarwrapper ul li {
+  list-style: none;
+  margin-bottom: -2px;
+  padding: 0;
+  border: 1.5px solid #1f1e20;
+}
+
+.sphinxsidebarwrapper ul li.current > a {
+  color: #eaa900;
+  border-left: 2px solid #eaa900;
+}
+
+.sphinxsidebarwrapper ul li.current {
+  padding: 0px 0 0px;
+  margin-bottom: 0;
+  background-color: #1f1e20;
+}
+
+.sphinxsidebarwrapper ul li ul {
+  margin-bottom: 0;
+  padding-top: 4px;
+  padding-bottom: 25px;
+}
+
+.sphinxsidebarwrapper ul li ul li {
+  border: none;
+  padding: 5.5px 0 5.5px;
+}
+
+.sphinxsidebarwrapper ul li ul li a {
+  text-transform: none;
+  padding: 0px 5px 0 29px;
+  font-size: 12px;
+}
+
+.sphinxsidebarwrapper ul li a {
+  display: block;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: white;
+  letter-spacing: .07em;
+  padding: 9px 10px 8px 26px;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+
+.sphinxsidebarwrapper ul li a:hover, ul.aside-menu li a:focus {
+  text-decoration: none;
+  color: #eaa900;
+}
+
+.breadcrumbs {
+  border:none;
+}
+
+a {
+  color: #eaa900;
+}
+
+a:visited {
+  color: #eaa900;
+}
+
+
+.highlight pre{
+  background-color: black;
+  border:1px solid #5e5e5e;
+}
+
+.highlight .go {
+  color: white;
+}
