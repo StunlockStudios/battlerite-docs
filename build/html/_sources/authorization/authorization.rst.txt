@@ -14,12 +14,16 @@ In some cases an X-API-KEY will give you more access to information, and in all 
 
 To specify the Headers, use this code:
 
+**Shell**
+
 .. code-block:: shell
 
   # With shell, you can just pass the correct header with each request
     curl "<endpoint-url>" \
     -H "Authorization: <api-key>"
     -H "Accept: application/vnd.api+json"
+
+**Java**
 
 .. code-block:: java
 
@@ -34,6 +38,8 @@ To specify the Headers, use this code:
 
   conn.getInputStream()
 
+**Python**  
+
 .. code-block:: python
 
   import requests
@@ -46,6 +52,8 @@ To specify the Headers, use this code:
   }
 
   r = requests.get(url, headers=header)
+
+**Go**
 
 .. code-block:: go
 

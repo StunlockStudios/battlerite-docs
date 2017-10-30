@@ -71,7 +71,79 @@
             
   <div class="section" id="players">
 <span id="id1"></span><h1>Players<a class="headerlink" href="#players" title="Permalink to this headline">¶</a></h1>
+<p>Player objects contain aggregated lifetime information about each Player. At this time Players are fairly sparse, but there are plans to add much richer data as it becomes available.</p>
+<div class="section" id="get-a-single-player">
+<h2>Get a Single Player<a class="headerlink" href="#get-a-single-player" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint retrieves a specific player.</p>
+<p><em>Please Note: Changes Coming! - Player resources are not fully defined at this point, but are included so that consumers can get basic info (name, etc.) This object will have additional data added over the next few months, and may change slightly as data moves from the `attributes.stats` object to the main `attributes` object.</em></p>
+<p><strong>HTTP Request</strong>
+<code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/players/&lt;ID&gt;</span></code></p>
+<p><strong>URL Parameters</strong></p>
+<p>Parameter: ID
+Description: The ID of the player to retrieve</p>
+<p><strong>Shell</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/players/&lt;ID&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+
+  **The above <span class="nb">command</span> returns JSON structured like this:**
+
+        <span class="o">{{</span>
+      <span class="s2">&quot;data&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;attributes&quot;</span>: <span class="o">{</span>
+            <span class="s2">&quot;stats&quot;</span>: <span class="o">{</span>
+                <span class="s2">&quot;lossStreak&quot;</span>: <span class="m">1</span>,
+                <span class="s2">&quot;winStreak&quot;</span>: <span class="m">0</span>,
+                <span class="s2">&quot;lifetimeGold&quot;</span>: <span class="m">10536</span>.0
+            <span class="o">}</span>,
+            <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;boombastic04&quot;</span>
+        <span class="o">}</span>,
+        <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;player&quot;</span>,
+        <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;6abb30de-7cb8-11e4-8bd3-06eb725f8a76&quot;</span>
+      <span class="o">}</span>
+      <span class="o">}</span>
+</pre></div>
+</div>
+<p><strong>Javascript</strong></p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">//There are a variety of Java HTTP libraries that support query-parameters.</span>
+
+  <span class="o">**</span><span class="nx">The</span> <span class="nx">above</span> <span class="nx">command</span> <span class="nx">returns</span> <span class="nx">JSON</span> <span class="nx">structured</span> <span class="nx">like</span> <span class="k">this</span><span class="o">:**</span>
+
+        <span class="p">{{</span>
+      <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;attributes&quot;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s2">&quot;stats&quot;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s2">&quot;lossStreak&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="s2">&quot;winStreak&quot;</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="s2">&quot;lifetimeGold&quot;</span><span class="o">:</span> <span class="mf">10536.0</span>
+            <span class="p">},</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;boombastic04&quot;</span>
+        <span class="p">},</span>
+        <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;player&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;6abb30de-7cb8-11e4-8bd3-06eb725f8a76&quot;</span>
+      <span class="p">}</span>
+      <span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-a-collection-of-players">
+<h2>Get a Collection of Players<a class="headerlink" href="#get-a-collection-of-players" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint retrieves a collection of up to 6 players, filtered by name. Player names are specific to each region. If a player has changed names, it is possible that there are multiple ID’s for a single player name.</p>
+<p><strong>HTTP Request</strong>
+<code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/players</span></code></p>
+<p><strong>Query Parameters</strong>
+Parameter: filter[playerNames]
+Default: None
+Description: Filters by player names. Usage: filter[playerNames]=player1,player2</p>
+<p><strong>Shell</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/players?filter[playerNames]=player1,player2&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+      <span class="o">}</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -91,7 +163,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../receivingresponses/receivingresponses.html">Receiving Responses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../matches/matches.html">Matches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../match_data_summary/match_data_summary.html">Match Data Summary</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Players</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Players</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-a-single-player">Get a Single Player</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-a-collection-of-players">Get a Collection of Players</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../samples/samples.html">Samples</a></li>

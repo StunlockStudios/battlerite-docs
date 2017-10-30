@@ -71,7 +71,138 @@
             
   <div class="section" id="match-data-summary">
 <span id="id1"></span><h1>Match Data Summary<a class="headerlink" href="#match-data-summary" title="Permalink to this headline">¶</a></h1>
+<p>Special thanks to Kashz for helping to create this! GitHub: iAm-Kashif</p>
+<div class="section" id="match-object">
+<h2>Match Object<a class="headerlink" href="#match-object" title="Permalink to this headline">¶</a></h2>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="24%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Type</td>
+<td>str</td>
+<td>Match</td>
+</tr>
+<tr class="row-odd"><td>ID</td>
+<td>str</td>
+<td>Match ID</td>
+</tr>
+<tr class="row-even"><td>createdAt</td>
+<td>str (iso8601)</td>
+<td>Time of Match Played</td>
+</tr>
+<tr class="row-odd"><td>duration</td>
+<td>int</td>
+<td>Time of match in seconds</td>
+</tr>
+<tr class="row-even"><td>gameMode</td>
+<td>str</td>
+<td>Game Mode</td>
+</tr>
+<tr class="row-odd"><td>patchVersion</td>
+<td>str</td>
+<td>Version of API</td>
+</tr>
+<tr class="row-even"><td>shardID</td>
+<td>str</td>
+<td>Match Shard</td>
+</tr>
+<tr class="row-odd"><td>stats</td>
+<td>map</td>
+<td>See Match.stats</td>
+</tr>
+<tr class="row-even"><td>assets</td>
+<td>obj</td>
+<td>See Match.assets</td>
+</tr>
+<tr class="row-odd"><td>rosters</td>
+<td>obj</td>
+<td>See Rosters</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Match.stats (End of game statistics)</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="24%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>endGameReason</td>
+<td>str</td>
+<td>“Victory” or “Defeat”</td>
+</tr>
+<tr class="row-odd"><td>queue</td>
+<td>str</td>
+<td>Game Mode</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Match.assets (Telemetry Data)</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="24%" />
+<col width="47%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Type</td>
+<td>string</td>
+<td>asset</td>
+</tr>
+<tr class="row-odd"><td>createdAt</td>
+<td>str (iso8601)</td>
+<td>Time of Telemtry creation</td>
+</tr>
+<tr class="row-even"><td>description</td>
+<td>str</td>
+<td>” “</td>
+</tr>
+<tr class="row-odd"><td>filename</td>
+<td>str</td>
+<td>telemetry.json</td>
+</tr>
+<tr class="row-even"><td>id</td>
+<td>str</td>
+<td>ID of Asset</td>
+</tr>
+<tr class="row-odd"><td>contentType</td>
+<td>str</td>
+<td>application/json</td>
+</tr>
+<tr class="row-even"><td>name</td>
+<td>map</td>
+<td>telemetry</td>
+</tr>
+<tr class="row-odd"><td>url</td>
+<td>obj</td>
+<td>Link to Telemetry.json file</td>
+</tr>
+</tbody>
+</table>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -90,7 +221,8 @@
 <li class="toctree-l1"><a class="reference internal" href="../makingrequests/makingrequests.html">Making Requests</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../receivingresponses/receivingresponses.html">Receiving Responses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../matches/matches.html">Matches</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Match Data Summary</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Match Data Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#match-object">Match Object</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players</a></li>

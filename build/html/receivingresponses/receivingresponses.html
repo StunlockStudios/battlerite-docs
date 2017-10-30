@@ -76,55 +76,24 @@
 <p>All Server responses contain a root JSON object.</p>
 <p>A response will contain at least one of the following top-level members:</p>
 <ul class="simple">
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">data:</th><td class="field-body">: the response’s “primary data”</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">errors:</th><td class="field-body">: an array of error objects</td>
-</tr>
-</tbody>
-</table>
-</li>
+<li><code class="docutils literal"><span class="pre">data</span></code> : the response’s “primary data”</li>
+<li><code class="docutils literal"><span class="pre">errors</span></code> : an array of error objects</li>
 </ul>
 <p>A response may contain any of these top-level members:</p>
 <ul class="simple">
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">links:</th><td class="field-body">: a links object related to the primary data.</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li><table class="first docutils field-list" frame="void" rules="none">
-<col class="field-name" />
-<col class="field-body" />
-<tbody valign="top">
-<tr class="field-odd field"><th class="field-name">included:</th><td class="field-body">: an array of resource objects that are related to the primary data and/or each other (“included resources”).</td>
-</tr>
-</tbody>
-</table>
-</li>
+<li><code class="docutils literal"><span class="pre">links</span></code>: a links object related to the primary data.</li>
+<li><code class="docutils literal"><span class="pre">included</span></code>: an array of resource objects that are related to the primary data and/or each other (“included resources”).</li>
 </ul>
 <p>If a document does not contain a top-level data key, the included member will not be present either.</p>
 <p>Primary data will be either:</p>
 <ul class="simple">
-<li>a single [resource object][resource objects], a single [resource identifier object], or :null:</li>
-<li>an array of [resource objects], an array of [resource identifier objects][resource identifier object], or an empty array :([]):</li>
+<li>a single [resource object][resource objects], a single [resource identifier object], or <code class="docutils literal"><span class="pre">null</span></code></li>
+<li>an array of [resource objects], an array of [resource identifier objects][resource identifier object], or an empty array <code class="docutils literal"><span class="pre">([])</span></code></li>
 </ul>
 <p>For example, the following primary data is a single resource object:</p>
 <p>The following primary data is a single [resource identifier object] that references the same resource:</p>
 <p>A logical collection of resources will always be represented as an array, even if it only contains one item or is empty.</p>
+<p><strong>Javascript</strong></p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
   <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
     <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;match&quot;</span><span class="p">,</span>
@@ -149,9 +118,10 @@
 <div class="section" id="rate-limits">
 <h2>Rate Limits<a class="headerlink" href="#rate-limits" title="Permalink to this headline">¶</a></h2>
 <p>Be nice. If you’re sending too many requests too quickly, we’ll send back a
-:429: error code (server unavailable).</p>
+<code class="docutils literal"><span class="pre">429</span></code> error code (server unavailable).</p>
 <p><strong>Please note: Free for non-commercial use for up to 10 requests per minute! To increase your rate limit, log into your admin dashboard, find the app you would like a higher rate limit for, and click “request a higher rate limit”</strong></p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>**The rate limit headers are defined as follows:**
+<p><strong>Shell</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>The rate limit headers are defined as follows:
 
 X-RateLimit-Limit - Request limit per day / per minute
 X-RateLimit-Remaining - The number of requests left <span class="k">for</span> the <span class="nb">time</span> window

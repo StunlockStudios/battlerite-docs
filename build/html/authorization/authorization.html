@@ -77,12 +77,14 @@ JWTs are passed as bearer tokens in the Authorization header, and look like the 
 <p>There’s no need to create JWTs manually, they will be created for you when you register for the API - <a class="reference external" href="https://developer.battlerite.com">Register Here!</a>.</p>
 <p>In some cases an X-API-KEY will give you more access to information, and in all cases it means that you are operating under a per-token rate limit.</p>
 <p>To specify the Headers, use this code:</p>
+<p><strong>Shell</strong></p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span><span class="c1"># With shell, you can just pass the correct header with each request</span>
   curl <span class="s2">&quot;&lt;endpoint-url&gt;&quot;</span> <span class="se">\</span>
   -H <span class="s2">&quot;Authorization: &lt;api-key&gt;&quot;</span>
   -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
 </div>
+<p><strong>Java</strong></p>
 <div class="highlight-java"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
 <span class="kn">import</span> <span class="nn">java.net.*</span><span class="o">;</span>
 
@@ -95,6 +97,7 @@ JWTs are passed as bearer tokens in the Authorization header, and look like the 
 <span class="n">conn</span><span class="o">.</span><span class="na">getInputStream</span><span class="o">()</span>
 </pre></div>
 </div>
+<p><strong>Python</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;&lt;endpoint-url&gt;&quot;</span>
@@ -107,6 +110,7 @@ JWTs are passed as bearer tokens in the Authorization header, and look like the 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
 </pre></div>
 </div>
+<p><strong>Go</strong></p>
 <div class="highlight-go"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="s">&quot;net/http&quot;</span>
 
 <span class="nx">client</span> <span class="o">:=</span> <span class="o">&amp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">Client</span><span class="p">{}</span>

@@ -71,7 +71,52 @@
             
   <div class="section" id="links">
 <span id="id1"></span><h1>Links<a class="headerlink" href="#links" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="get-a-link">
+<h2>Get a Link<a class="headerlink" href="#get-a-link" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint checks to see if a link object exists for a given code.</p>
+<p><strong>HTTP Request</strong>
+<code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/link</span></code></p>
+<p><strong>Shell</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/link/{id}&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="post-a-link">
+<h2>Post a Link<a class="headerlink" href="#post-a-link" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint creates a PlayerLink object if the verification code matches the one provided by the game.</p>
+<p><strong>HTTP Request</strong>
+<code class="docutils literal"><span class="pre">POST</span> <span class="pre">https://api.dc01.gamelockerapp.com/link/{player_id}</span></code></p>
+<p><strong>Query Parameters</strong>
+=========================== ===================================================================================================================
+Parameter                   Description
+=========================== ===================================================================================================================
+code                        The verification code
+=========================== ===================================================================================================================</p>
+<p><strong>Shell</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -XPOST <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/link/{player_id}&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="player-link">
+<h2>Player Link<a class="headerlink" href="#player-link" title="Permalink to this headline">¶</a></h2>
+<p><strong>Shell</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>  <span class="o">{</span>
+  <span class="s2">&quot;attributes&quot;</span>: <span class="o">{</span>
+      <span class="s2">&quot;playerId&quot;</span>: <span class="s2">&quot;fb374a7b-78be-4fcc-83ed-6a532a8a6f55&quot;</span>,
+      <span class="s2">&quot;shardId&quot;</span>: <span class="s2">&quot;na&quot;</span>,
+      <span class="s2">&quot;titleId&quot;</span>: <span class="s2">&quot;semc-vainglory&quot;</span>
+  <span class="o">}</span>,
+  <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;2454e5ac-0a69-4468-ad12-8616f066e817&quot;</span>,
+  <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;playerLink&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -95,7 +140,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../samples/samples.html">Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../teams/teams.html">Teams</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Links</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Links</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-a-link">Get a Link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#post-a-link">Post a Link</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#player-link">Player Link</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>

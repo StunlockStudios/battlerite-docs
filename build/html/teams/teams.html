@@ -71,7 +71,57 @@
             
   <div class="section" id="teams">
 <span id="id1"></span><h1>Teams<a class="headerlink" href="#teams" title="Permalink to this headline">¶</a></h1>
+<p>Team objects contain aggregated lifetime information about each Team.</p>
+<div class="section" id="get-a-collection-of-teams">
+<h2>Get a collection of Teams<a class="headerlink" href="#get-a-collection-of-teams" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint retrieves a collection of up to 6 teams.</p>
+<p><em>Important - Team resources are not yet available in the API.</em></p>
+<p><strong>HTTP Request</strong>
+<code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/teams</span></code></p>
+<p><strong>URL Parameters</strong>
+=========================== ================ ===================================================================================================================
+Parameter                   Default          Description
+=========================== ================ ===================================================================================================================
+filter[teamNames]           none             Filters by team name. Usage: filter[teamNames]=team1
+filter[teamIds]             none             Filter by team id. Usage: filter[teamIds]=12345
+=========================== ================ ===================================================================================================================</p>
+<p><em>Remember — a happy team is an authenticated team!</em></p>
+<p><strong>Shell</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/teams?filter[teamNames]=team1&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="get-a-single-team">
+<h2>Get a Single Team<a class="headerlink" href="#get-a-single-team" title="Permalink to this headline">¶</a></h2>
+<p>This endpoint retrieves a specific team.</p>
+<p><strong>HTTP Request</strong>
+<code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/teams/&lt;ID&gt;</span></code></p>
+<p><strong>URL Parameters</strong>
+=========================== ===================================================================================================================
+Parameter                   Description
+=========================== ===================================================================================================================
+ID                          The ID of the team to retrieve
+=========================== ===================================================================================================================</p>
+<p><strong>Shell</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>  curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/teams/&lt;ID&gt;&quot;</span> <span class="se">\</span>
+  -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+  -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+
+  The above <span class="nb">command</span> returns JSON structured like this:
+
+<span class="o">{</span>
+  <span class="s2">&quot;id&quot;</span>: <span class="m">2</span>,
+  <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Max&quot;</span>,
+  <span class="s2">&quot;breed&quot;</span>: <span class="s2">&quot;unknown&quot;</span>,
+  <span class="s2">&quot;fluffiness&quot;</span>: <span class="m">5</span>,
+  <span class="s2">&quot;cuteness&quot;</span>: <span class="m">10</span>
+<span class="o">}</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -94,7 +144,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../samples/samples.html">Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Teams</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Teams</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#get-a-collection-of-teams">Get a collection of Teams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#get-a-single-team">Get a Single Team</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../links/links.html">Links</a></li>

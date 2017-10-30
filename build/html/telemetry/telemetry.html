@@ -71,7 +71,177 @@
             
   <div class="section" id="telemetry">
 <span id="id1"></span><h1>Telemetry<a class="headerlink" href="#telemetry" title="Permalink to this headline">¶</a></h1>
+<p>The telemtry provides us insights into the match. It gives us details of various events that happened in the match alongwith the time when they happened. Some of the events also have location which can be plotted on a Vainglory Game map. Telemtry is very useful to generate a timeline visualtions of how the match went for replays, or create heatmaps of where a certin hero or ability is most useful. These are just some of the exmaples of where Telemtry can be used.</p>
+<div class="section" id="to-get-telemetry-data">
+<h2>To get Telemetry Data<a class="headerlink" href="#to-get-telemetry-data" title="Permalink to this headline">¶</a></h2>
+<p>You start by pulling a list of matches using the matches endopoint.</p>
+<p>The HTTP Request to get matches is <code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/matches</span></code></p>
+<p><strong>Shell</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/matches&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+
+*The above <span class="nb">command</span> returns JSON structured like this:*
+
+ <span class="s2">&quot;data&quot;</span>: <span class="o">[</span>
+  <span class="o">{</span>
+    <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;match&quot;</span>,
+    <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;f5373c40-0aa9-11e7-bcff-0667892d829e&quot;</span>,
+    <span class="s2">&quot;attributes&quot;</span>: <span class="o">{</span>
+      <span class="s2">&quot;createdAt&quot;</span>: <span class="s2">&quot;2017-03-17T00:38:00Z&quot;</span>,
+      <span class="s2">&quot;duration&quot;</span>: <span class="m">259</span>,
+      <span class="s2">&quot;gameMode&quot;</span>: <span class="s2">&quot;blitz_pvp_ranked&quot;</span>,
+      <span class="s2">&quot;patchVersion&quot;</span>: <span class="s2">&quot;&quot;</span>,
+      <span class="s2">&quot;shardId&quot;</span>: <span class="s2">&quot;na&quot;</span>,
+      <span class="s2">&quot;stats&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;endGameReason&quot;</span>: <span class="s2">&quot;victory&quot;</span>,
+        <span class="s2">&quot;queue&quot;</span>: <span class="s2">&quot;blitz_pvp_ranked&quot;</span>
+      <span class="o">}</span>,
+      <span class="s2">&quot;titleId&quot;</span>: <span class="s2">&quot;semc-vainglory&quot;</span>
+    <span class="o">}</span>,
+    <span class="s2">&quot;relationships&quot;</span>: <span class="o">{</span>
+      <span class="s2">&quot;assets&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;data&quot;</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;asset&quot;</span>,
+            <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;b900c179-0aaa-11e7-bb12-0242ac110005&quot;</span>
+          <span class="o">}</span>
+        <span class="o">]</span>
+      <span class="o">}</span>,
+      <span class="s2">&quot;rosters&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;data&quot;</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;roster&quot;</span>,
+            <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;b8f6640a-0aaa-11e7-bb12-0242ac110005&quot;</span>
+          <span class="o">}</span>,
+          <span class="o">{</span>
+            <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;roster&quot;</span>,
+            <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;b8f65271-0aaa-11e7-bb12-0242ac110005&quot;</span>
+          <span class="o">}</span>
+        <span class="o">]</span>
+      <span class="o">}</span>,
+      <span class="s2">&quot;rounds&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;data&quot;</span>: <span class="o">[]</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>,
+
+  *You need to look <span class="k">for</span> Assets JSON node which points to telemetry. Check <span class="k">for</span> the following in the response:*
+
+  <span class="s2">&quot;relationships&quot;</span>: <span class="o">{</span>
+      <span class="s2">&quot;assets&quot;</span>: <span class="o">{</span>
+        <span class="s2">&quot;data&quot;</span>: <span class="o">[</span>
+          <span class="o">{</span>
+            <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;asset&quot;</span>,
+            <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;b900c179-0aaa-11e7-bb12-0242ac110005&quot;</span>
+          <span class="o">}</span>
+        <span class="o">]</span>
+      <span class="o">}</span>,
+
+  *Once you have located this ID, you now have to search <span class="k">for</span> the following JSON segment in the response object. The following response object will provide you a link to the Telemtry data*
+
+  <span class="o">{</span>
+    <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;asset&quot;</span>,
+    <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;b900c179-0aaa-11e7-bb12-0242ac110005&quot;</span>,
+    <span class="s2">&quot;attributes&quot;</span>: <span class="o">{</span>
+      <span class="s2">&quot;URL&quot;</span>: <span class="s2">&quot;https://gl-prod-us-east-1.s3.amazonaws.com/assets/semc-vainglory/na/2017/03/17/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json&quot;</span>,
+      <span class="s2">&quot;contentType&quot;</span>: <span class="s2">&quot;application/json&quot;</span>,
+      <span class="s2">&quot;createdAt&quot;</span>: <span class="s2">&quot;2017-03-17T00:43:22Z&quot;</span>,
+      <span class="s2">&quot;description&quot;</span>: <span class="s2">&quot;&quot;</span>,
+      <span class="s2">&quot;filename&quot;</span>: <span class="s2">&quot;telemetry.json&quot;</span>,
+      <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;telemetry&quot;</span>
+    <span class="o">}</span>
+  <span class="o">}</span>,
+
+  *You can download the data with following commands. Please note that you <span class="k">do</span> not need API Key to get this data.*
+
+  curl <span class="s2">&quot;https://gl-prod-us-east-1.s3.amazonaws.com/assets/semc-vainglory/na/2017/03/17/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json&quot;</span> <span class="se">\</span>
+       -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+
+       *This request will <span class="k">return</span> you a response as follows:*
+
+       <span class="o">{</span> <span class="s2">&quot;time&quot;</span>: <span class="s2">&quot;2017-02-18T06:37:15+0000&quot;</span>,
+   <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;DealDamage&quot;</span>,
+   <span class="s2">&quot;payload&quot;</span>: <span class="o">{</span>
+     <span class="s2">&quot;Team&quot;</span>: <span class="s2">&quot;Left&quot;</span>,
+     <span class="s2">&quot;Actor&quot;</span>: <span class="s2">&quot;*Ringo*&quot;</span>,
+     <span class="s2">&quot;Target&quot;</span>: <span class="s2">&quot;*Turret*&quot;</span>,
+     <span class="s2">&quot;Source&quot;</span>: <span class="s2">&quot;Unknown&quot;</span>,
+     <span class="s2">&quot;Damage&quot;</span>: <span class="m">405</span>,
+     <span class="s2">&quot;Delt&quot;</span>:  <span class="m">613</span>,
+     <span class="s2">&quot;IsHero&quot;</span>: <span class="m">1</span>,
+     <span class="s2">&quot;TargetIsHero&quot;</span>: <span class="m">0</span>
+   <span class="o">}</span>
+ <span class="o">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="event-data-dictionary">
+<h2>Event Data Dictionary<a class="headerlink" href="#event-data-dictionary" title="Permalink to this headline">¶</a></h2>
+<p>Telemetry data is classified into several event of interest. Following is a list of every event type with an example.</p>
+<p><strong>PlayerFirstSpawn</strong></p>
+<p>At the start of the game when players spawn.</p>
+<p><strong>Level Up</strong></p>
+<p>When a player gains a level in the game. In game types Brawl, you will find 9 events at the exact same time.</p>
+<p><strong>BuyItem</strong></p>
+<p>When a player buys an item.</p>
+<p><strong>SellItem</strong></p>
+<p>When a player sells an item. <code class="docutils literal"><span class="pre">json</span> <span class="pre">{</span> <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;2017-03-31T02:49:37+0000&quot;,</span> <span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;SellItem&quot;,</span> <span class="pre">&quot;payload&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;Team&quot;:</span> <span class="pre">&quot;Left&quot;,</span> <span class="pre">&quot;Actor&quot;:</span> <span class="pre">&quot;*Lyra*&quot;,</span> <span class="pre">&quot;Item&quot;:</span> <span class="pre">&quot;Flare&quot;,</span> <span class="pre">&quot;Cost&quot;:</span> <span class="pre">15</span> <span class="pre">}</span> <span class="pre">}</span></code></p>
+<p><strong>LearnAbility</strong></p>
+<p>When a player puts a point into one of the abilities. Please note there can be a time difference between when a player gains a level and learns an ability <code class="docutils literal"><span class="pre">json</span> <span class="pre">{</span> <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;2017-03-17T00:38:52+0000&quot;,</span> <span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;LearnAbility&quot;,</span> <span class="pre">&quot;payload&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;Team&quot;:</span> <span class="pre">&quot;Right&quot;,</span> <span class="pre">&quot;Actor&quot;:</span> <span class="pre">&quot;*Sayoc*&quot;,</span> <span class="pre">&quot;Ability&quot;:</span> <span class="pre">&quot;HERO_ABILITY_SAYOC_C&quot;,</span> <span class="pre">&quot;Level&quot;:</span> <span class="pre">1</span> <span class="pre">}</span> <span class="pre">},</span></code></p>
+<p><strong>UseAbility</strong></p>
+<p>This event is recorded when a player uses an ability and it will hold information about the hero who used it together with the co-ordinates for the map. <code class="docutils literal"><span class="pre">json</span> <span class="pre">{</span> <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;2017-03-17T00:39:08+0000&quot;,</span> <span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;UseAbility&quot;,</span> <span class="pre">&quot;payload&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;Team&quot;:</span> <span class="pre">&quot;Right&quot;,</span> <span class="pre">&quot;Actor&quot;:</span> <span class="pre">&quot;*Kestrel*&quot;,</span> <span class="pre">&quot;Ability&quot;:</span> <span class="pre">&quot;HERO_ABILITY_KESTREL_A_NAME&quot;,</span> <span class="pre">&quot;Position&quot;:</span> <span class="pre">[</span> <span class="pre">39.39,</span> <span class="pre">0.01,</span> <span class="pre">27.26</span> <span class="pre">]</span> <span class="pre">}</span> <span class="pre">},</span></code></p>
+<p><strong>UseItemAbility</strong></p>
+<p>This event is recorded when a player uses an activatable item or a charm/taunt. <code class="docutils literal"><span class="pre">json</span> <span class="pre">{</span> <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;2017-03-31T03:10:17+0000&quot;,</span> <span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;UseItemAbility&quot;,</span> <span class="pre">&quot;payload&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;Team&quot;:</span> <span class="pre">&quot;Left&quot;,</span> <span class="pre">&quot;Actor&quot;:</span> <span class="pre">&quot;*Lyra*&quot;,</span> <span class="pre">&quot;Ability&quot;:</span> <span class="pre">&quot;Travel</span> <span class="pre">Boots&quot;,</span> <span class="pre">&quot;Position&quot;:</span> <span class="pre">[</span> <span class="pre">-17.51,</span> <span class="pre">0.01,</span> <span class="pre">41.63</span> <span class="pre">],</span> <span class="pre">&quot;TargetActor&quot;:</span> <span class="pre">&quot;None&quot;,</span> <span class="pre">&quot;TargetPosition&quot;:</span> <span class="pre">[</span> <span class="pre">-17.51,</span> <span class="pre">0.01,</span> <span class="pre">41.63</span> <span class="pre">]</span> <span class="pre">}</span> <span class="pre">}</span></code></p>
+<p><strong>EarnXP</strong></p>
+<p>This event is recorded when a player gains XP from any source. it could be killing a minion, miner or a hero. <code class="docutils literal"><span class="pre">json</span> <span class="pre">{</span> <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;2017-03-17T00:39:09+0000&quot;,</span> <span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;EarnXP&quot;,</span> <span class="pre">&quot;payload&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;Team&quot;:</span> <span class="pre">&quot;Left&quot;,</span> <span class="pre">&quot;Actor&quot;:</span> <span class="pre">&quot;*Koshka*&quot;,</span> <span class="pre">&quot;Source&quot;:</span> <span class="pre">&quot;*JungleMinion_TreeEnt*&quot;,</span> <span class="pre">&quot;Amount&quot;:</span> <span class="pre">67,</span> <span class="pre">&quot;Shared</span> <span class="pre">With&quot;:</span> <span class="pre">1</span> <span class="pre">}</span> <span class="pre">},</span></code></p>
+<p><strong>DealDamage</strong></p>
+<p>This event is recorded when any actor (player, turret, minion, etc.) deals damage to any other. <code class="docutils literal"><span class="pre">json</span> <span class="pre">{</span> <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;2017-03-31T02:47:34+0000&quot;,</span> <span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;DealDamage&quot;,</span> <span class="pre">&quot;payload&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;Team&quot;:</span> <span class="pre">&quot;Left&quot;,</span> <span class="pre">&quot;Actor&quot;:</span> <span class="pre">&quot;*Skaarf*&quot;,</span> <span class="pre">&quot;Target&quot;:</span> <span class="pre">&quot;*Vox*&quot;,</span> <span class="pre">&quot;Source&quot;:</span> <span class="pre">&quot;Unknown&quot;,</span> <span class="pre">&quot;Damage&quot;:</span> <span class="pre">105,</span> <span class="pre">&quot;Delt&quot;:</span> <span class="pre">80,</span> <span class="pre">&quot;IsHero&quot;:</span> <span class="pre">1,</span> <span class="pre">&quot;TargetIsHero&quot;:</span> <span class="pre">1</span> <span class="pre">}</span> <span class="pre">}</span></code></p>
+<p><strong>KillActor</strong></p>
+<p>This event is recorded when a player kills anything in game. it could be a a minion, miner or a hero. You will generally see EarnXP and KillActor events come at the sme time.</p>
+<p><strong>NPCkillNPC</strong></p>
+<p>When one non-player actor kills another, such as the Kraken or a minion killing a turret. <code class="docutils literal"><span class="pre">json</span> <span class="pre">{</span> <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;2017-03-31T03:07:21+0000&quot;,</span> <span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;NPCkillNPC&quot;,</span> <span class="pre">&quot;payload&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;Team&quot;:</span> <span class="pre">&quot;Left&quot;,</span> <span class="pre">&quot;Actor&quot;:</span> <span class="pre">&quot;*Kraken_Captured*&quot;,</span> <span class="pre">&quot;Killed&quot;:</span> <span class="pre">&quot;*Turret*&quot;,</span> <span class="pre">&quot;KilledTeam&quot;:</span> <span class="pre">&quot;Right&quot;,</span> <span class="pre">&quot;Gold&quot;:</span> <span class="pre">&quot;300&quot;,</span> <span class="pre">&quot;IsHero&quot;:</span> <span class="pre">0,</span> <span class="pre">&quot;TargetIsHero&quot;:</span> <span class="pre">0,</span> <span class="pre">&quot;Position&quot;:</span> <span class="pre">[</span> <span class="pre">54,</span> <span class="pre">0,</span> <span class="pre">2.92</span> <span class="pre">]</span> <span class="pre">}</span> <span class="pre">}</span></code></p>
+<p><strong>GoldFromTowerKill</strong></p>
+<p>When a player earns gold from the destruction of a turret belonging to the enemy team. <code class="docutils literal"><span class="pre">json</span> <span class="pre">{</span> <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;2017-03-31T02:57:02+0000&quot;,</span> <span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;GoldFromTowerKill&quot;,</span> <span class="pre">&quot;payload&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;Team&quot;:</span> <span class="pre">&quot;Left&quot;,</span> <span class="pre">&quot;Actor&quot;:</span> <span class="pre">&quot;*Idris*&quot;,</span> <span class="pre">&quot;Amount&quot;:</span> <span class="pre">300</span> <span class="pre">}</span> <span class="pre">}</span></code></p>
+<p><strong>GoldFromGoldMine</strong></p>
+<p>When a player earns gold from his or her team capturing the gold miner. <code class="docutils literal"><span class="pre">json</span> <span class="pre">{</span> <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;2017-03-31T03:00:43+0000&quot;,</span> <span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;GoldFromGoldMine&quot;,</span> <span class="pre">&quot;payload&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;Team&quot;:</span> <span class="pre">&quot;Left&quot;,</span> <span class="pre">&quot;Actor&quot;:</span> <span class="pre">&quot;*Idris*&quot;,</span> <span class="pre">&quot;Amount&quot;:</span> <span class="pre">300</span> <span class="pre">}</span> <span class="pre">}</span></code></p>
+<p><strong>GoldFromKrakenKill</strong></p>
+<p>When a player earns gold from his or her team killing a Kraken released by the enemy team. <code class="docutils literal"><span class="pre">json</span> <span class="pre">{</span> <span class="pre">&quot;time&quot;:</span> <span class="pre">&quot;2017-03-31T03:07:43+0000&quot;,</span> <span class="pre">&quot;type&quot;:</span> <span class="pre">&quot;GoldFromKrakenKill&quot;,</span> <span class="pre">&quot;payload&quot;:</span> <span class="pre">{</span> <span class="pre">&quot;Team&quot;:</span> <span class="pre">&quot;Right&quot;,</span> <span class="pre">&quot;Actor&quot;:</span> <span class="pre">&quot;*Kestrel*&quot;,</span> <span class="pre">&quot;Amount&quot;:</span> <span class="pre">500</span> <span class="pre">}</span> <span class="pre">}</span></code></p>
+<p><strong>Javascript</strong></p>
+<div class="highlight-Javascript"><div class="highlight"><pre><span></span>  <span class="p">{</span>
+  <span class="s2">&quot;time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-03-17T00:38:32+0000&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;PlayerFirstSpawn&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;payload&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;Team&quot;</span><span class="o">:</span> <span class="s2">&quot;Right&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Actor&quot;</span><span class="o">:</span> <span class="s2">&quot;*Alpha*&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+  <span class="p">{</span>
+  <span class="s2">&quot;time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-03-17T00:38:32+0000&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;LevelUp&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;payload&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;Team&quot;</span><span class="o">:</span> <span class="s2">&quot;Right&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Actor&quot;</span><span class="o">:</span> <span class="s2">&quot;*Alpha*&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Level&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="s2">&quot;LifetimeGold&quot;</span><span class="o">:</span> <span class="mi">0</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="p">{</span>
+  <span class="s2">&quot;time&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-03-17T00:38:45+0000&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;BuyItem&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;payload&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;Team&quot;</span><span class="o">:</span> <span class="s2">&quot;Left&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Actor&quot;</span><span class="o">:</span> <span class="s2">&quot;*Vox*&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Item&quot;</span><span class="o">:</span> <span class="s2">&quot;Breaking Point&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;Cost&quot;</span><span class="o">:</span> <span class="mi">2600</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -93,7 +263,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../match_data_summary/match_data_summary.html">Match Data Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../samples/samples.html">Samples</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Telemetry</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Telemetry</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#to-get-telemetry-data">To get Telemetry Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#event-data-dictionary">Event Data Dictionary</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../teams/teams.html">Teams</a></li>

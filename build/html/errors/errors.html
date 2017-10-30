@@ -71,6 +71,59 @@
             
   <div class="section" id="errors">
 <span id="id1"></span><h1>Errors<a class="headerlink" href="#errors" title="Permalink to this headline">¶</a></h1>
+<p>The server will stop processing if a problem is encountered and return the correct HTTP error status code. Errors may additionally include error objects, which are returned as an array keyed by errors in the top level of a JSON API document.</p>
+<p>An error objects have the following members:</p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">title:</span></code> (Required) the HTTP status code applicable to this problem, expressed as a string value.</li>
+<li><code class="docutils literal"><span class="pre">description:</span></code> (Optional) a short summary of the problem</li>
+</ul>
+<p>The Server uses the following error codes:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="19%" />
+<col width="81%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Error Code</th>
+<th class="head">Meaning</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>400</td>
+<td>Bad Request – Your request sucks</td>
+</tr>
+<tr class="row-odd"><td>401</td>
+<td>Unauthorized – Your API key is wrong</td>
+</tr>
+<tr class="row-even"><td>403</td>
+<td>Forbidden – The object requested is hidden for administrators only</td>
+</tr>
+<tr class="row-odd"><td>404</td>
+<td>Not Found – The specified object could not be found</td>
+</tr>
+<tr class="row-even"><td>405</td>
+<td>Method Not Allowed – You tried to access a object with an invalid method</td>
+</tr>
+<tr class="row-odd"><td>406</td>
+<td>Not Acceptable – You requested a format that isn’t JSON</td>
+</tr>
+<tr class="row-even"><td>410</td>
+<td>Gone – The object requested has been removed from our servers</td>
+</tr>
+<tr class="row-odd"><td>418</td>
+<td>I’m a teapot</td>
+</tr>
+<tr class="row-even"><td>429</td>
+<td>Too Many Requests – You’re requesting too much data! Slow down!</td>
+</tr>
+<tr class="row-odd"><td>500</td>
+<td>Internal Server Error – We had a problem with our server. Try again later.</td>
+</tr>
+<tr class="row-even"><td>503</td>
+<td>Service Unavailable – We’re temporarily offline for maintenance. Please try again later.</td>
+</tr>
+</tbody>
+</table>
 <div class="toctree-wrapper compound">
 </div>
 </div>
