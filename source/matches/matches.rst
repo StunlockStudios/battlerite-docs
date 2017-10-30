@@ -11,6 +11,8 @@ Rosters
 
 Rosters track the scores of each opposing group of Participants. If players entered matchmaking as a team, the Roster will have a related Team. Rosters have many Participants objects, one for each member of the Roster. Roster objects are only meaningful within the context of a Match and are not exposed as a standalone resource.
 
+**Javascript**
+
 .. code-block:: javascript
 
   {
@@ -47,6 +49,8 @@ Participants
 
 Participant objects track each member in a Roster. Participants may be anonymous Players, registered Players, or bots. In the case where the Participant is a registered Player, the Participant will have a single Player relationship. Participant objects are only meaningful within the context of a Match and are not exposed as a standalone resource.
 
+**Javascript**
+
 .. code-block:: javascript
 
   {
@@ -64,13 +68,47 @@ Participant objects track each member in a Roster. Participants may be anonymous
     }
   }
 
-Get a Colection of Matches
+Get a Collection of Matches
 ---------------------------
 
 This endpoint retrieves data from matches. Bulk scraping matches is prohibited.
 
 **HTTP Request**
-GET https://api.dc01.gamelockerapp.com/shards/na/matches
+``GET https://api.dc01.gamelockerapp.com/shards/na/matches``
+
+**Query Parameters**
+
++------------------------+----------------+----------------------------------------------------------------+
+| **Parameter **         | **Default**    | **Description**                                                |
++========================+================+================================================================+
+| page[offset]           | 0              | Allows paging over results                                     |
++========================+================+================================================================+
+| page[limit ]           | 50             | The default (and current maximum) is 50.                       |
+|                        |                | Values less than 50 and great than 2 are supported.            | 
++========================+================+================================================================+
+| sort                   | createdAt      | By default, Matches are sorted by creation time ascending.     |
++========================+================+================================================================+
+| filter[createdAt-start]| 3hrs ago       | Must occur before end time. Format is iso8601 Usage:           |
+|                        |                | filter[createdAt-start]=2017-01-01T08:25:30Z                   |
++========================+================+================================================================+
+| filter[createdAt-end]  | Now            | Queries search the last 3 hrs. Format is iso8601 i.e.          |
+|                        |                | filter[createdAt-end]=2017-01-01T13:25:30Z                     |
++========================+================+================================================================+
+| filter[playerNames]    | none           | Filters by player name. Usage:                                 |
+|                        |                | filter[playerNames]=player1,player2,...                        |
++========================+================+================================================================+
+| filter[playerIds]      | none           | Filters by player Id. Usage:                                   |
+|                        |                | filter[playerIds]=playerId,playerId,...                        |
++========================+================+================================================================+
+| filter[teamNames]      | none           | Filters by team names. Team names are the same as the in       |
+|                        |                | game team tags. Usage: filter[teamNames]=TSM,team2,...         |
++========================+================+================================================================+
+| filter[gameMode]       | none           |   filter by gameMode Usage: filter[gameMode]=casual,ranked,... |
++========================+================+================================================================+
+
+*Remember — a happy match is an authenticated match!*
+
+**Shell**
 
 .. code-block:: shell
 
@@ -108,6 +146,8 @@ GET https://api.dc01.gamelockerapp.com/shards/na/matches
     ]
   }
 
+**Java**
+
 .. code-block:: java
 
   //There are a variety of Java HTTP libraries that support query-parameters.
@@ -141,6 +181,8 @@ GET https://api.dc01.gamelockerapp.com/shards/na/matches
       }
     ]
   }
+
+**Python**
 
 .. code-block:: python
 
@@ -192,6 +234,8 @@ GET https://api.dc01.gamelockerapp.com/shards/na/matches
     ]
   }
 
+**Go**
+
 .. code-block:: go
 
   q := req.URL.Query()
@@ -230,6 +274,86 @@ GET https://api.dc01.gamelockerapp.com/shards/na/matches
         }
       }
     ]
+  }
+
+Get a Single Match
+---------------------------
+
+This endpoint retrieves a specific match.
+
+**HTTP Request**
+``GET https://api.dc01.gamelockerapp.com/shards/na/matches/<ID>``
+
+**URL Parameters**
+Parameter: ``ID``
+Description: ``The ID of the match to retrieve``
+
+**Shell**
+
+.. code-block:: shell
+
+  curl "https://api.dc01.gamelockerapp.com/shards/na/matches/<matchID>" \
+  -H "Authorization: Bearer <api-key>" \
+  -H "Accept: application/vnd.api+json"
+
+    **The above command returns JSON structured like this:**
+
+  {
+    "data": {
+      "type": "match",
+      "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
+      "attributes": {
+        "createdAt": "2017-01-06T20:30:08Z",
+        "duration": 1482195372,
+        "gameMode": "casual",
+        "patchVersion": "1.0.0",
+        "shardId": "na",
+        "stats": "acesEarned: 3, etc..."
+      },
+      "relationships": {
+        "rosters": {
+          "data": [{
+            "type": "roster",
+            "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
+          }, {
+            "type": "roster",
+            "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
+          }]
+        }
+      }
+    }
+  }
+
+**Javascript**
+
+.. code-block:: Javascript
+
+    //There are a variety of Java HTTP libraries that support URL parameters
+
+    {
+    "data": {
+      "type": "match",
+      "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
+      "attributes": {
+        "createdAt": "2017-01-06T20:30:08Z",
+        "duration": 1482195372,
+        "gameMode": "casual",
+        "patchVersion": "1.0.0",
+        "shardId": "na",
+        "stats": "acesEarned: 3, etc..."
+      },
+      "relationships": {
+        "rosters": {
+          "data": [{
+            "type": "roster",
+            "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
+          }, {
+            "type": "roster",
+            "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
+          }]
+        }
+      }
+    }
   }
 
 .. toctree::
