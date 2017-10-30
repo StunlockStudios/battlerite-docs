@@ -482,6 +482,10 @@ p {
   padding: 0 0 0 0 !important;
 }
 
+.sphinxsidebarwrapper h3 {
+  display: none;
+}
+
 .sphinxsidebarwrapper ul li {
   list-style: none;
   margin-bottom: -2px;
@@ -557,4 +561,22 @@ a:visited {
 
 .pre {
   background-color: #444444;
+}
+
+table {
+  margin-bottom: 20px;
+}
+
+table.docutils th {
+  padding:10px;
+  border:1px solid #afb7b9;
+}
+
+thead {
+  background-color: #1d191e;
+}
+
+table.docutils td {
+  padding:10px;
+  border:1px solid #afb7b9;
 }
