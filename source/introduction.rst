@@ -7,7 +7,7 @@ Build something great!
 
 At the moment this Service is in Alpha Preview mode. You can see sample data, test the interface, and provide feedback to our development team.
 
-While we initially took a different approach, based on community feedback the Server now makes every attempt to implement the required features of the `JSON-API <http://jsonapi.org/`_. specification.
+While we initially took a different approach, based on community feedback the Server now makes every attempt to implement the required features of the `JSON-API <http://jsonapi.org/>`_. specification.
 
 We show example language bindings using CURL and plan to add libraries for Ruby, NodeJS, Java, Python and more. Community contributions are welcome and rewarded with good karma (and swag!) You can view code examples in the dark area to the right, and you can switch the programming language of the examples with the tabs in the top right.
 
@@ -15,7 +15,7 @@ We show example language bindings using CURL and plan to add libraries for Ruby,
 Versioning
 ---------------------------
 
-We following `SEMVER <http://semver.org/`_. standards, using a MAJOR.MINOR.PATCH versioning scheme. This means that we will increment versioning in the following way:
+We following `SEMVER <http://semver.org/>`_. standards, using a MAJOR.MINOR.PATCH versioning scheme. This means that we will increment versioning in the following way:
 
 MAJOR version when we make incompatible API changes,
 MINOR version when we add functionality in a backwards-compatible manner,
