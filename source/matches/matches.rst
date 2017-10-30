@@ -13,34 +13,34 @@ Rosters track the scores of each opposing group of Participants. If players ente
 
 .. code-block:: javascript
 
-{
-  "type": "roster",
-  "id": "eca49808-d510-11e6-bf26-cec0c932ce01",
-  "attributes": {
-    "stats": {
-      "acesEarned": 2,
-      "gold": 32344,
-      "etc..."
-    }
-  },
-  "relationships": {
-    "team": {
-      "data": {
-        "type": "team",
-        "id": "753d464c-d511-11e6-bf26-cec0c932ce01"
+  {
+    "type": "roster",
+    "id": "eca49808-d510-11e6-bf26-cec0c932ce01",
+    "attributes": {
+      "stats": {
+        "acesEarned": 2,
+        "gold": 32344,
+        "etc..."
       }
     },
-    "participants": {
-      "data": [
-        {
-          "type": "participant",
-          "id": "eca49a7e-d510-11e6-bf26-cec0c932ce01"
-        },
-        "etc..."
-      ]
+    "relationships": {
+      "team": {
+        "data": {
+          "type": "team",
+          "id": "753d464c-d511-11e6-bf26-cec0c932ce01"
+        }
+      },
+      "participants": {
+        "data": [
+          {
+            "type": "participant",
+            "id": "eca49a7e-d510-11e6-bf26-cec0c932ce01"
+          },
+          "etc..."
+        ]
+      }
     }
   }
-}
 
 Participants
 ---------------------------
@@ -49,20 +49,20 @@ Participant objects track each member in a Roster. Participants may be anonymous
 
 .. code-block:: javascript
 
-{
-  "type": "participant",
-  "id": "ea77c3a7-d44e-11e6-8f77-0242ac130004",
-  "attributes": {
-    "actor": "*Hero009*",
-    "stats": {
-      "assists": 4,
-      "crystalMineCaptures": 1,
-      "deaths": 2,
-      "farm": 49.25,
-      "etc..."
+  {
+    "type": "participant",
+    "id": "ea77c3a7-d44e-11e6-8f77-0242ac130004",
+    "attributes": {
+      "actor": "*Hero009*",
+      "stats": {
+        "assists": 4,
+        "crystalMineCaptures": 1,
+        "deaths": 2,
+        "farm": 49.25,
+        "etc..."
+      }
     }
   }
-}
 
 Get a Colection of Matches
 ---------------------------
@@ -74,163 +74,163 @@ GET https://api.dc01.gamelockerapp.com/shards/na/matches
 
 .. code-block:: shell
 
-curl -g "https://api.dc01.gamelockerapp.com/shards/na/matches?sort=createdAt&page[limit]=3&filter[createdAt-start]=2017-02-27T13:25:30Z&filter[playerNames]=<playerName>" \
-  -H "Authorization: Bearer <api-key>" \
-  -H "Accept: application/vnd.api+json"
+  curl -g "https://api.dc01.gamelockerapp.com/shards/na/matches?sort=createdAt&page[limit]=3&filter[createdAt-start]=2017-02-27T13:25:30Z&filter[playerNames]=<playerName>" \
+    -H "Authorization: Bearer <api-key>" \
+    -H "Accept: application/vnd.api+json"
+
+    **The above command returns JSON structured like this:**
+
+    {
+    "data": [
+      {
+        "type": "match",
+        "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
+        "attributes": {
+          "createdAt": "2017-01-06T20:30:08Z",
+          "duration": 1482195372,
+          "gameMode": "casual",
+          "patchVersion": "1.0.0",
+          "shardId": "na",
+          "stats": "acesEarned: 3, etc..."
+        },
+        "relationships": {
+          "rosters": {
+            "data": [{
+              "type": "roster",
+              "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
+            }, {
+              "type": "roster",
+              "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
+            }]
+          }
+        }
+      }
+    ]
+  }
+
+.. code-block:: java
+
+  //There are a variety of Java HTTP libraries that support query-parameters.
 
   **The above command returns JSON structured like this:**
 
   {
-  "data": [
-    {
-      "type": "match",
-      "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
-      "attributes": {
-        "createdAt": "2017-01-06T20:30:08Z",
-        "duration": 1482195372,
-        "gameMode": "casual",
-        "patchVersion": "1.0.0",
-        "shardId": "na",
-        "stats": "acesEarned: 3, etc..."
-      },
-      "relationships": {
-        "rosters": {
-          "data": [{
-            "type": "roster",
-            "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
-          }, {
-            "type": "roster",
-            "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
-          }]
+    "data": [
+      {
+        "type": "match",
+        "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
+        "attributes": {
+          "createdAt": "2017-01-06T20:30:08Z",
+          "duration": 1482195372,
+          "gameMode": "casual",
+          "patchVersion": "1.0.0",
+          "shardId": "na",
+          "stats": "acesEarned: 3, etc..."
+        },
+        "relationships": {
+          "rosters": {
+            "data": [{
+              "type": "roster",
+              "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
+            }, {
+              "type": "roster",
+              "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
+            }]
+          }
         }
       }
-    }
-  ]
-}
-
-.. code-block:: java
-
-//There are a variety of Java HTTP libraries that support query-parameters.
-
-  **The above command returns JSON structured like this:**
-
-{
-  "data": [
-    {
-      "type": "match",
-      "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
-      "attributes": {
-        "createdAt": "2017-01-06T20:30:08Z",
-        "duration": 1482195372,
-        "gameMode": "casual",
-        "patchVersion": "1.0.0",
-        "shardId": "na",
-        "stats": "acesEarned: 3, etc..."
-      },
-      "relationships": {
-        "rosters": {
-          "data": [{
-            "type": "roster",
-            "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
-          }, {
-            "type": "roster",
-            "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
-          }]
-        }
-      }
-    }
-  ]
-}
+    ]
+  }
 
 .. code-block:: python
 
-import requests
+  import requests
 
-url = "https://api.dc01.gamelockerapp.com/shards/na/matches"
+  url = "https://api.dc01.gamelockerapp.com/shards/na/matches"
 
-header = {
-    "Authorization": "<api-key>",
-    "Accept": "application/vnd.api+json"
-}
+  header = {
+      "Authorization": "<api-key>",
+      "Accept": "application/vnd.api+json"
+  }
 
-query = {
-    "sort": "createdAt",
-    "filter[playerNames]": "<playerName>",
-    "filter[createdAt-start]": "2017-02-28T13:25:30Z",
-    "page[limit]": "3"
-}
+  query = {
+      "sort": "createdAt",
+      "filter[playerNames]": "<playerName>",
+      "filter[createdAt-start]": "2017-02-28T13:25:30Z",
+      "page[limit]": "3"
+  }
 
-r = requests.get(url, headers=header, params=query)
+  r = requests.get(url, headers=header, params=query)
 
   **The above command returns JSON structured like this:**
 
-{
-  "data": [
-    {
-      "type": "match",
-      "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
-      "attributes": {
-        "createdAt": "2017-01-06T20:30:08Z",
-        "duration": 1482195372,
-        "gameMode": "casual",
-        "patchVersion": "1.0.0",
-        "shardId": "na",
-        "stats": "acesEarned: 3, etc..."
-      },
-      "relationships": {
-        "rosters": {
-          "data": [{
-            "type": "roster",
-            "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
-          }, {
-            "type": "roster",
-            "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
-          }]
+  {
+    "data": [
+      {
+        "type": "match",
+        "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
+        "attributes": {
+          "createdAt": "2017-01-06T20:30:08Z",
+          "duration": 1482195372,
+          "gameMode": "casual",
+          "patchVersion": "1.0.0",
+          "shardId": "na",
+          "stats": "acesEarned: 3, etc..."
+        },
+        "relationships": {
+          "rosters": {
+            "data": [{
+              "type": "roster",
+              "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
+            }, {
+              "type": "roster",
+              "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
+            }]
+          }
         }
       }
-    }
-  ]
-}
+    ]
+  }
 
 .. code-block:: go
 
-q := req.URL.Query()
-q.Add("sort", "createdAt")
-q.Add("filter[playerNames]", "<playerName>")
-q.Add("filter[createdAt-start]", "2017-02-27T13:25:30Z")
-q.Add("page[limit]", "3")
-req.URL.RawQuery = q.Encode()
-res, _ := client.Do(req)
+  q := req.URL.Query()
+  q.Add("sort", "createdAt")
+  q.Add("filter[playerNames]", "<playerName>")
+  q.Add("filter[createdAt-start]", "2017-02-27T13:25:30Z")
+  q.Add("page[limit]", "3")
+  req.URL.RawQuery = q.Encode()
+  res, _ := client.Do(req)
 
-  **The above command returns JSON structured like this:**
+    **The above command returns JSON structured like this:**
 
-{
-  "data": [
-    {
-      "type": "match",
-      "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
-      "attributes": {
-        "createdAt": "2017-01-06T20:30:08Z",
-        "duration": 1482195372,
-        "gameMode": "casual",
-        "patchVersion": "1.0.0",
-        "shardId": "na",
-        "stats": "acesEarned: 3, etc..."
-      },
-      "relationships": {
-        "rosters": {
-          "data": [{
-            "type": "roster",
-            "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
-          }, {
-            "type": "roster",
-            "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
-          }]
+  {
+    "data": [
+      {
+        "type": "match",
+        "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
+        "attributes": {
+          "createdAt": "2017-01-06T20:30:08Z",
+          "duration": 1482195372,
+          "gameMode": "casual",
+          "patchVersion": "1.0.0",
+          "shardId": "na",
+          "stats": "acesEarned: 3, etc..."
+        },
+        "relationships": {
+          "rosters": {
+            "data": [{
+              "type": "roster",
+              "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
+            }, {
+              "type": "roster",
+              "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
+            }]
+          }
         }
       }
-    }
-  ]
-}
+    ]
+  }
 
 .. toctree::
   :maxdepth: 2

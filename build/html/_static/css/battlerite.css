@@ -554,3 +554,7 @@ a:visited {
 .highlight .go {
   color: white;
 }
+
+.pre {
+  background-color: #444444;
+}

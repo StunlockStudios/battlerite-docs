@@ -73,27 +73,102 @@
 <span id="makingrequests"></span><h1>Making Requests<a class="headerlink" href="#making-requests" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="content-negotiation">
 <h2>Content Negotiation<a class="headerlink" href="#content-negotiation" title="Permalink to this headline">¶</a></h2>
+<p>Content Negotiation
+Clients using the api should specify that they accept responses using the application/vnd.api+json format, for convenience we will also accept application/json since it is the default for many popular client libraries.</p>
+<p>The Server will respond with a Content-Type header that mirrors the format requested by the Client.</p>
 </div>
 <div class="section" id="regions">
 <h2>Regions<a class="headerlink" href="#regions" title="Permalink to this headline">¶</a></h2>
+<p>The Vainglory Game Data Service currently supports the following regions:</p>
+<p><em>General Region Shards</em></p>
+<p>To find data regarding live servers, where all data is found, please use the following shards.</p>
+<ul class="simple">
+<li><strong>North America:</strong> :na:</li>
+<li><strong>Europe:</strong> :eu:</li>
+<li><strong>South America:</strong> :sa:</li>
+<li><strong>East Asia:</strong> :ea:</li>
+<li><strong>Southeast Asia (SEA):</strong> :sg:</li>
+</ul>
+<p><em>Tournament Region Shards</em></p>
+<p>To find data regarding professional eSport, which take place on the private client only, please use the following shards.</p>
+<ul class="simple">
+<li><strong>North America Tournaments:</strong> <code class="docutils literal"><span class="pre">tournament-na</span></code></li>
+<li><strong>Europe Tournaments:</strong> <code class="docutils literal"><span class="pre">tournament-eu</span></code></li>
+<li><strong>South America Tournaments:</strong> <code class="docutils literal"><span class="pre">tournament-sa</span></code></li>
+<li><strong>East Asia Tournaments:</strong> <code class="docutils literal"><span class="pre">tournament-ea</span></code></li>
+<li><strong>Southeast Asia Tournaments:</strong> :tournament-sg:</li>
+</ul>
+<p><strong>Choosing a specific region is currently required</strong></p>
 </div>
 <div class="section" id="gzip">
 <h2>GZIP<a class="headerlink" href="#gzip" title="Permalink to this headline">¶</a></h2>
+<p>Clients can specify the header :Accept-Encoding: gzip: and the server will compress responses.
+Responses will be returns with :Content-Encoding: gzip:.</p>
+<p>Given the size of matches, this can have significant performance benefits.</p>
 </div>
 <div class="section" id="pagination">
 <h2>Pagination<a class="headerlink" href="#pagination" title="Permalink to this headline">¶</a></h2>
+<p>Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the limit and offset parameters.
+To fetch items 2 through 10 you would specify a limit of 8 and an offset of 2:</p>
+<p>If not specified, the server will default for matches to :limit=5: and :offset=0:, and for players/samples to :limit=50: and :offset=0:</p>
+<blockquote>
+<div><strong>Important - Currently the server will not allow responses with over 50 primary data objects</strong></div></blockquote>
 </div>
 <div class="section" id="search-time">
 <h2>Search Time<a class="headerlink" href="#search-time" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>Data retention period: 120 days.</li>
+<li>The max search time span between createdAt-start and createdAt-end: 28 days.</li>
+</ul>
+<p><strong>Defaults:</strong>
+* If you don’t specify createdAt-start, the default is now - 28 days.
+* If you don’t specify createdAt-end, the default is now.
+* If you search for a time &gt; now, the default is now.
+* If you search for a time before the retention period, the default is the retention period (now - 120 days).
+* If createdAt-start &gt;= createdAt-end, you will receive an error.</p>
 </div>
 <div class="section" id="sorting">
 <h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
+<p>The default sort order is always ascending. Ascending corresponds to the standard order of numbers and letters, i.e. A to Z, 0 to 9). For dates and times, ascending means that earlier values precede later ones e.g. 1/1/2000 will sort ahead of 1/1/2001.</p>
+<p>All resource collections have a default sort order. In addition, some resources provide the ability to sort according to one or more criteria (“sort fields”).</p>
+<p>If sort fields are is prefixed with a minus, the order will be changed to descending.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">**</span><span class="nx">The</span> <span class="nx">example</span> <span class="nx">below</span> <span class="nx">will</span> <span class="k">return</span> <span class="nx">the</span> <span class="nx">oldest</span> <span class="nx">articles</span> <span class="nx">first</span><span class="o">:**</span>
+<span class="s2">&quot;.../matches?sort=createdAt&quot;</span>
+
+<span class="o">**</span><span class="nx">The</span> <span class="nx">example</span> <span class="nx">below</span> <span class="nx">will</span> <span class="k">return</span> <span class="nx">the</span> <span class="nx">newest</span> <span class="nx">articles</span> <span class="nx">first</span><span class="o">:**</span>
+<span class="s2">&quot;.../matches?sort=-createdAt&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="json-p-callbacks">
 <h2>JSON-P Callbacks<a class="headerlink" href="#json-p-callbacks" title="Permalink to this headline">¶</a></h2>
+<p>You can send a ?callback parameter to any GET call to have the results wrapped in a JSON function. This is typically used when browsers want to embed content in web pages by getting around cross domain issues. The response includes the same data output as the regular API, plus the relevant HTTP Header information.</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/status?callback=foo&quot;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="cross-origin-resource-sharing">
 <h2>Cross Origin Resource Sharing<a class="headerlink" href="#cross-origin-resource-sharing" title="Permalink to this headline">¶</a></h2>
+<p>This is what the CORS preflight request looks like:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -i https://api.dc01.gamelockerapp.com/status -H <span class="s2">&quot;Origin: http://example.com&quot;</span>
+HTTP/1.1 <span class="m">200</span> OK
+...
+Access-Control-Allow-Origin: *
+Access-Control-Expose-Headers: Content-Length
+
+This is what the CORS preflight request looks like:
+
+curl -i https://api.dc01.gamelockerapp.com/status -H <span class="s2">&quot;Origin: http://example.com&quot;</span> -X OPTIONS
+HTTP/1.1 <span class="m">200</span> OK
+...
+Access-Control-Allow-Headers: Origin,X-Title-Id,Authorization
+Access-Control-Allow-Methods: GET,POST,OPTIONS
+Access-Control-Allow-Origin: *
+Access-Control-Max-Age: <span class="m">86400</span>
+</pre></div>
+</div>
+<p>The API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any origin. You can read the CORS W3C Recommendation, or this intro from the HTML 5 Security Guide.</p>
+<p>Here’s a sample request sent from a browser hitting <a class="reference external" href="http://example.com">http://example.com</a>:</p>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -108,7 +183,6 @@
 <h3><a href="../index.html">Table Of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../versioning/versioning.html">Versioning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../datacenters/datacenters.html">Datacenters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../authorization/authorization.html">Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../titles/titles.html">Titles</a></li>

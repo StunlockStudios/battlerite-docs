@@ -30,10 +30,10 @@ To find data regarding live servers, where all data is found, please use the fol
 
 To find data regarding professional eSport, which take place on the private client only, please use the following shards.
 
-* **North America Tournaments:** :tournament-na:
-* **Europe Tournaments:** :tournament-eu:
-* **South America Tournaments:** :tournament-sa:
-* **East Asia Tournaments:** :tournament-ea:
+* **North America Tournaments:** ``tournament-na``
+* **Europe Tournaments:** ``tournament-eu``
+* **South America Tournaments:** ``tournament-sa``
+* **East Asia Tournaments:** ``tournament-ea``
 * **Southeast Asia Tournaments:** :tournament-sg:
 
 **Choosing a specific region is currently required**
@@ -79,53 +79,13 @@ All resource collections have a default sort order. In addition, some resources 
 
 If sort fields are is prefixed with a minus, the order will be changed to descending.
 
-.. code-block:: shell
-
-**The example below will return the oldest articles first:**
-".../matches?sort=createdAt"
-
-**The example below will return the newest articles first:**
-".../matches?sort=-createdAt"
-
-.. code-block:: java
-
-**The example below will return the oldest articles first:**
-".../matches?sort=createdAt"
-
-**The example below will return the newest articles first:**
-".../matches?sort=-createdAt"
-
-.. code-block:: python
-
-**The example below will return the oldest articles first:**
-".../matches?sort=createdAt"
-
-**The example below will return the newest articles first:**
-".../matches?sort=-createdAt"
-
-.. code-block:: ruby
-
-**The example below will return the oldest articles first:**
-".../matches?sort=createdAt"
-
-**The example below will return the newest articles first:**
-".../matches?sort=-createdAt"
-
 .. code-block:: javascript
 
-**The example below will return the oldest articles first:**
-".../matches?sort=createdAt"
+  **The example below will return the oldest articles first:**
+  ".../matches?sort=createdAt"
 
-**The example below will return the newest articles first:**
-".../matches?sort=-createdAt"
-
-.. code-block:: go
-
-**The example below will return the oldest articles first:**
-".../matches?sort=createdAt"
-
-**The example below will return the newest articles first:**
-".../matches?sort=-createdAt"
+  **The example below will return the newest articles first:**
+  ".../matches?sort=-createdAt"
 
 JSON-P Callbacks
 ---------------------------
@@ -134,7 +94,7 @@ You can send a ?callback parameter to any GET call to have the results wrapped i
 
 .. code-block:: shell
 
-curl -g "https://api.dc01.gamelockerapp.com/status?callback=foo"
+  curl -g "https://api.dc01.gamelockerapp.com/status?callback=foo"
 
 
 Cross Origin Resource Sharing
@@ -144,14 +104,15 @@ This is what the CORS preflight request looks like:
 
 .. code-block:: shell
 
-curl -i https://api.dc01.gamelockerapp.com/status -H "Origin: http://example.com"
+  curl -i https://api.dc01.gamelockerapp.com/status -H "Origin: http://example.com"
   HTTP/1.1 200 OK
   ...
   Access-Control-Allow-Origin: *
   Access-Control-Expose-Headers: Content-Length
-This is what the CORS preflight request looks like:
 
-curl -i https://api.dc01.gamelockerapp.com/status -H "Origin: http://example.com" -X OPTIONS
+  This is what the CORS preflight request looks like:
+
+  curl -i https://api.dc01.gamelockerapp.com/status -H "Origin: http://example.com" -X OPTIONS
   HTTP/1.1 200 OK
   ...
   Access-Control-Allow-Headers: Origin,X-Title-Id,Authorization

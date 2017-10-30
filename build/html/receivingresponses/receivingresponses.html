@@ -71,7 +71,96 @@
             
   <div class="section" id="receiving-responses">
 <span id="receivingresponses"></span><h1>Receiving Responses<a class="headerlink" href="#receiving-responses" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="payload">
+<h2>Payload<a class="headerlink" href="#payload" title="Permalink to this headline">¶</a></h2>
+<p>All Server responses contain a root JSON object.</p>
+<p>A response will contain at least one of the following top-level members:</p>
+<ul class="simple">
+<li><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">data:</th><td class="field-body">: the response’s “primary data”</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">errors:</th><td class="field-body">: an array of error objects</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>A response may contain any of these top-level members:</p>
+<ul class="simple">
+<li><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">links:</th><td class="field-body">: a links object related to the primary data.</td>
+</tr>
+</tbody>
+</table>
+</li>
+<li><table class="first docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">included:</th><td class="field-body">: an array of resource objects that are related to the primary data and/or each other (“included resources”).</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<p>If a document does not contain a top-level data key, the included member will not be present either.</p>
+<p>Primary data will be either:</p>
+<ul class="simple">
+<li>a single [resource object][resource objects], a single [resource identifier object], or :null:</li>
+<li>an array of [resource objects], an array of [resource identifier objects][resource identifier object], or an empty array :([]):</li>
+</ul>
+<p>For example, the following primary data is a single resource object:</p>
+<p>The following primary data is a single [resource identifier object] that references the same resource:</p>
+<p>A logical collection of resources will always be represented as an array, even if it only contains one item or is empty.</p>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;match&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;skarn&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;attributes&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="c1">// ... this matches attributes</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;relationships&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="c1">// ... this matches relationships</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+<span class="p">{</span>
+  <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;match&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;1&quot;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="rate-limits">
+<h2>Rate Limits<a class="headerlink" href="#rate-limits" title="Permalink to this headline">¶</a></h2>
+<p>Be nice. If you’re sending too many requests too quickly, we’ll send back a
+:429: error code (server unavailable).</p>
+<p><strong>Please note: Free for non-commercial use for up to 10 requests per minute! To increase your rate limit, log into your admin dashboard, find the app you would like a higher rate limit for, and click “request a higher rate limit”</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>**The rate limit headers are defined as follows:**
+
+X-RateLimit-Limit - Request limit per day / per minute
+X-RateLimit-Remaining - The number of requests left <span class="k">for</span> the <span class="nb">time</span> window
+X-RateLimit-Reset - The remaining window before the rate limit is refilled in UTC epoch nanoseconds.
+* Limit tokens are incrementally filled by <span class="m">60</span><span class="o">(</span>sec<span class="o">)</span>/ rate limit. ex: <span class="m">60</span><span class="o">(</span>sec<span class="o">)</span>/10<span class="o">(</span>rate<span class="o">)</span> gets rate token every <span class="m">6</span> seconds up to max rate limit.
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
+</div>
 </div>
 </div>
 
@@ -84,12 +173,13 @@
 <h3><a href="../index.html">Table Of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../versioning/versioning.html">Versioning</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../datacenters/datacenters.html">Datacenters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../authorization/authorization.html">Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../titles/titles.html">Titles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../makingrequests/makingrequests.html">Making Requests</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Receiving Responses</a><ul class="simple">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Receiving Responses</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#payload">Payload</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rate-limits">Rate Limits</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../matches/matches.html">Matches</a></li>

@@ -31,26 +31,26 @@ The following primary data is a single [resource identifier object] that referen
 
 A logical collection of resources will always be represented as an array, even if it only contains one item or is empty.
 
-.. code-block:: shell, python, java, ruby, javascript, go
+.. code-block:: javascript
 
-{
-  "data": {
-    "type": "match",
-    "id": "skarn",
-    "attributes": {
-      // ... this matches attributes
-    },
-    "relationships": {
-      // ... this matches relationships
+  {
+    "data": {
+      "type": "match",
+      "id": "skarn",
+      "attributes": {
+        // ... this matches attributes
+      },
+      "relationships": {
+        // ... this matches relationships
+      }
     }
   }
-}
-{
-  "data": {
-    "type": "match",
-    "id": "1"
+  {
+    "data": {
+      "type": "match",
+      "id": "1"
+    }
   }
-}
 
 
 
@@ -64,12 +64,12 @@ Be nice. If you're sending too many requests too quickly, we'll send back a
 
 .. code-block:: shell
 
-**The rate limit headers are defined as follows:**
+  **The rate limit headers are defined as follows:**
 
-X-RateLimit-Limit - Request limit per day / per minute
-X-RateLimit-Remaining - The number of requests left for the time window
-X-RateLimit-Reset - The remaining window before the rate limit is refilled in UTC epoch nanoseconds.
-* Limit tokens are incrementally filled by 60(sec)/ rate limit. ex: 60(sec)/10(rate) gets rate token every 6 seconds up to max rate limit.  
+  X-RateLimit-Limit - Request limit per day / per minute
+  X-RateLimit-Remaining - The number of requests left for the time window
+  X-RateLimit-Reset - The remaining window before the rate limit is refilled in UTC epoch nanoseconds.
+  * Limit tokens are incrementally filled by 60(sec)/ rate limit. ex: 60(sec)/10(rate) gets rate token every 6 seconds up to max rate limit.
 
 
 .. toctree::
