@@ -49,7 +49,7 @@ Description: The ID of the player to retrieve
 
 **Javascript**
 
-.. code-block:: shell
+.. code-block:: javascript
 
   //There are a variety of Java HTTP libraries that support query-parameters.
 
@@ -74,6 +74,25 @@ Description: The ID of the player to retrieve
 Get a Collection of Players
 ---------------------------
 
+This endpoint retrieves a collection of up to 6 players, filtered by name. Player names are specific to each region. If a player has changed names, it is possible that there are multiple ID's for a single player name.
+
+**HTTP Request**
+``GET https://api.dc01.gamelockerapp.com/shards/na/players``
+
+
+**Query Parameters**
+Parameter: filter[playerNames]
+Default: None
+Description: Filters by player names. Usage: filter[playerNames]=player1,player2
+
+**Shell**
+
+.. code-block:: shell
+
+  curl "https://api.dc01.gamelockerapp.com/shards/na/players?filter[playerNames]=player1,player2" \
+  -H "Authorization: Bearer <api-key>" \
+  -H "Accept: application/vnd.api+json"
+	}
 
 .. toctree::
   :maxdepth: 2
