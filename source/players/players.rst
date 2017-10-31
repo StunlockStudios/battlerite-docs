@@ -15,16 +15,18 @@ This endpoint retrieves a specific player.
 *Please Note: Changes Coming! - Player resources are not fully defined at this point, but are included so that consumers can get basic info (name, etc.) This object will have additional data added over the next few months, and may change slightly as data moves from the `attributes.stats` object to the main `attributes` object.*
 
 **HTTP Request**
-``GET https://api.dc01.gamelockerapp.com/shards/na/players/<ID>``
+
+|  ``GET https://api.dc01.gamelockerapp.com/shards/na/players/<ID>``
 
 **URL Parameters**
 
-Parameter: ID
-Description: The ID of the player to retrieve
+|  Parameter: ID
+|  Description: The ID of the player to retrieve
 
-**Shell**
 
 .. code-block:: shell
+
+	//shell
 
   curl "https://api.dc01.gamelockerapp.com/shards/na/players/<ID>" \
   -H "Authorization: Bearer <api-key>" \
@@ -47,9 +49,10 @@ Description: The ID of the player to retrieve
 	}
 	}
 
-**Javascript**
 
 .. code-block:: javascript
+
+	//javascript
 
   //There are a variety of Java HTTP libraries that support query-parameters.
 
@@ -77,17 +80,20 @@ Get a Collection of Players
 This endpoint retrieves a collection of up to 6 players, filtered by name. Player names are specific to each region. If a player has changed names, it is possible that there are multiple ID's for a single player name.
 
 **HTTP Request**
-``GET https://api.dc01.gamelockerapp.com/shards/na/players``
+
+|  ``GET https://api.dc01.gamelockerapp.com/shards/na/players``
 
 
 **Query Parameters**
-Parameter: filter[playerNames]
-Default: None
-Description: Filters by player names. Usage: filter[playerNames]=player1,player2
 
-**Shell**
+|  Parameter: filter[playerNames]
+|  Default: None
+|  Description: Filters by player names. Usage: filter[playerNames]=player1,player2
+
 
 .. code-block:: shell
+
+	//shell
 
   curl "https://api.dc01.gamelockerapp.com/shards/na/players?filter[playerNames]=player1,player2" \
   -H "Authorization: Bearer <api-key>" \

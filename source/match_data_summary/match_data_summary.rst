@@ -23,6 +23,7 @@ assets             obj             See Match.assets
 rosters            obj             See Rosters
 =================  ==============  ===========================
 
+
 **Match.stats (End of game statistics)**
 
 =================  ==============  ===========================
@@ -31,6 +32,7 @@ Variable    	   Type            Description
 endGameReason      str             "Victory" or "Defeat"
 queue              str             Game Mode
 =================  ==============  ===========================
+
 
 **Match.assets (Telemetry Data)**
 

@@ -17,14 +17,17 @@ To specify the Headers, use this code:
 
 .. code-block:: shell
 
+  //Shell
+
   # With shell, you can just pass the correct header with each request
     curl "<endpoint-url>" \
     -H "Authorization: <api-key>"
     -H "Accept: application/vnd.api+json"
 
-**Java**
 
 .. code-block:: java
+
+  //Java
 
   import java.io.*;
   import java.net.*;
@@ -37,9 +40,10 @@ To specify the Headers, use this code:
 
   conn.getInputStream()
 
-**Python**
 
 .. code-block:: python
+
+  //Python
 
   import requests
 
@@ -52,9 +56,10 @@ To specify the Headers, use this code:
 
   r = requests.get(url, headers=header)
 
-**Go**
 
 .. code-block:: go
+
+  //Go
 
   import "net/http"
 

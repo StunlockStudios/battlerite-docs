@@ -11,9 +11,10 @@ Rosters
 
 Rosters track the scores of each opposing group of Participants. If players entered matchmaking as a team, the Roster will have a related Team. Rosters have many Participants objects, one for each member of the Roster. Roster objects are only meaningful within the context of a Match and are not exposed as a standalone resource.
 
-**Javascript**
 
 .. code-block:: javascript
+
+  //Javascript
 
   {
     "type": "roster",
@@ -44,6 +45,8 @@ Rosters track the scores of each opposing group of Participants. If players ente
     }
   }
 
+
+
 Participants
 ---------------------------
 
@@ -52,6 +55,8 @@ Participant objects track each member in a Roster. Participants may be anonymous
 **Javascript**
 
 .. code-block:: javascript
+
+  //Javascript
 
   {
     "type": "participant",
@@ -68,6 +73,8 @@ Participant objects track each member in a Roster. Participants may be anonymous
     }
   }
 
+
+
 Get a Collection of Matches
 ---------------------------
 
@@ -75,8 +82,6 @@ This endpoint retrieves data from matches. Bulk scraping matches is prohibited.
 
 **HTTP Request**
 ``GET https://api.dc01.gamelockerapp.com/shards/na/matches``
-
-**Query Parameters**
 
 =========================== ================ =================================================================================================================== 
 Parameter                   Default          Description                                               
@@ -94,15 +99,16 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
 
 *Remember — a happy match is an authenticated match!*
 
-**Shell**
 
 .. code-block:: shell
+
+  //shell
 
   curl -g "https://api.dc01.gamelockerapp.com/shards/na/matches?sort=createdAt&page[limit]=3&filter[createdAt-start]=2017-02-27T13:25:30Z&filter[playerNames]=<playerName>" \
     -H "Authorization: Bearer <api-key>" \
     -H "Accept: application/vnd.api+json"
 
-    **The above command returns JSON structured like this:**
+    //The above command returns JSON structured like this:
 
     {
     "data": [
@@ -132,13 +138,14 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
     ]
   }
 
-**Java**
 
 .. code-block:: java
 
+  //Java
+
   //There are a variety of Java HTTP libraries that support query-parameters.
 
-  **The above command returns JSON structured like this:**
+  //The above command returns JSON structured like this:
 
   {
     "data": [
@@ -168,9 +175,10 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
     ]
   }
 
-**Python**
 
 .. code-block:: python
+
+  //Python
 
   import requests
 
@@ -190,7 +198,7 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
 
   r = requests.get(url, headers=header, params=query)
 
-  **The above command returns JSON structured like this:**
+  //The above command returns JSON structured like this:
 
   {
     "data": [
@@ -220,9 +228,10 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
     ]
   }
 
-**Go**
 
 .. code-block:: go
+
+  //Go
 
   q := req.URL.Query()
   q.Add("sort", "createdAt")
@@ -232,7 +241,7 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
   req.URL.RawQuery = q.Encode()
   res, _ := client.Do(req)
 
-    **The above command returns JSON structured like this:**
+  //The above command returns JSON structured like this:
 
   {
     "data": [
@@ -268,21 +277,22 @@ Get a Single Match
 This endpoint retrieves a specific match.
 
 **HTTP Request**
-``GET https://api.dc01.gamelockerapp.com/shards/na/matches/<ID>``
+|  ``GET https://api.dc01.gamelockerapp.com/shards/na/matches/<ID>``
 
 **URL Parameters**
-Parameter: ``ID``
-Description: ``The ID of the match to retrieve``
+|  Parameter: ``ID``
+|  Description: ``The ID of the match to retrieve``
 
-**Shell**
 
 .. code-block:: shell
+
+  //shell
 
   curl "https://api.dc01.gamelockerapp.com/shards/na/matches/<matchID>" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
-    **The above command returns JSON structured like this:**
+    //The above command returns JSON structured like this:
 
   {
     "data": {
@@ -310,9 +320,10 @@ Description: ``The ID of the match to retrieve``
     }
   }
 
-**Javascript**
 
 .. code-block:: Javascript
+
+  //javascript
 
     //There are a variety of Java HTTP libraries that support URL parameters
 

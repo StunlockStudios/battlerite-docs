@@ -7,7 +7,7 @@ Content Negotiation
 ---------------------------
 
 Content Negotiation
-Clients using the api should specify that they accept responses using the ``application/vnd.api+json``format, for convenience we will also accept ``application/json`` since it is the default for many popular client libraries.
+Clients using the api should specify that they accept responses using the ``application/vnd.api+json`` format, for convenience we will also accept ``application/json`` since it is the default for many popular client libraries.
 
 The Server will respond with a ``Content-Type`` header that mirrors the format requested by the Client.
 
@@ -16,35 +16,32 @@ Regions
 
 The Vainglory Game Data Service currently supports the following regions:
 
-*General Region Shards*
-
-To find data regarding live servers, where all data is found, please use the following shards.
+*General Region Shards:* To find data regarding live servers, where all data is found, please use the following shards.
 
 * **North America:** ``na``
-* **Europe:** ``eu:``
+* **Europe:** ``eu``
 * **South America:** ``sa``
 * **East Asia:** ``ea``
-* **Southeast Asia (SEA):** ``sg``
+* **Southeast Asia (SEA):** ``sa``
 
-*Tournament Region Shards*
-
-To find data regarding professional eSport, which take place on the private client only, please use the following shards.
-
+*Tournament Region Shards:* To find data regarding professional eSport, which take place on the private client only, please use the following shards.
 * **North America Tournaments:** ``tournament-na``
 * **Europe Tournaments:** ``tournament-eu``
 * **South America Tournaments:** ``tournament-sa``
 * **East Asia Tournaments:** ``tournament-ea``
-* **Southeast Asia Tournaments:** :tournament-sg:
+* **Southeast Asia Tournaments:** ``tournament-sg``
 
-*Choosing a specific region is currently required*
-
-**Javascript**
+*Please note: Choosing a specific region is currently required*
 
 .. code-block:: javascript
+
+  Javascript
 
   To specify a region, use this code:
 
   "...gamelockerapp.com/shards/<region>/..."
+
+
 
 GZIP
 ---------------------------
@@ -54,37 +51,44 @@ Responses will be returns with ``Content-Encoding: gzip``.
 
 Given the size of matches, this can have significant performance benefits.
 
-**Shell**
 
 .. code-block:: javascript
+
+  Shell:
 
   To specify the header Accept-Encoding, use this code:
 
   -H "Accept-Encoding: gzip"
 
-**Java**
+
 
 .. code-block:: java
+
+  Java:
 
   To specify the header Accept-Encoding, use this code:
 
   conn.setRequestProperty("Accept-Encoding","gzip");
 
-**Python**
 
 .. code-block:: python
+
+  Python:
 
   To specify the header Accept-Encoding, use this code:
 
   header = {"Accept-Encoding":"gzip"}
 
-**Go**
 
 .. code-block:: go
+
+  Go:
 
   To specify the header Accept-Encoding, use this code:
 
   req.Header.Set("Accept-Encoding", "gzip")
+
+
 
 Pagination
 ---------------------------
@@ -95,18 +99,22 @@ If not specified, the server will default for matches to ``limit=5`` and ``offse
 
  *Important - Currently the server will not allow responses with over 50 primary data objects*
 
+
+
 Search Time
 ---------------------------
 
-* Data retention period: 120 days.
-* The max search time span between createdAt-start and createdAt-end: 28 days.
 
 **Defaults:**
+
+* Data retention period: 120 days.
+* The max search time span between createdAt-start and createdAt-end: 28 days.
 * If you don't specify createdAt-start, the default is now - 28 days.
 * If you don't specify createdAt-end, the default is now.
 * If you search for a time > now, the default is now.
 * If you search for a time before the retention period, the default is the retention period (now - 120 days).
 * If createdAt-start >= createdAt-end, you will receive an error.
+
 
 Sorting
 ---------------------------
@@ -117,9 +125,10 @@ All resource collections have a default sort order. In addition, some resources 
 
 If sort fields are is prefixed with a minus, the order will be changed to descending.
 
-**Javascript**
 
 .. code-block:: javascript
+
+  Javascript:
 
   **The example below will return the oldest articles first:**
   ".../matches?sort=createdAt"
@@ -127,16 +136,21 @@ If sort fields are is prefixed with a minus, the order will be changed to descen
   **The example below will return the newest articles first:**
   ".../matches?sort=-createdAt"
 
+
+
 JSON-P Callbacks
 ---------------------------
 
 You can send a ?callback parameter to any GET call to have the results wrapped in a JSON function. This is typically used when browsers want to embed content in web pages by getting around cross domain issues. The response includes the same data output as the regular API, plus the relevant HTTP Header information.
 
-**Shell**
 
 .. code-block:: shell
 
+  Shell:
+
   curl -g "https://api.dc01.gamelockerapp.com/status?callback=foo"
+
+
 
 
 Cross Origin Resource Sharing
@@ -146,9 +160,9 @@ This is what the CORS preflight request looks like. The API supports Cross Origi
 
 Here's a sample request sent from a browser hitting http://example.com:
 
-**Shell**
-
 .. code-block:: shell
+
+  Shell:
 
   curl -i https://api.dc01.gamelockerapp.com/status -H "Origin: http://example.com"
   HTTP/1.1 200 OK
