@@ -26,10 +26,9 @@ filter[createdAt-start]     none             Must occur before end time. Format 
 filter[createdAt-end]       none             Queries search the last 3 hrs. Format is iso8601 i.e.filter[createdAt-end]=2017-01-01T13:25:30Z
 =========================== ================ ===================================================================================================================
 
+**Python:**
 
 .. code-block:: python
-
-  //python
 
   curl "https://api.dc01.gamelockerapp.com/shards/na/samples" \
   -H "Authorization: Bearer <api-key>" \
@@ -55,10 +54,9 @@ filter[createdAt-end]       none             Queries search the last 3 hrs. Form
       }
     }
 
+**Javascript:**
 
 .. code-block:: javascript
-
-  //javascript
 
   //There are a variety of Java HTTP libraries that support query-parameters.
 

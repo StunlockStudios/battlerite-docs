@@ -27,6 +27,7 @@ Primary data will be either:
 
 For example, the following primary data is a single resource object. It's primary data is a single [resource identifier object] that references the same resource. A logical collection of resources will always be represented as an array, even if it only contains one item or is empty.
 
+**Javascript:**
 
 .. code-block:: javascript
 
@@ -61,10 +62,9 @@ Be nice. If you're sending too many requests too quickly, we'll send back a
 
 **Please note: Free for non-commercial use for up to 10 requests per minute! To increase your rate limit, log into your admin dashboard, find the app you would like a higher rate limit for, and click "request a higher rate limit"**
 
+**Shell:**
 
 .. code-block:: shell
-
-  Shell:
 
   The rate limit headers are defined as follows:
 

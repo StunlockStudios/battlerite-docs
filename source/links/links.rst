@@ -32,14 +32,15 @@ This endpoint creates a PlayerLink object if the verification code matches the o
 
 |  ``POST https://api.dc01.gamelockerapp.com/link/{player_id}``
 
+
 **Query Parameters:**
 
 |  ``Parameter: Code``
 |  
 
-.. code-block:: shell
+**Shell:**
 
-	//Shell:
+.. code-block:: shell
 
 	  curl -XPOST "https://api.dc01.gamelockerapp.com/shards/na/link/{player_id}" \
 	  -H "Authorization: Bearer <api-key>" \
@@ -51,10 +52,9 @@ This endpoint creates a PlayerLink object if the verification code matches the o
 Player Link
 ---------------------------
 
+**Shell:**
 
 .. code-block:: shell
-
-	//Shell:
 
 		  {
 		  "attributes": {

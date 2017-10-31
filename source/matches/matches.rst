@@ -11,10 +11,9 @@ Rosters
 
 Rosters track the scores of each opposing group of Participants. If players entered matchmaking as a team, the Roster will have a related Team. Rosters have many Participants objects, one for each member of the Roster. Roster objects are only meaningful within the context of a Match and are not exposed as a standalone resource.
 
+**Javascript:**
 
 .. code-block:: javascript
-
-  //Javascript
 
   {
     "type": "roster",
@@ -52,11 +51,9 @@ Participants
 
 Participant objects track each member in a Roster. Participants may be anonymous Players, registered Players, or bots. In the case where the Participant is a registered Player, the Participant will have a single Player relationship. Participant objects are only meaningful within the context of a Match and are not exposed as a standalone resource.
 
-**Javascript**
+**Javascript:**
 
 .. code-block:: javascript
-
-  //Javascript
 
   {
     "type": "participant",
@@ -81,7 +78,7 @@ Get a Collection of Matches
 This endpoint retrieves data from matches. Bulk scraping matches is prohibited.
 
 **HTTP Request**
-``GET https://api.dc01.gamelockerapp.com/shards/na/matches``
+|  ``GET https://api.dc01.gamelockerapp.com/shards/na/matches``
 
 =========================== ================ =================================================================================================================== 
 Parameter                   Default          Description                                               
@@ -99,12 +96,11 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
 
 *Remember — a happy match is an authenticated match!*
 
+**Shell:**
 
 .. code-block:: shell
 
-  //shell
-
-  curl -g "https://api.dc01.gamelockerapp.com/shards/na/matches?sort=createdAt&page[limit]=3&filter[createdAt-start]=2017-02-27T13:25:30Z&filter[playerNames]=<playerName>" \
+    curl -g "https://api.dc01.gamelockerapp.com/shards/na/matches?sort=createdAt&page[limit]=3&filter[createdAt-start]=2017-02-27T13:25:30Z&filter[playerNames]=<playerName>" \
     -H "Authorization: Bearer <api-key>" \
     -H "Accept: application/vnd.api+json"
 
@@ -138,12 +134,11 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
     ]
   }
 
+**Java:**
 
 .. code-block:: java
 
-  //Java
-
-  //There are a variety of Java HTTP libraries that support query-parameters.
+  //*There are a variety of Java HTTP libraries that support query-parameters.
 
   //The above command returns JSON structured like this:
 
@@ -175,10 +170,9 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
     ]
   }
 
+**Python:**
 
 .. code-block:: python
-
-  //Python
 
   import requests
 
@@ -228,10 +222,9 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
     ]
   }
 
+**Go:**
 
 .. code-block:: go
-
-  //Go
 
   q := req.URL.Query()
   q.Add("sort", "createdAt")
@@ -283,10 +276,9 @@ This endpoint retrieves a specific match.
 |  Parameter: ``ID``
 |  Description: ``The ID of the match to retrieve``
 
+**Shell:**
 
 .. code-block:: shell
-
-  //shell
 
   curl "https://api.dc01.gamelockerapp.com/shards/na/matches/<matchID>" \
   -H "Authorization: Bearer <api-key>" \
@@ -320,10 +312,9 @@ This endpoint retrieves a specific match.
     }
   }
 
+**Javascript:**
 
 .. code-block:: Javascript
-
-  //javascript
 
     //There are a variety of Java HTTP libraries that support URL parameters
 

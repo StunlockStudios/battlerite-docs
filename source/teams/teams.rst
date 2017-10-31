@@ -53,11 +53,9 @@ This endpoint retrieves a specific team.
 |  Description: The ID of the team to retrieve
 
 
-
+**Shell:**
 
 .. code-block:: shell
-
-	//shell
 
 	  curl "https://api.dc01.gamelockerapp.com/teams/<ID>" \
 	  -H "Authorization: Bearer <api-key>" \

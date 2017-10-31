@@ -25,6 +25,7 @@ The Vainglory Game Data Service currently supports the following regions:
 * **Southeast Asia (SEA):** ``sa``
 
 *Tournament Region Shards:* To find data regarding professional eSport, which take place on the private client only, please use the following shards.
+
 * **North America Tournaments:** ``tournament-na``
 * **Europe Tournaments:** ``tournament-eu``
 * **South America Tournaments:** ``tournament-sa``
@@ -33,9 +34,11 @@ The Vainglory Game Data Service currently supports the following regions:
 
 *Please note: Choosing a specific region is currently required*
 
+**Javascript:**
+
 .. code-block:: javascript
 
-  Javascript
+  //Javascript
 
   To specify a region, use this code:
 
@@ -51,38 +54,40 @@ Responses will be returns with ``Content-Encoding: gzip``.
 
 Given the size of matches, this can have significant performance benefits.
 
+**Shell:**
 
 .. code-block:: javascript
 
-  Shell:
 
   To specify the header Accept-Encoding, use this code:
 
   -H "Accept-Encoding: gzip"
 
 
+**Java:**
 
 .. code-block:: java
 
-  Java:
 
   To specify the header Accept-Encoding, use this code:
 
   conn.setRequestProperty("Accept-Encoding","gzip");
 
 
+**Python:**
+
 .. code-block:: python
 
-  Python:
 
   To specify the header Accept-Encoding, use this code:
 
   header = {"Accept-Encoding":"gzip"}
 
 
+**Go:**
+
 .. code-block:: go
 
-  Go:
 
   To specify the header Accept-Encoding, use this code:
 
@@ -125,15 +130,15 @@ All resource collections have a default sort order. In addition, some resources 
 
 If sort fields are is prefixed with a minus, the order will be changed to descending.
 
+**Javascript**
 
 .. code-block:: javascript
 
-  Javascript:
 
-  **The example below will return the oldest articles first:**
+  //The example below will return the oldest articles first:
   ".../matches?sort=createdAt"
 
-  **The example below will return the newest articles first:**
+  //The example below will return the newest articles first:
   ".../matches?sort=-createdAt"
 
 
@@ -141,12 +146,11 @@ If sort fields are is prefixed with a minus, the order will be changed to descen
 JSON-P Callbacks
 ---------------------------
 
-You can send a ?callback parameter to any GET call to have the results wrapped in a JSON function. This is typically used when browsers want to embed content in web pages by getting around cross domain issues. The response includes the same data output as the regular API, plus the relevant HTTP Header information.
+You can send a ``?callback`` parameter to any GET call to have the results wrapped in a JSON function. This is typically used when browsers want to embed content in web pages by getting around cross domain issues. The response includes the same data output as the regular API, plus the relevant HTTP Header information.
 
+**Shell:**
 
 .. code-block:: shell
-
-  Shell:
 
   curl -g "https://api.dc01.gamelockerapp.com/status?callback=foo"
 
@@ -160,9 +164,10 @@ This is what the CORS preflight request looks like. The API supports Cross Origi
 
 Here's a sample request sent from a browser hitting http://example.com:
 
+**Shell:**
+
 .. code-block:: shell
 
-  Shell:
 
   curl -i https://api.dc01.gamelockerapp.com/status -H "Origin: http://example.com"
   HTTP/1.1 200 OK

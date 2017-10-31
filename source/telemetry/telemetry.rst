@@ -15,10 +15,9 @@ You start by pulling a list of matches using the matches endopoint.
 **HTTP Request**
 |  ``GET https://api.dc01.gamelockerapp.com/shards/na/matches``
 
+**Shell:**
 
 .. code-block:: shell
-
-  //shell
 
   curl "https://api.dc01.gamelockerapp.com/shards/na/matches" \
   -H "Authorization: Bearer <api-key>" \
@@ -151,10 +150,9 @@ Telemetry data is classified into several event of interest. Following is a list
 **GoldFromKrakenKill:** When a player earns gold from his or her team killing a Kraken released by the enemy team. ``json { "time": "2017-03-31T03:07:43+0000", "type": "GoldFromKrakenKill", "payload": { "Team": "Right", "Actor": "*Kestrel*", "Amount": 500 } }``
 
 
+**Javascript:**
 
 .. code-block:: Javascript
-
-  //javascript
 
     {
     "time": "2017-03-17T00:38:32+0000",

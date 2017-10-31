@@ -18,15 +18,16 @@ This endpoint retrieves a specific player.
 
 |  ``GET https://api.dc01.gamelockerapp.com/shards/na/players/<ID>``
 
+
 **URL Parameters**
 
 |  Parameter: ID
 |  Description: The ID of the player to retrieve
 
 
-.. code-block:: shell
+**Shell:**
 
-	//shell
+.. code-block:: shell
 
   curl "https://api.dc01.gamelockerapp.com/shards/na/players/<ID>" \
   -H "Authorization: Bearer <api-key>" \
@@ -50,9 +51,9 @@ This endpoint retrieves a specific player.
 	}
 
 
-.. code-block:: javascript
+**Javascript:** 
 
-	//javascript
+.. code-block:: javascript
 
   //There are a variety of Java HTTP libraries that support query-parameters.
 
@@ -91,9 +92,9 @@ This endpoint retrieves a collection of up to 6 players, filtered by name. Playe
 |  Description: Filters by player names. Usage: filter[playerNames]=player1,player2
 
 
-.. code-block:: shell
+**Shell:**
 
-	//shell
+.. code-block:: shell
 
   curl "https://api.dc01.gamelockerapp.com/shards/na/players?filter[playerNames]=player1,player2" \
   -H "Authorization: Bearer <api-key>" \
