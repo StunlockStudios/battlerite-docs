@@ -7,7 +7,7 @@ Matches records are created every time players complete a game session. Each Mat
 
 
 Rosters
----------------------------
+----------------------
 
 Rosters track the scores of each opposing group of Participants. If players entered matchmaking as a team, the Roster will have a related Team. Rosters have many Participants objects, one for each member of the Roster. Roster objects are only meaningful within the context of a Match and are not exposed as a standalone resource.
 
