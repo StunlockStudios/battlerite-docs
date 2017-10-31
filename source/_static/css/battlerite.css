@@ -480,6 +480,10 @@ p {
     width: 20rem;
 }
 
+.sphinxsidebarwrapper {
+    padding: 2rem 2rem 0 0;
+}
+
 .sphinxsidebarwrapper ul {
   padding: 0 0 0 0 !important;
 }
