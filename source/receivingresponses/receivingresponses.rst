@@ -31,8 +31,6 @@ For example, the following primary data is a single resource object. It's primar
 
 .. code-block:: javascript
 
-  //Javascript:
-
   {
     "data": {
       "type": "match",

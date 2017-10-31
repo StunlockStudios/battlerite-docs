@@ -12,10 +12,9 @@ This endpoint checks to see if a link object exists for a given code.
 
 |  ``GET https://api.dc01.gamelockerapp.com/link``
 
+**Shell:**
 
 .. code-block:: shell
-
-	//Shell:
 
 	  curl "https://api.dc01.gamelockerapp.com/shards/na/link/{id}" \
 	  -H "Authorization: Bearer <api-key>" \

@@ -26,11 +26,9 @@ This endpoint retrieves a collection of up to 6 teams.
 |  Defailt: none
 |  Description: Filter by team id. Usage: filter[teamIds]=12345
 
-
+**Shell:**
 
 .. code-block:: shell
-
-	//shell
 
   curl "https://api.dc01.gamelockerapp.com/shards/na/teams?filter[teamNames]=team1" \
   -H "Authorization: Bearer <api-key>" \
