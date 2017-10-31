@@ -19,6 +19,8 @@ This endpoint checks to see if a link object exists for a given code.
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
+
+
 Post a Link
 ---------------------------
 
@@ -31,13 +33,14 @@ This endpoint creates a PlayerLink object if the verification code matches the o
 Parameter: Code
 Description:The verification code
 
-**Shell**
-
+**Shell:**
 .. code-block:: shell
 
   curl -XPOST "https://api.dc01.gamelockerapp.com/shards/na/link/{player_id}" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
+
+
 
 
 Player Link

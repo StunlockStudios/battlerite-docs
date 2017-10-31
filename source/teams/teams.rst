@@ -16,14 +16,15 @@ This endpoint retrieves a collection of up to 6 teams.
 ``GET https://api.dc01.gamelockerapp.com/teams``
 
 **URL Parameters**
-=========================== ================ =================================================================================================================== 
-Parameter                   Default          Description                                               
-=========================== ================ ===================================================================================================================
-filter[teamNames]           none             Filters by team name. Usage: filter[teamNames]=team1                                     
-filter[teamIds]             none             Filter by team id. Usage: filter[teamIds]=12345             
-=========================== ================ ===================================================================================================================
 
-*Remember — a happy team is an authenticated team!*
+Parameter: filter[teamNames]
+Defailt: none
+Description: Filters by team name. Usage: filter[teamNames]=team1
+
+Parameter: filter[teamIds]
+Defailt: none
+Description: Filter by team id. Usage: filter[teamIds]=12345
+
 
 **Shell**
 
@@ -42,11 +43,8 @@ This endpoint retrieves a specific team.
 ``GET https://api.dc01.gamelockerapp.com/teams/<ID>``
 
 **URL Parameters**
-=========================== =================================================================================================================== 
-Parameter                   Description                                               
-=========================== =================================================================================================================== 
-ID                          The ID of the team to retrieve                                            
-=========================== =================================================================================================================== 
+Parameter: ID
+Description: The ID of the team to retrieve
 
 
 **Shell**
