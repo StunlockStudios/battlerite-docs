@@ -38,8 +38,6 @@ The Vainglory Game Data Service currently supports the following regions:
 
 .. code-block:: javascript
 
-  //Javascript
-
   To specify a region, use this code:
 
   "...gamelockerapp.com/shards/<region>/..."
