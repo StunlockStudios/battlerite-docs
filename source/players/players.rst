@@ -22,7 +22,8 @@ This endpoint retrieves a specific player.
 Parameter: ID
 Description: The ID of the player to retrieve
 
-**Shell**
+Shell
+^^^^^^
 
 .. code-block:: shell
 
