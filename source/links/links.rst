@@ -11,9 +11,10 @@ This endpoint checks to see if a link object exists for a given code.
 **HTTP Request**
 ``GET https://api.dc01.gamelockerapp.com/link``
 
-**Shell**
 
 .. code-block:: shell
+
+	**Shell**
 
   curl "https://api.dc01.gamelockerapp.com/shards/na/link/{id}" \
   -H "Authorization: Bearer <api-key>" \
@@ -26,15 +27,14 @@ Post a Link
 
 This endpoint creates a PlayerLink object if the verification code matches the one provided by the game.
 
-**HTTP Request**
-``POST https://api.dc01.gamelockerapp.com/link/{player_id}``
+**HTTP Request:** ``POST https://api.dc01.gamelockerapp.com/link/{player_id}``
 
-**Query Parameters**
-Parameter: Code
-Description:The verification code
+**Query Parameters:** ``Parameter: Code``  |  ``Description: The verification code``
 
-**Shell:**
+
 .. code-block:: shell
+
+	**Shell:**
 
   curl -XPOST "https://api.dc01.gamelockerapp.com/shards/na/link/{player_id}" \
   -H "Authorization: Bearer <api-key>" \
@@ -46,9 +46,10 @@ Description:The verification code
 Player Link
 ---------------------------
 
-**Shell**
 
 .. code-block:: shell
+
+	**Shell**
 
 	  {
 	  "attributes": {

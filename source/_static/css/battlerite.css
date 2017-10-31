@@ -481,11 +481,11 @@ p {
 }
 
 .sphinxsidebarwrapper {
-    padding: 2rem 2rem 0 0;
+    padding: 2rem 1rem 0 0;
 }
 
 .sphinxsidebarwrapper ul {
-  padding: 2rem 1rem 0 0 !important;
+  padding: 2rem 1rem 0 0;
 }
 
 .sphinxsidebarwrapper h3 {
@@ -565,7 +565,7 @@ a:visited {
 }
 
 .pre {
-  background-color: #1F1E20;
+  background-color: #1e1e1e;
 }
 
 table {
