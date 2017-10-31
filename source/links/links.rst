@@ -28,11 +28,8 @@ This endpoint creates a PlayerLink object if the verification code matches the o
 ``POST https://api.dc01.gamelockerapp.com/link/{player_id}``
 
 **Query Parameters**
-=========================== =================================================================================================================== 
-Parameter                   Description                                               
-=========================== =================================================================================================================== 
-code                        The verification code                                           
-=========================== =================================================================================================================== 
+Parameter: Code
+Description:The verification code
 
 **Shell**
 

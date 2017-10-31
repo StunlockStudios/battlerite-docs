@@ -14,8 +14,8 @@ In some cases an X-API-KEY will give you more access to information, and in all 
 
 To specify the Headers, use this code:
 
-Shell
-^^^^^
+**Shell**
+
 
 .. code-block:: shell
 
@@ -39,8 +39,7 @@ Shell
 
   conn.getInputStream()
 
-Python
-^^^^^
+**Python**
 
 .. code-block:: python
 
@@ -55,8 +54,7 @@ Python
 
   r = requests.get(url, headers=header)
 
-Go
-^^^^^
+**Go**
 
 .. code-block:: go
 
