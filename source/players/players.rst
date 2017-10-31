@@ -8,7 +8,7 @@ Player objects contain aggregated lifetime information about each Player. At thi
 
 
 Get a Single Player
----------------------------
+--------------------
 
 This endpoint retrieves a specific player.
 
