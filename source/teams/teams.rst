@@ -14,16 +14,17 @@ This endpoint retrieves a collection of up to 6 teams.
 
 **HTTP Request**
 
-|  ``GET https://api.dc01.gamelockerapp.com/teams``
+
+``GET https://api.dc01.gamelockerapp.com/teams``
 
 **URL Parameters**
 
 |  Parameter: filter[teamNames]
-|  Defailt: none
+|  Default: none
 |  Description: Filters by team name. Usage: filter[teamNames]=team1
 
 |  Parameter: filter[teamIds]
-|  Defailt: none
+|  Default: none
 |  Description: Filter by team id. Usage: filter[teamIds]=12345
 
 **Shell:**

@@ -78,7 +78,8 @@ Get a Collection of Matches
 This endpoint retrieves data from matches. Bulk scraping matches is prohibited.
 
 **HTTP Request**
-|  ``GET https://api.dc01.gamelockerapp.com/shards/na/matches``
+
+``GET https://api.dc01.gamelockerapp.com/shards/na/matches``
 
 =========================== ================ =================================================================================================================== 
 Parameter                   Default          Description                                               
@@ -138,7 +139,7 @@ filter[gameMode]            none              Filter by gameMode Usage: filter[g
 
 .. code-block:: java
 
-  //*There are a variety of Java HTTP libraries that support query-parameters.
+  //There are a variety of Java HTTP libraries that support query-parameters.
 
   //The above command returns JSON structured like this:
 
@@ -270,11 +271,13 @@ Get a Single Match
 This endpoint retrieves a specific match.
 
 **HTTP Request**
-|  ``GET https://api.dc01.gamelockerapp.com/shards/na/matches/<ID>``
+
+``GET https://api.dc01.gamelockerapp.com/shards/na/matches/<ID>``
 
 **URL Parameters**
-|  Parameter: ``ID``
-|  Description: ``The ID of the match to retrieve``
+
+Parameter: ``ID``
+Description: ``The ID of the match to retrieve``
 
 **Shell:**
 

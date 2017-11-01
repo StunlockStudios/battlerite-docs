@@ -13,7 +13,7 @@ This endpoint retrieves a collection of randomly selected matches.
 
 **HTTP Request**
 
-|  ``GET https://api.dc01.gamelockerapp.com/shards/na/samples``
+``GET https://api.dc01.gamelockerapp.com/shards/na/samples``
 
 
 =========================== ================ ===================================================================================================================

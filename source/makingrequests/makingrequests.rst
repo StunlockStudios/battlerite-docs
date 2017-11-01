@@ -6,7 +6,6 @@ Making Requests
 Content Negotiation
 ---------------------------
 
-Content Negotiation
 Clients using the api should specify that they accept responses using the ``application/vnd.api+json`` format, for convenience we will also accept ``application/json`` since it is the default for many popular client libraries.
 
 The Server will respond with a ``Content-Type`` header that mirrors the format requested by the Client.
@@ -14,7 +13,7 @@ The Server will respond with a ``Content-Type`` header that mirrors the format r
 Regions
 ---------------------------
 
-The Vainglory Game Data Service currently supports the following regions:
+The Battlerite Game Data Service currently supports the following regions:
 
 *General Region Shards:* To find data regarding live servers, where all data is found, please use the following shards.
 
@@ -56,7 +55,6 @@ Given the size of matches, this can have significant performance benefits.
 
 .. code-block:: javascript
 
-
   To specify the header Accept-Encoding, use this code:
 
   -H "Accept-Encoding: gzip"
@@ -65,7 +63,6 @@ Given the size of matches, this can have significant performance benefits.
 **Java:**
 
 .. code-block:: java
-
 
   To specify the header Accept-Encoding, use this code:
 
@@ -76,7 +73,6 @@ Given the size of matches, this can have significant performance benefits.
 
 .. code-block:: python
 
-
   To specify the header Accept-Encoding, use this code:
 
   header = {"Accept-Encoding":"gzip"}
@@ -85,7 +81,6 @@ Given the size of matches, this can have significant performance benefits.
 **Go:**
 
 .. code-block:: go
-
 
   To specify the header Accept-Encoding, use this code:
 
@@ -132,7 +127,6 @@ If sort fields are is prefixed with a minus, the order will be changed to descen
 
 .. code-block:: javascript
 
-
   //The example below will return the oldest articles first:
   ".../matches?sort=createdAt"
 
@@ -165,7 +159,6 @@ Here's a sample request sent from a browser hitting http://example.com:
 **Shell:**
 
 .. code-block:: shell
-
 
   curl -i https://api.dc01.gamelockerapp.com/status -H "Origin: http://example.com"
   HTTP/1.1 200 OK

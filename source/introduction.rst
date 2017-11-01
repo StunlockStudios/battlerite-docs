@@ -1,7 +1,7 @@
 Introduction
 ============
 
-The first version of the Vainglory Game Data Service is an exciting step forward towards making it easier for users to have open access to in-game data.
+The first version of the Battlerite Game Data Service is an exciting step forward towards making it easier for users to have open access to in-game data.
 
 Build something great!
 
