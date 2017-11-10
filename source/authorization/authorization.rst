@@ -3,23 +3,25 @@
 Authorization
 =============
 
-We require a JSON Web Token `JWT <https://jwt.io/>`_. be sent along with your request via the Authorization header.
+We require that a JSON Web Token `JWT <https://jwt.io/>`_ be sent along with your request via the Authorization header. There's no need to create JWTs manually, they will be created for you when you register for the API - `Register Here! <https://developer.battlerite.com>`_
+
 JWTs are passed as bearer tokens in the Authorization header, and look like the following:
 
-Authorization: <Enter your API Key>
+``Authorization: <Enter your API Key>``
 
-There's no need to create JWTs manually, they will be created for you when you register for the API - `Register Here! <https://developer.battlerite.com>`_. In some cases an X-API-KEY will give you more access to information, and in all cases it means that you are operating under a per-token rate limit.
+In some cases an X-API-KEY will give you more access to information, and in all cases it means that you are operating under a per-token rate limit.
 
 To specify the Headers, use this code:
 
 **Shell**
 
+With shell, you can just pass the correct header with each request
+
 .. code-block:: shell
 
-  # With shell, you can just pass the correct header with each request
-    curl "<endpoint-url>" \
-    -H "Authorization: <api-key>"
-    -H "Accept: application/vnd.api+json"
+  curl "<endpoint-url>" \
+  -H "Authorization: <api-key>"
+  -H "Accept: application/vnd.api+json"
 
 **Java**
 
@@ -45,8 +47,8 @@ To specify the Headers, use this code:
   url = "<endpoint-url>"
 
   header = {
-      "Authorization": "<api-key>",
-      "Accept": "application/vnd.api+json"
+    "Authorization": "<api-key>",
+    "Accept": "application/vnd.api+json"
   }
 
   r = requests.get(url, headers=header)

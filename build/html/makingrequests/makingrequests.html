@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Making Requests &#8212; Battelrite 0.2 documentation</title>
+    <title>Making Requests &#8212; Battlerite 1.0 documentation</title>
     <link rel="stylesheet" href="../_static/css/battlerite.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -59,7 +59,7 @@
   </nav>
   <nav id="breadcrumbs">
     <ul>
-      <li><a href="../index.html">Battelrite 0.2 documentation</a></li> 
+      <li><a href="../index.html">Battlerite 1.0 documentation</a></li> 
     </ul>
   </nav>
   </div>  
@@ -73,107 +73,103 @@
 <span id="makingrequests"></span><h1>Making Requests<a class="headerlink" href="#making-requests" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="content-negotiation">
 <h2>Content Negotiation<a class="headerlink" href="#content-negotiation" title="Permalink to this headline">¶</a></h2>
-<p>Content Negotiation
-Clients using the api should specify that they accept responses using the <code class="docutils literal"><span class="pre">application/vnd.api+json``format,</span> <span class="pre">for</span> <span class="pre">convenience</span> <span class="pre">we</span> <span class="pre">will</span> <span class="pre">also</span> <span class="pre">accept</span> <span class="pre">``application/json</span></code> since it is the default for many popular client libraries.</p>
+<p>Clients using the api should specify that they accept responses using the <code class="docutils literal"><span class="pre">application/vnd.api+json</span></code> format, for convenience we will also accept <code class="docutils literal"><span class="pre">application/json</span></code> since it is the default for many popular client libraries.</p>
 <p>The Server will respond with a <code class="docutils literal"><span class="pre">Content-Type</span></code> header that mirrors the format requested by the Client.</p>
 </div>
 <div class="section" id="regions">
 <h2>Regions<a class="headerlink" href="#regions" title="Permalink to this headline">¶</a></h2>
-<p>The Vainglory Game Data Service currently supports the following regions:</p>
-<p><em>General Region Shards</em></p>
-<p>To find data regarding live servers, where all data is found, please use the following shards.</p>
+<p>The Battlerite Game Data Service currently supports the following regions:</p>
+<p><em>General Region Shards:</em> To find data regarding live servers, where all data is found, please use the following shards.</p>
 <ul class="simple">
 <li><strong>North America:</strong> <code class="docutils literal"><span class="pre">na</span></code></li>
-<li><strong>Europe:</strong> <code class="docutils literal"><span class="pre">eu:</span></code></li>
-<li><strong>South America:</strong> <code class="docutils literal"><span class="pre">sa</span></code></li>
-<li><strong>East Asia:</strong> <code class="docutils literal"><span class="pre">ea</span></code></li>
-<li><strong>Southeast Asia (SEA):</strong> <code class="docutils literal"><span class="pre">sg</span></code></li>
+<li><strong>Europe:</strong> <code class="docutils literal"><span class="pre">eu</span></code></li>
+<li><strong>South America:</strong> <code class="docutils literal"><span class="pre">south_america</span></code></li>
+<li><strong>Asia:</strong> <code class="docutils literal"><span class="pre">asia</span></code></li>
+<li><strong>oceania:</strong> <code class="docutils literal"><span class="pre">oce</span></code></li>
 </ul>
-<p><em>Tournament Region Shards</em></p>
-<p>To find data regarding professional eSport, which take place on the private client only, please use the following shards.</p>
-<ul class="simple">
-<li><strong>North America Tournaments:</strong> <code class="docutils literal"><span class="pre">tournament-na</span></code></li>
-<li><strong>Europe Tournaments:</strong> <code class="docutils literal"><span class="pre">tournament-eu</span></code></li>
-<li><strong>South America Tournaments:</strong> <code class="docutils literal"><span class="pre">tournament-sa</span></code></li>
-<li><strong>East Asia Tournaments:</strong> <code class="docutils literal"><span class="pre">tournament-ea</span></code></li>
-<li><strong>Southeast Asia Tournaments:</strong> :tournament-sg:</li>
-</ul>
-<p><em>Choosing a specific region is currently required</em></p>
-<p><strong>Javascript</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">To</span> <span class="nx">specify</span> <span class="nx">a</span> <span class="nx">region</span><span class="p">,</span> <span class="nx">use</span> <span class="k">this</span> <span class="nx">code</span><span class="o">:</span>
-
-<span class="s2">&quot;...gamelockerapp.com/shards/&lt;region&gt;/...&quot;</span>
+<p><em>Please note: Choosing a specific region is currently required</em></p>
+<p>To specify a region, use this code:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&quot;...gamelockerapp.com/shards/&lt;region&gt;/...&quot;
 </pre></div>
 </div>
 </div>
 <div class="section" id="gzip">
 <h2>GZIP<a class="headerlink" href="#gzip" title="Permalink to this headline">¶</a></h2>
-<p>Clients can specify the header <code class="docutils literal"><span class="pre">Accept-Encoding:</span> <span class="pre">gzip</span></code> and the server will compress responses.
-Responses will be returns with <code class="docutils literal"><span class="pre">Content-Encoding:</span> <span class="pre">gzip</span></code>.</p>
+<p>Clients can specify the header <code class="docutils literal"><span class="pre">Accept-Encoding:</span> <span class="pre">gzip</span></code> and the server will compress responses. Responses will be returned with <code class="docutils literal"><span class="pre">Content-Encoding:</span> <span class="pre">gzip</span></code>.</p>
 <p>Given the size of matches, this can have significant performance benefits.</p>
-<p><strong>Shell</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">To</span> <span class="nx">specify</span> <span class="nx">the</span> <span class="nx">header</span> <span class="nx">Accept</span><span class="o">-</span><span class="nx">Encoding</span><span class="p">,</span> <span class="nx">use</span> <span class="k">this</span> <span class="nx">code</span><span class="o">:</span>
-
-<span class="o">-</span><span class="nx">H</span> <span class="s2">&quot;Accept-Encoding: gzip&quot;</span>
+<p>To specify the header Accept-Encoding, use this code:</p>
+<p><strong>Shell:</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>-H <span class="s2">&quot;Accept-Encoding: gzip&quot;</span>
 </pre></div>
 </div>
-<p><strong>Java</strong></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">specify</span> <span class="n">the</span> <span class="n">header</span> <span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="o">,</span> <span class="n">use</span> <span class="k">this</span> <span class="n">code</span><span class="o">:</span>
-
-<span class="n">conn</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">&quot;Accept-Encoding&quot;</span><span class="o">,</span><span class="s">&quot;gzip&quot;</span><span class="o">);</span>
+<p><strong>Java:</strong></p>
+<div class="highlight-java"><div class="highlight"><pre><span></span><span class="n">conn</span><span class="o">.</span><span class="na">setRequestProperty</span><span class="o">(</span><span class="s">&quot;Accept-Encoding&quot;</span><span class="o">,</span><span class="s">&quot;gzip&quot;</span><span class="o">);</span>
 </pre></div>
 </div>
-<p><strong>Python</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">To</span> <span class="n">specify</span> <span class="n">the</span> <span class="n">header</span> <span class="n">Accept</span><span class="o">-</span><span class="n">Encoding</span><span class="p">,</span> <span class="n">use</span> <span class="n">this</span> <span class="n">code</span><span class="p">:</span>
-
-<span class="n">header</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Accept-Encoding&quot;</span><span class="p">:</span><span class="s2">&quot;gzip&quot;</span><span class="p">}</span>
+<p><strong>Python:</strong></p>
+<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">header</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Accept-Encoding&quot;</span><span class="p">:</span><span class="s2">&quot;gzip&quot;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p><strong>Go</strong></p>
-<div class="highlight-go"><div class="highlight"><pre><span></span><span class="nx">To</span> <span class="nx">specify</span> <span class="nx">the</span> <span class="nx">header</span> <span class="nx">Accept</span><span class="o">-</span><span class="nx">Encoding</span><span class="p">,</span> <span class="nx">use</span> <span class="nx">this</span> <span class="nx">code</span><span class="p">:</span>
-
-<span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nx">Set</span><span class="p">(</span><span class="s">&quot;Accept-Encoding&quot;</span><span class="p">,</span> <span class="s">&quot;gzip&quot;</span><span class="p">)</span>
+<p><strong>Go:</strong></p>
+<div class="highlight-go"><div class="highlight"><pre><span></span><span class="nx">req</span><span class="p">.</span><span class="nx">Header</span><span class="p">.</span><span class="nx">Set</span><span class="p">(</span><span class="s">&quot;Accept-Encoding&quot;</span><span class="p">,</span> <span class="s">&quot;gzip&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="pagination">
 <h2>Pagination<a class="headerlink" href="#pagination" title="Permalink to this headline">¶</a></h2>
-<p>Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the limit and offset parameters. To fetch items 2 through 10 you would specify a limit of 8 and an offset of 2:</p>
-<p>If not specified, the server will default for matches to <code class="docutils literal"><span class="pre">limit=5</span></code> and <code class="docutils literal"><span class="pre">offset=0</span></code>, and for players/samples to <code class="docutils literal"><span class="pre">limit=50</span></code> and <code class="docutils literal"><span class="pre">offset=0</span></code></p>
-<blockquote>
-<div><em>Important - Currently the server will not allow responses with over 50 primary data objects</em></div></blockquote>
+<p>Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the limit and offset parameters. To fetch items 3 through 5 you would specify a limit of 5 and an offset of 3:</p>
+<p>If not specified, the server will default to <code class="docutils literal"><span class="pre">offset=0</span></code>, and the following values for <code class="docutils literal"><span class="pre">limit</span></code>:</p>
+<div class="line-block">
+<div class="line">Matches: 5</div>
+<div class="line">players/samples: 6</div>
+</div>
+<p>Note that the above values are also the maximum values for <code class="docutils literal"><span class="pre">limit</span></code>.</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&amp;page[offset]=3&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+</pre></div>
+</div>
+<p>At the end of the JSON returned by the above command you will find links to the first, next, and current pages:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&quot;links&quot;: {
+  &quot;first&quot;: &quot;https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&amp;page[offset]=0&quot;,
+  &quot;next&quot;: &quot;https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&amp;page[offset]=8&quot;,
+  &quot;self&quot;: &quot;https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&amp;page[offset]=3&quot;
+},
+</pre></div>
+</div>
+<p>There will also be a previous page link when appropriate.</p>
 </div>
 <div class="section" id="search-time">
 <h2>Search Time<a class="headerlink" href="#search-time" title="Permalink to this headline">¶</a></h2>
+<p><strong>Defaults:</strong></p>
 <ul class="simple">
 <li>Data retention period: 120 days.</li>
 <li>The max search time span between createdAt-start and createdAt-end: 28 days.</li>
+<li>If you don’t specify createdAt-start, the default is now - 28 days.</li>
+<li>If you don’t specify createdAt-end, the default is now.</li>
+<li>If you search for a time &gt; now, the default is now.</li>
+<li>If you search for a time before the retention period, the default is the retention period (now - 120 days).</li>
+<li>If createdAt-start &gt;= createdAt-end, you will receive an error.</li>
 </ul>
-<p><strong>Defaults:</strong>
-* If you don’t specify createdAt-start, the default is now - 28 days.
-* If you don’t specify createdAt-end, the default is now.
-* If you search for a time &gt; now, the default is now.
-* If you search for a time before the retention period, the default is the retention period (now - 120 days).
-* If createdAt-start &gt;= createdAt-end, you will receive an error.</p>
 </div>
 <div class="section" id="sorting">
 <h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
 <p>The default sort order is always ascending. Ascending corresponds to the standard order of numbers and letters, i.e. A to Z, 0 to 9). For dates and times, ascending means that earlier values precede later ones e.g. 1/1/2000 will sort ahead of 1/1/2001.</p>
 <p>All resource collections have a default sort order. In addition, some resources provide the ability to sort according to one or more criteria (“sort fields”).</p>
-<p>If sort fields are is prefixed with a minus, the order will be changed to descending.</p>
-<p><strong>Javascript</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="o">**</span><span class="nx">The</span> <span class="nx">example</span> <span class="nx">below</span> <span class="nx">will</span> <span class="k">return</span> <span class="nx">the</span> <span class="nx">oldest</span> <span class="nx">articles</span> <span class="nx">first</span><span class="o">:**</span>
-<span class="s2">&quot;.../matches?sort=createdAt&quot;</span>
-
-<span class="o">**</span><span class="nx">The</span> <span class="nx">example</span> <span class="nx">below</span> <span class="nx">will</span> <span class="k">return</span> <span class="nx">the</span> <span class="nx">newest</span> <span class="nx">articles</span> <span class="nx">first</span><span class="o">:**</span>
-<span class="s2">&quot;.../matches?sort=-createdAt&quot;</span>
+<p>If sort fields are prefixed with a minus, the order will be changed to descending.</p>
+<p>The example below will return the oldest articles first:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&quot;.../matches?sort=createdAt&quot;
+</pre></div>
+</div>
+<p>The example below will return the newest articles first:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&quot;.../matches?sort=-createdAt&quot;
 </pre></div>
 </div>
 </div>
 <div class="section" id="json-p-callbacks">
 <h2>JSON-P Callbacks<a class="headerlink" href="#json-p-callbacks" title="Permalink to this headline">¶</a></h2>
-<p>You can send a ?callback parameter to any GET call to have the results wrapped in a JSON function. This is typically used when browsers want to embed content in web pages by getting around cross domain issues. The response includes the same data output as the regular API, plus the relevant HTTP Header information.</p>
-<p><strong>Shell</strong></p>
+<p>You can send a <code class="docutils literal"><span class="pre">?callback</span></code> parameter to any GET call to have the results wrapped in a JSON function. This is typically used when browsers want to embed content in web pages by getting around cross domain issues. The response includes the same data output as the regular API, plus the relevant HTTP Header information.</p>
+<p><strong>Shell:</strong></p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/status?callback=foo&quot;</span>
 </pre></div>
 </div>
@@ -182,16 +178,16 @@ Responses will be returns with <code class="docutils literal"><span class="pre">
 <h2>Cross Origin Resource Sharing<a class="headerlink" href="#cross-origin-resource-sharing" title="Permalink to this headline">¶</a></h2>
 <p>This is what the CORS preflight request looks like. The API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any origin. You can read the CORS W3C Recommendation, or this intro from the HTML 5 Security Guide.</p>
 <p>Here’s a sample request sent from a browser hitting <a class="reference external" href="http://example.com">http://example.com</a>:</p>
-<p><strong>Shell</strong></p>
+<p><strong>Shell:</strong></p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>curl -i https://api.dc01.gamelockerapp.com/status -H <span class="s2">&quot;Origin: http://example.com&quot;</span>
 HTTP/1.1 <span class="m">200</span> OK
 ...
 Access-Control-Allow-Origin: *
 Access-Control-Expose-Headers: Content-Length
-
-This is what the CORS preflight request looks like:
-
-curl -i https://api.dc01.gamelockerapp.com/status -H <span class="s2">&quot;Origin: http://example.com&quot;</span> -X OPTIONS
+</pre></div>
+</div>
+<p>This is what the CORS preflight request looks like:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -i https://api.dc01.gamelockerapp.com/status -H <span class="s2">&quot;Origin: http://example.com&quot;</span> -X OPTIONS
 HTTP/1.1 <span class="m">200</span> OK
 ...
 Access-Control-Allow-Headers: Origin,X-Title-Id,Authorization
@@ -234,7 +230,6 @@ Access-Control-Max-Age: <span class="m">86400</span>
 <li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../samples/samples.html">Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../teams/teams.html">Teams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../links/links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Errors</a></li>
@@ -260,7 +255,7 @@ Access-Control-Max-Age: <span class="m">86400</span>
   </nav>
   <nav id="breadcrumbs">
     <ul>
-      <li><a href="../index.html">Battelrite 0.2 documentation</a></li> 
+      <li><a href="../index.html">Battlerite 1.0 documentation</a></li> 
     </ul>
   </nav>
   </div>

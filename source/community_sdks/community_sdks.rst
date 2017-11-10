@@ -3,8 +3,7 @@
 Community SDKs
 ===============
 
-Community contributions are welcome and rewarded with good karma (and swag!) If you are currently working on an API, let us know on the Discord server and we will add a link!
-
+Community contributions are welcome and rewarded with good karma (and swag!) If you are currently working on an API, email us at battlerite-gamelocker@madglory.com with a link and we will add it below!
 
 .. toctree::
   :maxdepth: 2

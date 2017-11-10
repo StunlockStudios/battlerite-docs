@@ -12,6 +12,9 @@ Get a Single Player
 
 This endpoint retrieves a specific player.
 
+* If a player has changed names, it is possible that there are multiple ID's for a single player name.
+* Player renames do not trigger a change on this endpoint. A minimum of 1 match after the rename is required to view the change.
+
 *Please Note: Changes Coming! - Player resources are not fully defined at this point, but are included so that consumers can get basic info (name, etc.) This object will have additional data added over the next few months, and may change slightly as data moves from the `attributes.stats` object to the main `attributes` object.*
 
 **HTTP Request**
@@ -21,8 +24,11 @@ This endpoint retrieves a specific player.
 
 **URL Parameters**
 
-|  Parameter: ID
-|  Description: The ID of the player to retrieve
+=========== ========= ==================================
+Parameter   Default   Description
+=========== ========= ==================================
+ID          none      The ID of the player to retrieve
+=========== ========= ==================================
 
 
 **Shell:**
@@ -33,47 +39,26 @@ This endpoint retrieves a specific player.
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
-    **The above command returns JSON structured like this:**
+**The above command returns JSON structured like this:**
 
-	  {{
-	"data": {
-	  "attributes": {
-	      "stats": {
-	          "lossStreak": 1,
-	          "winStreak": 0,
-	          "lifetimeGold": 10536.0
-	      },
-	      "name": "boombastic04"
-	  },
-	  "type": "player",
-	  "id": "6abb30de-7cb8-11e4-8bd3-06eb725f8a76"
-	}
-	}
+.. code-block:: none
 
-
-**Javascript:** 
-
-.. code-block:: javascript
-
-  //There are a variety of Java HTTP libraries that support query-parameters.
-
-    **The above command returns JSON structured like this:**
-
-	  {{
-	"data": {
-	  "attributes": {
-	      "stats": {
-	          "lossStreak": 1,
-	          "winStreak": 0,
-	          "lifetimeGold": 10536.0
-	      },
-	      "name": "boombastic04"
-	  },
-	  "type": "player",
-	  "id": "6abb30de-7cb8-11e4-8bd3-06eb725f8a76"
-	}
-	}
-
+  {
+    "data": {
+      "type": "player",
+      "id": "6abb30de-7cb8-11e4-8bd3-06eb725f8a76"
+      "attributes": {
+        "name": "..."
+        "stats": {
+          ...
+        },
+        "titleId": "stunlock-battlerite",
+        "shardId": "na",
+        "createdAt": "2017-11-02T19:52:48.623Z",
+        "patchVersion": "0.14"
+      },
+    }
+  }
 
 Get a Collection of Players
 ---------------------------
@@ -87,9 +72,11 @@ This endpoint retrieves a collection of up to 6 players, filtered by name. Playe
 
 **Query Parameters**
 
-|  Parameter: filter[playerNames]
-|  Default: None
-|  Description: Filters by player names. Usage: filter[playerNames]=player1,player2
+===================== ========= =====================================================================
+Parameter             Default   Description
+===================== ========= =====================================================================
+filter[playerNames]   none      Filters by player names. Usage: filter[playerNames]=player1,player2
+===================== ========= =====================================================================
 
 
 **Shell:**
@@ -99,7 +86,6 @@ This endpoint retrieves a collection of up to 6 players, filtered by name. Playe
   curl "https://api.dc01.gamelockerapp.com/shards/na/players?filter[playerNames]=player1,player2" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
-	}
 
 .. toctree::
   :maxdepth: 2

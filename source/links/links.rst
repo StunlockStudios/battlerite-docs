@@ -16,9 +16,9 @@ This endpoint checks to see if a link object exists for a given code.
 
 .. code-block:: shell
 
-	  curl "https://api.dc01.gamelockerapp.com/shards/na/link/{id}" \
-	  -H "Authorization: Bearer <api-key>" \
-	  -H "Accept: application/vnd.api+json"
+	curl "https://api.dc01.gamelockerapp.com/shards/<region>/link/{id}" \
+	-H "Authorization: Bearer <api-key>" \
+	-H "Accept: application/vnd.api+json"
 
 
 
@@ -34,16 +34,19 @@ This endpoint creates a PlayerLink object if the verification code matches the o
 
 **Query Parameters:**
 
-|  ``Parameter: Code``
-|  
+=========== ========= =======================
+Parameter   Default   Description
+=========== ========= =======================
+code        none      The verification code
+=========== ========= =======================
 
 **Shell:**
 
 .. code-block:: shell
 
-	  curl -XPOST "https://api.dc01.gamelockerapp.com/shards/na/link/{player_id}" \
-	  -H "Authorization: Bearer <api-key>" \
-	  -H "Accept: application/vnd.api+json"
+	curl -XPOST "https://api.dc01.gamelockerapp.com/shards/<region>/link/{player_id}" \
+	-H "Authorization: Bearer <api-key>" \
+	-H "Accept: application/vnd.api+json"
 
 
 
@@ -51,19 +54,17 @@ This endpoint creates a PlayerLink object if the verification code matches the o
 Player Link
 ---------------------------
 
-**Shell:**
+.. code-block:: none
 
-.. code-block:: shell
-
-		  {
-		  "attributes": {
-		      "playerId": "fb374a7b-78be-4fcc-83ed-6a532a8a6f55",
-		      "shardId": "na",
-		      "titleId": "semc-vainglory"
-		  },
-		  "id": "2454e5ac-0a69-4468-ad12-8616f066e817",
-		  "type": "playerLink"
-	}
+  {
+    "attributes": {
+      "playerId": "fb374a7b-78be-4fcc-83ed-6a532a8a6f55",
+      "shardId": "na",
+      "titleId": "stunlock-battlerite"
+    },
+    "id": "2454e5ac-0a69-4468-ad12-8616f066e817",
+    "type": "playerLink"
+  }
 
 .. toctree::
   :maxdepth: 2

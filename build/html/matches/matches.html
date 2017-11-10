@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Matches &#8212; Battelrite 0.2 documentation</title>
+    <title>Matches &#8212; Battlerite 1.0 documentation</title>
     <link rel="stylesheet" href="../_static/css/battlerite.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -59,7 +59,7 @@
   </nav>
   <nav id="breadcrumbs">
     <ul>
-      <li><a href="../index.html">Battelrite 0.2 documentation</a></li> 
+      <li><a href="../index.html">Battlerite 1.0 documentation</a></li> 
     </ul>
   </nav>
   </div>  
@@ -71,74 +71,77 @@
             
   <div class="section" id="matches">
 <span id="id1"></span><h1>Matches<a class="headerlink" href="#matches" title="Permalink to this headline">¶</a></h1>
-<p>Matches records are created every time players complete a game session. Each Match contains high level information about the game session, including info like duration, gameMode, and more. Each Match has two Rosters.</p>
+<p>Match records are created every time players complete a game session. Each Match contains high level information about the game session, including info like duration, gameMode, and more. Each Match has two Rosters.</p>
 <div class="section" id="rosters">
 <h2>Rosters<a class="headerlink" href="#rosters" title="Permalink to this headline">¶</a></h2>
 <p>Rosters track the scores of each opposing group of Participants. If players entered matchmaking as a team, the Roster will have a related Team. Rosters have many Participants objects, one for each member of the Roster. Roster objects are only meaningful within the context of a Match and are not exposed as a standalone resource.</p>
-<p><strong>Javascript</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;roster&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;eca49808-d510-11e6-bf26-cec0c932ce01&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;attributes&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;stats&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;acesEarned&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">&quot;gold&quot;</span><span class="o">:</span> <span class="mi">32344</span><span class="p">,</span>
-      <span class="s2">&quot;etc...&quot;</span>
-    <span class="p">}</span>
-  <span class="p">},</span>
-  <span class="s2">&quot;relationships&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;team&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;team&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;753d464c-d511-11e6-bf26-cec0c932ce01&quot;</span>
-      <span class="p">}</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;participants&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">[</span>
-        <span class="p">{</span>
-          <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;participant&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;eca49a7e-d510-11e6-bf26-cec0c932ce01&quot;</span>
-        <span class="p">},</span>
-        <span class="s2">&quot;etc...&quot;</span>
-      <span class="p">]</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+  &quot;type&quot;: &quot;roster&quot;,
+  &quot;id&quot;: &quot;eca49808-d510-11e6-bf26-cec0c932ce01&quot;,
+  &quot;attributes&quot;: {
+    &quot;stats&quot;: {
+      &quot;side&quot;: 1,
+      &quot;score&quot;: 3
+    },
+    &quot;won&quot;: &quot;true&quot;,
+    &quot;shardId&quot;: &quot;na&quot;
+  },
+  &quot;relationships&quot;: {
+    &quot;team&quot;: {
+      &quot;data&quot;: {
+        &quot;type&quot;: &quot;team&quot;,
+        &quot;id&quot;: &quot;753d464c-d511-11e6-bf26-cec0c932ce01&quot;
+      }
+    },
+    &quot;participants&quot;: {
+      &quot;data&quot;: [
+        {
+          &quot;type&quot;: &quot;participant&quot;,
+          &quot;id&quot;: &quot;eca49a7e-d510-11e6-bf26-cec0c932ce01&quot;
+        },
+        &quot;etc...&quot;
+      ]
+    }
+  }
+}
 </pre></div>
 </div>
 </div>
 <div class="section" id="participants">
 <h2>Participants<a class="headerlink" href="#participants" title="Permalink to this headline">¶</a></h2>
 <p>Participant objects track each member in a Roster. Participants may be anonymous Players, registered Players, or bots. In the case where the Participant is a registered Player, the Participant will have a single Player relationship. Participant objects are only meaningful within the context of a Match and are not exposed as a standalone resource.</p>
-<p><strong>Javascript</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="p">{</span>
-  <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;participant&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;ea77c3a7-d44e-11e6-8f77-0242ac130004&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;attributes&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;actor&quot;</span><span class="o">:</span> <span class="s2">&quot;*Hero009*&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;stats&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;assists&quot;</span><span class="o">:</span> <span class="mi">4</span><span class="p">,</span>
-      <span class="s2">&quot;crystalMineCaptures&quot;</span><span class="o">:</span> <span class="mi">1</span><span class="p">,</span>
-      <span class="s2">&quot;deaths&quot;</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
-      <span class="s2">&quot;farm&quot;</span><span class="o">:</span> <span class="mf">49.25</span><span class="p">,</span>
-      <span class="s2">&quot;etc...&quot;</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+  &quot;type&quot;: &quot;participant&quot;,
+  &quot;id&quot;: &quot;ea77c3a7-d44e-11e6-8f77-0242ac130004&quot;,
+  &quot;attributes&quot;: {
+    &quot;stats&quot;: {
+      &quot;kills&quot;: 1,
+      &quot;deaths&quot;: 0,
+      &quot;score&quot;: 744,
+      &quot;etc...&quot;
+    },
+    &quot;actor&quot;: &quot;Ashka&quot;,
+    &quot;shardId&quot;: &quot;na&quot;
+  }
+  &quot;relationships&quot;: {
+    &quot;player&quot;: {
+      ...
+    }
+  }
+}
 </pre></div>
 </div>
 </div>
 <div class="section" id="get-a-collection-of-matches">
 <h2>Get a Collection of Matches<a class="headerlink" href="#get-a-collection-of-matches" title="Permalink to this headline">¶</a></h2>
 <p>This endpoint retrieves data from matches. Bulk scraping matches is prohibited.</p>
-<p><strong>HTTP Request</strong>
-<code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/matches</span></code></p>
-<p><strong>Query Parameters</strong></p>
+<p><strong>HTTP Request</strong></p>
+<p><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/matches</span></code></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
-<col width="10%" />
-<col width="73%" />
+<col width="7%" />
+<col width="76%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Parameter</th>
@@ -186,237 +189,170 @@
 </tbody>
 </table>
 <p><em>Remember — a happy match is an authenticated match!</em></p>
-<p><strong>Shell</strong></p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/matches?sort=createdAt&amp;page[limit]=3&amp;filter[createdAt-start]=2017-02-27T13:25:30Z&amp;filter[playerNames]=&lt;playerName&gt;&quot;</span> <span class="se">\</span>
-  -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
-  -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
-
-  **The above <span class="nb">command</span> returns JSON structured like this:**
-
-  <span class="o">{</span>
-  <span class="s2">&quot;data&quot;</span>: <span class="o">[</span>
-    <span class="o">{</span>
-      <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;match&quot;</span>,
-      <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;02b90214-c64d-11e6-9f6b-062445d3d668&quot;</span>,
-      <span class="s2">&quot;attributes&quot;</span>: <span class="o">{</span>
-        <span class="s2">&quot;createdAt&quot;</span>: <span class="s2">&quot;2017-01-06T20:30:08Z&quot;</span>,
-        <span class="s2">&quot;duration&quot;</span>: <span class="m">1482195372</span>,
-        <span class="s2">&quot;gameMode&quot;</span>: <span class="s2">&quot;casual&quot;</span>,
-        <span class="s2">&quot;patchVersion&quot;</span>: <span class="s2">&quot;1.0.0&quot;</span>,
-        <span class="s2">&quot;shardId&quot;</span>: <span class="s2">&quot;na&quot;</span>,
-        <span class="s2">&quot;stats&quot;</span>: <span class="s2">&quot;acesEarned: 3, etc...&quot;</span>
-      <span class="o">}</span>,
-      <span class="s2">&quot;relationships&quot;</span>: <span class="o">{</span>
-        <span class="s2">&quot;rosters&quot;</span>: <span class="o">{</span>
-          <span class="s2">&quot;data&quot;</span>: <span class="o">[{</span>
-            <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;roster&quot;</span>,
-            <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;ea77c2eb-d44e-11e6-8f77-0242ac130004&quot;</span>
-          <span class="o">}</span>, <span class="o">{</span>
-            <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;roster&quot;</span>,
-            <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;dc2c14b4-d50c-11e6-bf26-cec0c932ce01&quot;</span>
-          <span class="o">}]</span>
-        <span class="o">}</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-  <span class="o">]</span>
-<span class="o">}</span>
+<p><strong>Shell:</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/matches?sort=createdAt&amp;page[limit]=3&amp;filter[createdAt-start]=2017-11-10T13:25:30Z&amp;filter[playerNames]=&lt;playerName&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
 </div>
-<p><strong>Java</strong></p>
-<div class="highlight-java"><div class="highlight"><pre><span></span><span class="c1">//There are a variety of Java HTTP libraries that support query-parameters.</span>
-
-<span class="o">**</span><span class="n">The</span> <span class="n">above</span> <span class="n">command</span> <span class="n">returns</span> <span class="n">JSON</span> <span class="n">structured</span> <span class="n">like</span> <span class="k">this</span><span class="o">:**</span>
-
-<span class="o">{</span>
-  <span class="s">&quot;data&quot;</span><span class="o">:</span> <span class="o">[</span>
-    <span class="o">{</span>
-      <span class="s">&quot;type&quot;</span><span class="o">:</span> <span class="s">&quot;match&quot;</span><span class="o">,</span>
-      <span class="s">&quot;id&quot;</span><span class="o">:</span> <span class="s">&quot;02b90214-c64d-11e6-9f6b-062445d3d668&quot;</span><span class="o">,</span>
-      <span class="s">&quot;attributes&quot;</span><span class="o">:</span> <span class="o">{</span>
-        <span class="s">&quot;createdAt&quot;</span><span class="o">:</span> <span class="s">&quot;2017-01-06T20:30:08Z&quot;</span><span class="o">,</span>
-        <span class="s">&quot;duration&quot;</span><span class="o">:</span> <span class="mi">1482195372</span><span class="o">,</span>
-        <span class="s">&quot;gameMode&quot;</span><span class="o">:</span> <span class="s">&quot;casual&quot;</span><span class="o">,</span>
-        <span class="s">&quot;patchVersion&quot;</span><span class="o">:</span> <span class="s">&quot;1.0.0&quot;</span><span class="o">,</span>
-        <span class="s">&quot;shardId&quot;</span><span class="o">:</span> <span class="s">&quot;na&quot;</span><span class="o">,</span>
-        <span class="s">&quot;stats&quot;</span><span class="o">:</span> <span class="s">&quot;acesEarned: 3, etc...&quot;</span>
-      <span class="o">},</span>
-      <span class="s">&quot;relationships&quot;</span><span class="o">:</span> <span class="o">{</span>
-        <span class="s">&quot;rosters&quot;</span><span class="o">:</span> <span class="o">{</span>
-          <span class="s">&quot;data&quot;</span><span class="o">:</span> <span class="o">[{</span>
-            <span class="s">&quot;type&quot;</span><span class="o">:</span> <span class="s">&quot;roster&quot;</span><span class="o">,</span>
-            <span class="s">&quot;id&quot;</span><span class="o">:</span> <span class="s">&quot;ea77c2eb-d44e-11e6-8f77-0242ac130004&quot;</span>
-          <span class="o">},</span> <span class="o">{</span>
-            <span class="s">&quot;type&quot;</span><span class="o">:</span> <span class="s">&quot;roster&quot;</span><span class="o">,</span>
-            <span class="s">&quot;id&quot;</span><span class="o">:</span> <span class="s">&quot;dc2c14b4-d50c-11e6-bf26-cec0c932ce01&quot;</span>
-          <span class="o">}]</span>
-        <span class="o">}</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-  <span class="o">]</span>
-<span class="o">}</span>
-</pre></div>
-</div>
-<p><strong>Python</strong></p>
+<p><strong>Python:</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
 <span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/matches&quot;</span>
 
 <span class="n">header</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;api-key&gt;&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/vnd.api+json&quot;</span>
+  <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;api-key&gt;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;Accept&quot;</span><span class="p">:</span> <span class="s2">&quot;application/vnd.api+json&quot;</span>
 <span class="p">}</span>
 
 <span class="n">query</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;createdAt&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;filter[playerNames]&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;playerName&gt;&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;filter[createdAt-start]&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-02-28T13:25:30Z&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;page[limit]&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span>
+  <span class="s2">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;createdAt&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;filter[playerNames]&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;playerName&gt;&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;filter[createdAt-start]&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-11-10T13:25:30Z&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;page[limit]&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span>
 <span class="p">}</span>
 
 <span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="n">header</span><span class="p">,</span> <span class="n">params</span><span class="o">=</span><span class="n">query</span><span class="p">)</span>
-
-<span class="o">**</span><span class="n">The</span> <span class="n">above</span> <span class="n">command</span> <span class="n">returns</span> <span class="n">JSON</span> <span class="n">structured</span> <span class="n">like</span> <span class="n">this</span><span class="p">:</span><span class="o">**</span>
-
-<span class="p">{</span>
-  <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;match&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;02b90214-c64d-11e6-9f6b-062445d3d668&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-01-06T20:30:08Z&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;duration&quot;</span><span class="p">:</span> <span class="mi">1482195372</span><span class="p">,</span>
-        <span class="s2">&quot;gameMode&quot;</span><span class="p">:</span> <span class="s2">&quot;casual&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;patchVersion&quot;</span><span class="p">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;shardId&quot;</span><span class="p">:</span> <span class="s2">&quot;na&quot;</span><span class="p">,</span>
-        <span class="s2">&quot;stats&quot;</span><span class="p">:</span> <span class="s2">&quot;acesEarned: 3, etc...&quot;</span>
-      <span class="p">},</span>
-      <span class="s2">&quot;relationships&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;rosters&quot;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;roster&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;ea77c2eb-d44e-11e6-8f77-0242ac130004&quot;</span>
-          <span class="p">},</span> <span class="p">{</span>
-            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;roster&quot;</span><span class="p">,</span>
-            <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;dc2c14b4-d50c-11e6-bf26-cec0c932ce01&quot;</span>
-          <span class="p">}]</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span>
 </pre></div>
 </div>
-<p><strong>Go</strong></p>
+<p><strong>Go:</strong></p>
 <div class="highlight-go"><div class="highlight"><pre><span></span><span class="nx">q</span> <span class="o">:=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nx">Query</span><span class="p">()</span>
 <span class="nx">q</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="s">&quot;sort&quot;</span><span class="p">,</span> <span class="s">&quot;createdAt&quot;</span><span class="p">)</span>
 <span class="nx">q</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="s">&quot;filter[playerNames]&quot;</span><span class="p">,</span> <span class="s">&quot;&lt;playerName&gt;&quot;</span><span class="p">)</span>
-<span class="nx">q</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="s">&quot;filter[createdAt-start]&quot;</span><span class="p">,</span> <span class="s">&quot;2017-02-27T13:25:30Z&quot;</span><span class="p">)</span>
+<span class="nx">q</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="s">&quot;filter[createdAt-start]&quot;</span><span class="p">,</span> <span class="s">&quot;2017-11-10T13:25:30Z&quot;</span><span class="p">)</span>
 <span class="nx">q</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="s">&quot;page[limit]&quot;</span><span class="p">,</span> <span class="s">&quot;3&quot;</span><span class="p">)</span>
 <span class="nx">req</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nx">RawQuery</span> <span class="p">=</span> <span class="nx">q</span><span class="p">.</span><span class="nx">Encode</span><span class="p">()</span>
 <span class="nx">res</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">client</span><span class="p">.</span><span class="nx">Do</span><span class="p">(</span><span class="nx">req</span><span class="p">)</span>
-
-  <span class="o">**</span><span class="nx">The</span> <span class="nx">above</span> <span class="nx">command</span> <span class="nx">returns</span> <span class="nx">JSON</span> <span class="nx">structured</span> <span class="nx">like</span> <span class="nx">this</span><span class="p">:</span><span class="o">**</span>
-
-<span class="p">{</span>
-  <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;match&quot;</span><span class="p">,</span>
-      <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;02b90214-c64d-11e6-9f6b-062445d3d668&quot;</span><span class="p">,</span>
-      <span class="s">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s">&quot;2017-01-06T20:30:08Z&quot;</span><span class="p">,</span>
-        <span class="s">&quot;duration&quot;</span><span class="p">:</span> <span class="mi">1482195372</span><span class="p">,</span>
-        <span class="s">&quot;gameMode&quot;</span><span class="p">:</span> <span class="s">&quot;casual&quot;</span><span class="p">,</span>
-        <span class="s">&quot;patchVersion&quot;</span><span class="p">:</span> <span class="s">&quot;1.0.0&quot;</span><span class="p">,</span>
-        <span class="s">&quot;shardId&quot;</span><span class="p">:</span> <span class="s">&quot;na&quot;</span><span class="p">,</span>
-        <span class="s">&quot;stats&quot;</span><span class="p">:</span> <span class="s">&quot;acesEarned: 3, etc...&quot;</span>
-      <span class="p">},</span>
-      <span class="s">&quot;relationships&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s">&quot;rosters&quot;</span><span class="p">:</span> <span class="p">{</span>
-          <span class="s">&quot;data&quot;</span><span class="p">:</span> <span class="p">[{</span>
-            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;roster&quot;</span><span class="p">,</span>
-            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;ea77c2eb-d44e-11e6-8f77-0242ac130004&quot;</span>
-          <span class="p">},</span> <span class="p">{</span>
-            <span class="s">&quot;type&quot;</span><span class="p">:</span> <span class="s">&quot;roster&quot;</span><span class="p">,</span>
-            <span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;dc2c14b4-d50c-11e6-bf26-cec0c932ce01&quot;</span>
-          <span class="p">}]</span>
-        <span class="p">}</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">]</span>
-<span class="p">}</span>
+</pre></div>
+</div>
+<p>The above commands returns JSON structured like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+  &quot;data&quot;: [
+    {
+      &quot;type&quot;: &quot;match&quot;,
+      &quot;id&quot;: &quot;02b90214-c64d-11e6-9f6b-062445d3d668&quot;,
+      &quot;attributes&quot;: {
+        &quot;createdAt&quot;: &quot;2017-11-10T20:30:08Z&quot;,
+        &quot;duration&quot;: 1482195372,
+        &quot;gameMode&quot;: &quot;...&quot;,
+        &quot;patchVersion&quot;: &quot;0.14&quot;,
+        &quot;shardId&quot;: &quot;na&quot;,
+        &quot;stats&quot;: {
+          &quot;mapID&quot;: &quot;417DE573937D74E39BF40EB6CF82670B&quot;,
+          &quot;type&quot;: &quot;VSAI&quot;
+        }
+      },
+      &quot;relationships&quot;: {
+        &quot;rounds&quot;: [
+          {
+            &quot;type&quot;: &quot;round&quot;,
+            &quot;id&quot;: &quot;729cf263-08a7-43a2-9c0c-21c73ecd45af&quot;
+            &quot;attributes&quot;: {
+              &quot;Ordinal&quot;: 0,
+              &quot;stats&quot;: {
+                &quot;WinningTeam&quot;: 1
+              },
+              &quot;duration&quot;: 64
+            }
+          }
+          ...
+        ],
+        &quot;rosters&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;roster&quot;,
+              &quot;id&quot;: &quot;ea77c2eb-d44e-11e6-8f77-0242ac130004&quot;
+            },
+            {
+              &quot;type&quot;: &quot;roster&quot;,
+              &quot;id&quot;: &quot;dc2c14b4-d50c-11e6-bf26-cec0c932ce01&quot;
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
 </pre></div>
 </div>
 </div>
 <div class="section" id="get-a-single-match">
 <h2>Get a Single Match<a class="headerlink" href="#get-a-single-match" title="Permalink to this headline">¶</a></h2>
 <p>This endpoint retrieves a specific match.</p>
-<p><strong>HTTP Request</strong>
-<code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/matches/&lt;ID&gt;</span></code></p>
-<p><strong>URL Parameters</strong>
-Parameter: <code class="docutils literal"><span class="pre">ID</span></code>
-Description: <code class="docutils literal"><span class="pre">The</span> <span class="pre">ID</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">match</span> <span class="pre">to</span> <span class="pre">retrieve</span></code></p>
-<p><strong>Shell</strong></p>
+<p><strong>HTTP Request</strong></p>
+<p><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/matches/&lt;ID&gt;</span></code></p>
+<p><strong>URL Parameters</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="17%" />
+<col width="62%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Default</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ID</td>
+<td>none</td>
+<td>The ID of the match to retrieve</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Shell:</strong></p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/matches/&lt;matchID&gt;&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
-
-  **The above <span class="nb">command</span> returns JSON structured like this:**
-
-<span class="o">{</span>
-  <span class="s2">&quot;data&quot;</span>: <span class="o">{</span>
-    <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;match&quot;</span>,
-    <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;02b90214-c64d-11e6-9f6b-062445d3d668&quot;</span>,
-    <span class="s2">&quot;attributes&quot;</span>: <span class="o">{</span>
-      <span class="s2">&quot;createdAt&quot;</span>: <span class="s2">&quot;2017-01-06T20:30:08Z&quot;</span>,
-      <span class="s2">&quot;duration&quot;</span>: <span class="m">1482195372</span>,
-      <span class="s2">&quot;gameMode&quot;</span>: <span class="s2">&quot;casual&quot;</span>,
-      <span class="s2">&quot;patchVersion&quot;</span>: <span class="s2">&quot;1.0.0&quot;</span>,
-      <span class="s2">&quot;shardId&quot;</span>: <span class="s2">&quot;na&quot;</span>,
-      <span class="s2">&quot;stats&quot;</span>: <span class="s2">&quot;acesEarned: 3, etc...&quot;</span>
-    <span class="o">}</span>,
-    <span class="s2">&quot;relationships&quot;</span>: <span class="o">{</span>
-      <span class="s2">&quot;rosters&quot;</span>: <span class="o">{</span>
-        <span class="s2">&quot;data&quot;</span>: <span class="o">[{</span>
-          <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;roster&quot;</span>,
-          <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;ea77c2eb-d44e-11e6-8f77-0242ac130004&quot;</span>
-        <span class="o">}</span>, <span class="o">{</span>
-          <span class="s2">&quot;type&quot;</span>: <span class="s2">&quot;roster&quot;</span>,
-          <span class="s2">&quot;id&quot;</span>: <span class="s2">&quot;dc2c14b4-d50c-11e6-bf26-cec0c932ce01&quot;</span>
-        <span class="o">}]</span>
-      <span class="o">}</span>
-    <span class="o">}</span>
-  <span class="o">}</span>
-<span class="o">}</span>
 </pre></div>
 </div>
-<p><strong>Javascript</strong></p>
-<div class="highlight-Javascript"><div class="highlight"><pre><span></span>  <span class="c1">//There are a variety of Java HTTP libraries that support URL parameters</span>
-
-  <span class="p">{</span>
-  <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">{</span>
-    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;match&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;02b90214-c64d-11e6-9f6b-062445d3d668&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;attributes&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;createdAt&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-01-06T20:30:08Z&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;duration&quot;</span><span class="o">:</span> <span class="mi">1482195372</span><span class="p">,</span>
-      <span class="s2">&quot;gameMode&quot;</span><span class="o">:</span> <span class="s2">&quot;casual&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;patchVersion&quot;</span><span class="o">:</span> <span class="s2">&quot;1.0.0&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;shardId&quot;</span><span class="o">:</span> <span class="s2">&quot;na&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;stats&quot;</span><span class="o">:</span> <span class="s2">&quot;acesEarned: 3, etc...&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;relationships&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;rosters&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">[{</span>
-          <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;roster&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;ea77c2eb-d44e-11e6-8f77-0242ac130004&quot;</span>
-        <span class="p">},</span> <span class="p">{</span>
-          <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;roster&quot;</span><span class="p">,</span>
-          <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;dc2c14b4-d50c-11e6-bf26-cec0c932ce01&quot;</span>
-        <span class="p">}]</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">}</span>
+<p>The above command returns JSON structured like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+  &quot;data&quot;: {
+    &quot;type&quot;: &quot;match&quot;,
+    &quot;id&quot;: &quot;02b90214-c64d-11e6-9f6b-062445d3d668&quot;,
+    &quot;attributes&quot;: {
+      &quot;createdAt&quot;: &quot;2017-11-10T20:30:08Z&quot;,
+      &quot;duration&quot;: 1482195372,
+      &quot;gameMode&quot;: &quot;...&quot;,
+      &quot;patchVersion&quot;: &quot;0.14&quot;,
+      &quot;shardId&quot;: &quot;na&quot;,
+      &quot;stats&quot;: {
+        mapID&quot;: &quot;417DE573937D74E39BF40EB6CF82670B&quot;,
+        &quot;type&quot;: &quot;VSAI&quot;
+      }
+    },
+    &quot;relationships&quot;: {
+      &quot;rounds&quot;: [
+        {
+          &quot;type&quot;: &quot;round&quot;,
+          &quot;id&quot;: &quot;729cf263-08a7-43a2-9c0c-21c73ecd45af&quot;
+          &quot;attributes&quot;: {
+            &quot;Ordinal&quot;: 0,
+            &quot;stats&quot;: {
+              &quot;WinningTeam&quot;: 1
+            },
+            &quot;duration&quot;: 64
+          }
+        }
+        ...
+      ],
+      &quot;rosters&quot;: {
+        &quot;data&quot;: [
+          {
+            &quot;type&quot;: &quot;roster&quot;,
+            &quot;id&quot;: &quot;ea77c2eb-d44e-11e6-8f77-0242ac130004&quot;
+          },
+          {
+            &quot;type&quot;: &quot;roster&quot;,
+            &quot;id&quot;: &quot;dc2c14b4-d50c-11e6-bf26-cec0c932ce01&quot;
+          }
+        ]
+      }
+    }
+  }
+}
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -449,7 +385,6 @@ Description: <code class="docutils literal"><span class="pre">The</span> <span c
 <li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../samples/samples.html">Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../teams/teams.html">Teams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../links/links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Errors</a></li>
@@ -475,7 +410,7 @@ Description: <code class="docutils literal"><span class="pre">The</span> <span c
   </nav>
   <nav id="breadcrumbs">
     <ul>
-      <li><a href="../index.html">Battelrite 0.2 documentation</a></li> 
+      <li><a href="../index.html">Battlerite 1.0 documentation</a></li> 
     </ul>
   </nav>
   </div>

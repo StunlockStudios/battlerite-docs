@@ -15,7 +15,6 @@ Gamelocker Documentation
   players/players
   samples/samples
   telemetry/telemetry
-  teams/teams
   links/links
   community_sdks/community_sdks
   errors/errors

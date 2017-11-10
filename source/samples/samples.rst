@@ -13,8 +13,9 @@ This endpoint retrieves a collection of randomly selected matches.
 
 **HTTP Request**
 
-``GET https://api.dc01.gamelockerapp.com/shards/na/samples``
+|  ``GET https://api.dc01.gamelockerapp.com/shards/na/samples``
 
+**Query Parameters**
 
 =========================== ================ ===================================================================================================================
 Parameter                   Default          Description
@@ -26,63 +27,35 @@ filter[createdAt-start]     none             Must occur before end time. Format 
 filter[createdAt-end]       none             Queries search the last 3 hrs. Format is iso8601 i.e.filter[createdAt-end]=2017-01-01T13:25:30Z
 =========================== ================ ===================================================================================================================
 
-**Python:**
+**Shell:**
 
-.. code-block:: python
-
-  curl "https://api.dc01.gamelockerapp.com/shards/na/samples" \
-  -H "Authorization: Bearer <api-key>" \
-  -H "Accept: application/vnd.api+json"
-
-  //The above command returns JSON structured like this:
-
-  {
-      "type": "sample",
-      "id": "sample-na-2017-02-28T07:15:30Z",
-      "attributes": {
-        "URL": "URL of Sample Matches",
-        "createdAt": "2017-02-28T07:15:30Z",
-        "shardId": "na",
-        "t0": "2017-02-28T07:15:30Z",
-        "t1": "2017-02-28T08:15:30Z",
-        "titleId": "semc-vainglory"
-      },
-      "relationships": {
-        "assets": {
-          "data": []
-        }
-      }
-    }
-
-**Javascript:**
-
-.. code-block:: javascript
-
-  //There are a variety of Java HTTP libraries that support query-parameters.
+.. code-block:: shell
 
   curl "https://api.dc01.gamelockerapp.com/shards/na/samples" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
-  //The above command returns JSON structured like this:
+The above command returns JSON structured like this:
+
+.. code-block:: none
 
   {
-      "type": "sample",
-      "id": "sample-na-2017-02-28T07:15:30Z",
-      "attributes": {
-        "URL": "URL of Sample Matches",
-        "createdAt": "2017-02-28T07:15:30Z",
-        "shardId": "na",
-        "t0": "2017-02-28T07:15:30Z",
-        "t1": "2017-02-28T08:15:30Z",
-        "titleId": "semc-vainglory"
-      },
-      "relationships": {
-        "assets": {
-          "data": []
-        }
+    "type": "sample",
+    "id": "sample-2017-02-28T07:15:30Z",
+    "attributes": {
+      "URL": "URL of Sample Matches",
+      "createdAt": "2017-02-28T07:15:30Z",
+      "shardId": "na",
+      "t0": "2017-02-28T07:15:30Z",
+      "t1": "2017-02-28T08:15:30Z",
+      "titleId": "stunlock-battlerite"
+    },
+    "relationships": {
+      "assets": {
+        "data": []
       }
     }
+  }
 
 .. toctree::
   :maxdepth: 2

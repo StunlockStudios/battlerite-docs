@@ -6,107 +6,117 @@ Making Requests
 Content Negotiation
 ---------------------------
 
-Content Negotiation
-Clients using the api should specify that they accept responses using the ``application/vnd.api+json``format, for convenience we will also accept ``application/json`` since it is the default for many popular client libraries.
+Clients using the api should specify that they accept responses using the ``application/vnd.api+json`` format, for convenience we will also accept ``application/json`` since it is the default for many popular client libraries.
 
 The Server will respond with a ``Content-Type`` header that mirrors the format requested by the Client.
 
 Regions
 ---------------------------
 
-The Vainglory Game Data Service currently supports the following regions:
+The Battlerite Game Data Service currently supports the following regions:
 
-*General Region Shards*
-
-To find data regarding live servers, where all data is found, please use the following shards.
+*General Region Shards:* To find data regarding live servers, where all data is found, please use the following shards.
 
 * **North America:** ``na``
-* **Europe:** ``eu:``
-* **South America:** ``sa``
-* **East Asia:** ``ea``
-* **Southeast Asia (SEA):** ``sg``
+* **Europe:** ``eu``
+* **South America:** ``south_america``
+* **Asia:** ``asia``
+* **oceania:** ``oce``
 
-*Tournament Region Shards*
+*Please note: Choosing a specific region is currently required*
 
-To find data regarding professional eSport, which take place on the private client only, please use the following shards.
+To specify a region, use this code:
 
-* **North America Tournaments:** ``tournament-na``
-* **Europe Tournaments:** ``tournament-eu``
-* **South America Tournaments:** ``tournament-sa``
-* **East Asia Tournaments:** ``tournament-ea``
-* **Southeast Asia Tournaments:** :tournament-sg:
-
-*Choosing a specific region is currently required*
-
-**Javascript**
-
-.. code-block:: javascript
-
-  To specify a region, use this code:
+.. code-block:: none
 
   "...gamelockerapp.com/shards/<region>/..."
+
+
 
 GZIP
 ---------------------------
 
-Clients can specify the header ``Accept-Encoding: gzip`` and the server will compress responses.
-Responses will be returns with ``Content-Encoding: gzip``.
+Clients can specify the header ``Accept-Encoding: gzip`` and the server will compress responses. Responses will be returned with ``Content-Encoding: gzip``.
 
 Given the size of matches, this can have significant performance benefits.
 
-**Shell**
+To specify the header Accept-Encoding, use this code:
 
-.. code-block:: javascript
+**Shell:**
 
-  To specify the header Accept-Encoding, use this code:
+.. code-block:: shell
 
   -H "Accept-Encoding: gzip"
 
-**Java**
+
+**Java:**
 
 .. code-block:: java
 
-  To specify the header Accept-Encoding, use this code:
-
   conn.setRequestProperty("Accept-Encoding","gzip");
 
-**Python**
+
+**Python:**
 
 .. code-block:: python
 
-  To specify the header Accept-Encoding, use this code:
-
   header = {"Accept-Encoding":"gzip"}
 
-**Go**
+
+**Go:**
 
 .. code-block:: go
 
-  To specify the header Accept-Encoding, use this code:
-
   req.Header.Set("Accept-Encoding", "gzip")
+
+
 
 Pagination
 ---------------------------
 
-Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the limit and offset parameters. To fetch items 2 through 10 you would specify a limit of 8 and an offset of 2:
+Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the limit and offset parameters. To fetch items 3 through 5 you would specify a limit of 5 and an offset of 3:
 
-If not specified, the server will default for matches to ``limit=5`` and ``offset=0``, and for players/samples to ``limit=50`` and ``offset=0``
+If not specified, the server will default to ``offset=0``, and the following values for ``limit``:
 
- *Important - Currently the server will not allow responses with over 50 primary data objects*
+| Matches: 5
+| players/samples: 6
+
+Note that the above values are also the maximum values for ``limit``.
+
+.. code-block:: shell
+
+  curl -g "https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&page[offset]=3" \
+  -H "Authorization: Bearer <api-key>" \
+  -H "Accept: application/vnd.api+json"
+
+At the end of the JSON returned by the above command you will find links to the first, next, and current pages:
+
+.. code-block:: none
+
+  "links": {
+    "first": "https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&page[offset]=0",
+    "next": "https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&page[offset]=8",
+    "self": "https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&page[offset]=3"
+  },
+
+There will also be a previous page link when appropriate.
+
+
 
 Search Time
 ---------------------------
 
-* Data retention period: 120 days.
-* The max search time span between createdAt-start and createdAt-end: 28 days.
 
 **Defaults:**
+
+* Data retention period: 120 days.
+* The max search time span between createdAt-start and createdAt-end: 28 days.
 * If you don't specify createdAt-start, the default is now - 28 days.
 * If you don't specify createdAt-end, the default is now.
 * If you search for a time > now, the default is now.
 * If you search for a time before the retention period, the default is the retention period (now - 120 days).
 * If createdAt-start >= createdAt-end, you will receive an error.
+
 
 Sorting
 ---------------------------
@@ -115,28 +125,34 @@ The default sort order is always ascending. Ascending corresponds to the standar
 
 All resource collections have a default sort order. In addition, some resources provide the ability to sort according to one or more criteria ("sort fields").
 
-If sort fields are is prefixed with a minus, the order will be changed to descending.
+If sort fields are prefixed with a minus, the order will be changed to descending.
 
-**Javascript**
+The example below will return the oldest articles first:
 
-.. code-block:: javascript
+.. code-block:: none
 
-  **The example below will return the oldest articles first:**
   ".../matches?sort=createdAt"
 
-  **The example below will return the newest articles first:**
+The example below will return the newest articles first:
+
+.. code-block:: none
+
   ".../matches?sort=-createdAt"
+
+
 
 JSON-P Callbacks
 ---------------------------
 
-You can send a ?callback parameter to any GET call to have the results wrapped in a JSON function. This is typically used when browsers want to embed content in web pages by getting around cross domain issues. The response includes the same data output as the regular API, plus the relevant HTTP Header information.
+You can send a ``?callback`` parameter to any GET call to have the results wrapped in a JSON function. This is typically used when browsers want to embed content in web pages by getting around cross domain issues. The response includes the same data output as the regular API, plus the relevant HTTP Header information.
 
-**Shell**
+**Shell:**
 
 .. code-block:: shell
 
   curl -g "https://api.dc01.gamelockerapp.com/status?callback=foo"
+
+
 
 
 Cross Origin Resource Sharing
@@ -146,7 +162,7 @@ This is what the CORS preflight request looks like. The API supports Cross Origi
 
 Here's a sample request sent from a browser hitting http://example.com:
 
-**Shell**
+**Shell:**
 
 .. code-block:: shell
 
@@ -156,7 +172,9 @@ Here's a sample request sent from a browser hitting http://example.com:
   Access-Control-Allow-Origin: *
   Access-Control-Expose-Headers: Content-Length
 
-  This is what the CORS preflight request looks like:
+This is what the CORS preflight request looks like:
+
+.. code-block:: shell
 
   curl -i https://api.dc01.gamelockerapp.com/status -H "Origin: http://example.com" -X OPTIONS
   HTTP/1.1 200 OK
@@ -165,8 +183,6 @@ Here's a sample request sent from a browser hitting http://example.com:
   Access-Control-Allow-Methods: GET,POST,OPTIONS
   Access-Control-Allow-Origin: *
   Access-Control-Max-Age: 86400
-
-
 
 
 .. toctree::

@@ -13,19 +13,21 @@ This endpoint retrieves a collection of up to 6 teams.
 *Important - Team resources are not yet available in the API.*
 
 **HTTP Request**
+
+
 ``GET https://api.dc01.gamelockerapp.com/teams``
 
 **URL Parameters**
-=========================== ================ =================================================================================================================== 
-Parameter                   Default          Description                                               
-=========================== ================ ===================================================================================================================
-filter[teamNames]           none             Filters by team name. Usage: filter[teamNames]=team1                                     
-filter[teamIds]             none             Filter by team id. Usage: filter[teamIds]=12345             
-=========================== ================ ===================================================================================================================
 
-*Remember — a happy team is an authenticated team!*
+|  Parameter: filter[teamNames]
+|  Default: none
+|  Description: Filters by team name. Usage: filter[teamNames]=team1
 
-**Shell**
+|  Parameter: filter[teamIds]
+|  Default: none
+|  Description: Filter by team id. Usage: filter[teamIds]=12345
+
+**Shell:**
 
 .. code-block:: shell
 
@@ -33,38 +35,41 @@ filter[teamIds]             none             Filter by team id. Usage: filter[te
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
+
+
 Get a Single Team
 ---------------------------
 
 This endpoint retrieves a specific team.
 
 **HTTP Request**
-``GET https://api.dc01.gamelockerapp.com/teams/<ID>``
+
+|  ``GET https://api.dc01.gamelockerapp.com/teams/<ID>``
 
 **URL Parameters**
-=========================== =================================================================================================================== 
-Parameter                   Description                                               
-=========================== =================================================================================================================== 
-ID                          The ID of the team to retrieve                                            
-=========================== =================================================================================================================== 
+
+|  Parameter: ID
+|  Description: The ID of the team to retrieve
 
 
-**Shell**
+**Shell:**
 
 .. code-block:: shell
 
-	  curl "https://api.dc01.gamelockerapp.com/teams/<ID>" \
-	  -H "Authorization: Bearer <api-key>" \
-	  -H "Accept: application/vnd.api+json"
+	curl "https://api.dc01.gamelockerapp.com/teams/<ID>" \
+	-H "Authorization: Bearer <api-key>" \
+	-H "Accept: application/vnd.api+json"
 
-	  The above command returns JSON structured like this:
-	  
+The above command returns JSON structured like this:
+
+.. code-block:: none
+
 	{
-	  "id": 2,
-	  "name": "Max",
-	  "breed": "unknown",
-	  "fluffiness": 5,
-	  "cuteness": 10
+		"id": 2,
+		"name": "Max",
+		"breed": "unknown",
+		"fluffiness": 5,
+	 	"cuteness": 10
 	}
 
 .. toctree::

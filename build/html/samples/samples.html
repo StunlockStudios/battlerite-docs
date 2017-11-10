@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Samples &#8212; Battelrite 0.2 documentation</title>
+    <title>Samples &#8212; Battlerite 1.0 documentation</title>
     <link rel="stylesheet" href="../_static/css/battlerite.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -59,7 +59,7 @@
   </nav>
   <nav id="breadcrumbs">
     <ul>
-      <li><a href="../index.html">Battelrite 0.2 documentation</a></li> 
+      <li><a href="../index.html">Battlerite 1.0 documentation</a></li> 
     </ul>
   </nav>
   </div>  
@@ -75,8 +75,11 @@
 <div class="section" id="get-a-collection-of-samples">
 <h2>Get a Collection of Samples<a class="headerlink" href="#get-a-collection-of-samples" title="Permalink to this headline">¶</a></h2>
 <p>This endpoint retrieves a collection of randomly selected matches.</p>
-<p><strong>HTTP Request</strong>
-<code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/samples</span></code></p>
+<p><strong>HTTP Request</strong></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/samples</span></code></div>
+</div>
+<p><strong>Query Parameters</strong></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
@@ -112,58 +115,30 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Shell</strong></p>
-<div class="highlight-python"><div class="highlight"><pre><span></span><span class="n">curl</span> <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/samples&quot;</span> \
-<span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> \
-<span class="o">-</span><span class="n">H</span> <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
-
-<span class="o">*</span><span class="n">The</span> <span class="n">above</span> <span class="n">command</span> <span class="n">returns</span> <span class="n">JSON</span> <span class="n">structured</span> <span class="n">like</span> <span class="n">this</span><span class="p">:</span><span class="o">*</span>
-
-<span class="p">{</span>
-    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;sample&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;id&quot;</span><span class="p">:</span> <span class="s2">&quot;sample-na-2017-02-28T07:15:30Z&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;URL&quot;</span><span class="p">:</span> <span class="s2">&quot;URL of Sample Matches&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;createdAt&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-02-28T07:15:30Z&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;shardId&quot;</span><span class="p">:</span> <span class="s2">&quot;na&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;t0&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-02-28T07:15:30Z&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;t1&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-02-28T08:15:30Z&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;titleId&quot;</span><span class="p">:</span> <span class="s2">&quot;semc-vainglory&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;relationships&quot;</span><span class="p">:</span> <span class="p">{</span>
-      <span class="s2">&quot;assets&quot;</span><span class="p">:</span> <span class="p">{</span>
-        <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="p">[]</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<p><strong>Shell:</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/samples&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
 </div>
-<p><strong>Javascript</strong></p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">//There are a variety of Java HTTP libraries that support query-parameters.</span>
-
-<span class="nx">curl</span> <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/samples&quot;</span> <span class="o">\</span>
-<span class="o">-</span><span class="nx">H</span> <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="o">\</span>
-<span class="o">-</span><span class="nx">H</span> <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
-
-<span class="o">*</span><span class="nx">The</span> <span class="nx">above</span> <span class="nx">command</span> <span class="nx">returns</span> <span class="nx">JSON</span> <span class="nx">structured</span> <span class="nx">like</span> <span class="k">this</span><span class="o">:*</span>
-
-<span class="p">{</span>
-    <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="s2">&quot;sample&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;id&quot;</span><span class="o">:</span> <span class="s2">&quot;sample-na-2017-02-28T07:15:30Z&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;attributes&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;URL&quot;</span><span class="o">:</span> <span class="s2">&quot;URL of Sample Matches&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;createdAt&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-02-28T07:15:30Z&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;shardId&quot;</span><span class="o">:</span> <span class="s2">&quot;na&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;t0&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-02-28T07:15:30Z&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;t1&quot;</span><span class="o">:</span> <span class="s2">&quot;2017-02-28T08:15:30Z&quot;</span><span class="p">,</span>
-      <span class="s2">&quot;titleId&quot;</span><span class="o">:</span> <span class="s2">&quot;semc-vainglory&quot;</span>
-    <span class="p">},</span>
-    <span class="s2">&quot;relationships&quot;</span><span class="o">:</span> <span class="p">{</span>
-      <span class="s2">&quot;assets&quot;</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s2">&quot;data&quot;</span><span class="o">:</span> <span class="p">[]</span>
-      <span class="p">}</span>
-    <span class="p">}</span>
-  <span class="p">}</span>
+<p>The above command returns JSON structured like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+  &quot;type&quot;: &quot;sample&quot;,
+  &quot;id&quot;: &quot;sample-2017-02-28T07:15:30Z&quot;,
+  &quot;attributes&quot;: {
+    &quot;URL&quot;: &quot;URL of Sample Matches&quot;,
+    &quot;createdAt&quot;: &quot;2017-02-28T07:15:30Z&quot;,
+    &quot;shardId&quot;: &quot;...&quot;,
+    &quot;t0&quot;: &quot;2017-02-28T07:15:30Z&quot;,
+    &quot;t1&quot;: &quot;2017-02-28T08:15:30Z&quot;,
+    &quot;titleId&quot;: &quot;stunlock-battlerite&quot;
+  },
+  &quot;relationships&quot;: {
+    &quot;assets&quot;: {
+      &quot;data&quot;: []
+    }
+  }
+}
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -193,7 +168,6 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../teams/teams.html">Teams</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../links/links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Errors</a></li>
@@ -219,7 +193,7 @@
   </nav>
   <nav id="breadcrumbs">
     <ul>
-      <li><a href="../index.html">Battelrite 0.2 documentation</a></li> 
+      <li><a href="../index.html">Battlerite 1.0 documentation</a></li> 
     </ul>
   </nav>
   </div>

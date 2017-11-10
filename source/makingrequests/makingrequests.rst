@@ -19,25 +19,15 @@ The Battlerite Game Data Service currently supports the following regions:
 
 * **North America:** ``na``
 * **Europe:** ``eu``
-* **South America:** ``sa``
-* **East Asia:** ``ea``
-* **Southeast Asia (SEA):** ``sa``
-
-*Tournament Region Shards:* To find data regarding professional eSport, which take place on the private client only, please use the following shards.
-
-* **North America Tournaments:** ``tournament-na``
-* **Europe Tournaments:** ``tournament-eu``
-* **South America Tournaments:** ``tournament-sa``
-* **East Asia Tournaments:** ``tournament-ea``
-* **Southeast Asia Tournaments:** ``tournament-sg``
+* **South America:** ``south_america``
+* **Asia:** ``asia``
+* **oceania:** ``oce``
 
 *Please note: Choosing a specific region is currently required*
 
-**Javascript:**
+To specify a region, use this code:
 
-.. code-block:: javascript
-
-  To specify a region, use this code:
+.. code-block:: none
 
   "...gamelockerapp.com/shards/<region>/..."
 
@@ -46,16 +36,15 @@ The Battlerite Game Data Service currently supports the following regions:
 GZIP
 ---------------------------
 
-Clients can specify the header ``Accept-Encoding: gzip`` and the server will compress responses.
-Responses will be returns with ``Content-Encoding: gzip``.
+Clients can specify the header ``Accept-Encoding: gzip`` and the server will compress responses. Responses will be returned with ``Content-Encoding: gzip``.
 
 Given the size of matches, this can have significant performance benefits.
 
+To specify the header Accept-Encoding, use this code:
+
 **Shell:**
 
-.. code-block:: javascript
-
-  To specify the header Accept-Encoding, use this code:
+.. code-block:: shell
 
   -H "Accept-Encoding: gzip"
 
@@ -64,16 +53,12 @@ Given the size of matches, this can have significant performance benefits.
 
 .. code-block:: java
 
-  To specify the header Accept-Encoding, use this code:
-
   conn.setRequestProperty("Accept-Encoding","gzip");
 
 
 **Python:**
 
 .. code-block:: python
-
-  To specify the header Accept-Encoding, use this code:
 
   header = {"Accept-Encoding":"gzip"}
 
@@ -82,8 +67,6 @@ Given the size of matches, this can have significant performance benefits.
 
 .. code-block:: go
 
-  To specify the header Accept-Encoding, use this code:
-
   req.Header.Set("Accept-Encoding", "gzip")
 
 
@@ -91,11 +74,32 @@ Given the size of matches, this can have significant performance benefits.
 Pagination
 ---------------------------
 
-Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the limit and offset parameters. To fetch items 2 through 10 you would specify a limit of 8 and an offset of 2:
+Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the limit and offset parameters. To fetch items 3 through 5 you would specify a limit of 5 and an offset of 3:
 
-If not specified, the server will default for matches to ``limit=5`` and ``offset=0``, and for players/samples to ``limit=50`` and ``offset=0``
+If not specified, the server will default to ``offset=0``, and the following values for ``limit``:
 
- *Important - Currently the server will not allow responses with over 50 primary data objects*
+| Matches: 5
+| players/samples: 6
+
+Note that the above values are also the maximum values for ``limit``.
+
+.. code-block:: shell
+
+  curl -g "https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&page[offset]=3" \
+  -H "Authorization: Bearer <api-key>" \
+  -H "Accept: application/vnd.api+json"
+
+At the end of the JSON returned by the above command you will find links to the first, next, and current pages:
+
+.. code-block:: none
+
+  "links": {
+    "first": "https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&page[offset]=0",
+    "next": "https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&page[offset]=8",
+    "self": "https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&page[offset]=3"
+  },
+
+There will also be a previous page link when appropriate.
 
 
 
@@ -121,16 +125,18 @@ The default sort order is always ascending. Ascending corresponds to the standar
 
 All resource collections have a default sort order. In addition, some resources provide the ability to sort according to one or more criteria ("sort fields").
 
-If sort fields are is prefixed with a minus, the order will be changed to descending.
+If sort fields are prefixed with a minus, the order will be changed to descending.
 
-**Javascript**
+The example below will return the oldest articles first:
 
-.. code-block:: javascript
+.. code-block:: none
 
-  //The example below will return the oldest articles first:
   ".../matches?sort=createdAt"
 
-  //The example below will return the newest articles first:
+The example below will return the newest articles first:
+
+.. code-block:: none
+
   ".../matches?sort=-createdAt"
 
 
@@ -166,7 +172,9 @@ Here's a sample request sent from a browser hitting http://example.com:
   Access-Control-Allow-Origin: *
   Access-Control-Expose-Headers: Content-Length
 
-  This is what the CORS preflight request looks like:
+This is what the CORS preflight request looks like:
+
+.. code-block:: shell
 
   curl -i https://api.dc01.gamelockerapp.com/status -H "Origin: http://example.com" -X OPTIONS
   HTTP/1.1 200 OK
@@ -175,8 +183,6 @@ Here's a sample request sent from a browser hitting http://example.com:
   Access-Control-Allow-Methods: GET,POST,OPTIONS
   Access-Control-Allow-Origin: *
   Access-Control-Max-Age: 86400
-
-
 
 
 .. toctree::

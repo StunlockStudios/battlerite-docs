@@ -5,13 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Teams &#8212; Battelrite 0.2 documentation</title>
+    <title>Teams &#8212; Battlerite 1.0 documentation</title>
     <link rel="stylesheet" href="../_static/css/battlerite.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    '../',
-        VERSION:     '0.2',
+        VERSION:     '1.0',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '.html',
         HAS_SOURCE:  true,
@@ -59,7 +59,7 @@
   </nav>
   <nav id="breadcrumbs">
     <ul>
-      <li><a href="../index.html">Battelrite 0.2 documentation</a></li> 
+      <li><a href="../index.html">Battlerite 1.0 documentation</a></li> 
     </ul>
   </nav>
   </div>  
@@ -76,17 +76,20 @@
 <h2>Get a collection of Teams<a class="headerlink" href="#get-a-collection-of-teams" title="Permalink to this headline">¶</a></h2>
 <p>This endpoint retrieves a collection of up to 6 teams.</p>
 <p><em>Important - Team resources are not yet available in the API.</em></p>
-<p><strong>HTTP Request</strong>
-<code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/teams</span></code></p>
-<p><strong>URL Parameters</strong>
-=========================== ================ ===================================================================================================================
-Parameter                   Default          Description
-=========================== ================ ===================================================================================================================
-filter[teamNames]           none             Filters by team name. Usage: filter[teamNames]=team1
-filter[teamIds]             none             Filter by team id. Usage: filter[teamIds]=12345
-=========================== ================ ===================================================================================================================</p>
-<p><em>Remember — a happy team is an authenticated team!</em></p>
-<p><strong>Shell</strong></p>
+<p><strong>HTTP Request</strong></p>
+<p><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/teams</span></code></p>
+<p><strong>URL Parameters</strong></p>
+<div class="line-block">
+<div class="line">Parameter: filter[teamNames]</div>
+<div class="line">Default: none</div>
+<div class="line">Description: Filters by team name. Usage: filter[teamNames]=team1</div>
+</div>
+<div class="line-block">
+<div class="line">Parameter: filter[teamIds]</div>
+<div class="line">Default: none</div>
+<div class="line">Description: Filter by team id. Usage: filter[teamIds]=12345</div>
+</div>
+<p><strong>Shell:</strong></p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/teams?filter[teamNames]=team1&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
@@ -96,28 +99,29 @@ filter[teamIds]             none             Filter by team id. Usage: filter[te
 <div class="section" id="get-a-single-team">
 <h2>Get a Single Team<a class="headerlink" href="#get-a-single-team" title="Permalink to this headline">¶</a></h2>
 <p>This endpoint retrieves a specific team.</p>
-<p><strong>HTTP Request</strong>
-<code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/teams/&lt;ID&gt;</span></code></p>
-<p><strong>URL Parameters</strong>
-=========================== ===================================================================================================================
-Parameter                   Description
-=========================== ===================================================================================================================
-ID                          The ID of the team to retrieve
-=========================== ===================================================================================================================</p>
-<p><strong>Shell</strong></p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>  curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/teams/&lt;ID&gt;&quot;</span> <span class="se">\</span>
-  -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
-  -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
-
-  The above <span class="nb">command</span> returns JSON structured like this:
-
-<span class="o">{</span>
-  <span class="s2">&quot;id&quot;</span>: <span class="m">2</span>,
-  <span class="s2">&quot;name&quot;</span>: <span class="s2">&quot;Max&quot;</span>,
-  <span class="s2">&quot;breed&quot;</span>: <span class="s2">&quot;unknown&quot;</span>,
-  <span class="s2">&quot;fluffiness&quot;</span>: <span class="m">5</span>,
-  <span class="s2">&quot;cuteness&quot;</span>: <span class="m">10</span>
-<span class="o">}</span>
+<p><strong>HTTP Request</strong></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/teams/&lt;ID&gt;</span></code></div>
+</div>
+<p><strong>URL Parameters</strong></p>
+<div class="line-block">
+<div class="line">Parameter: ID</div>
+<div class="line">Description: The ID of the team to retrieve</div>
+</div>
+<p><strong>Shell:</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/teams/&lt;ID&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+</pre></div>
+</div>
+<p>The above command returns JSON structured like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+        &quot;id&quot;: 2,
+        &quot;name&quot;: &quot;Max&quot;,
+        &quot;breed&quot;: &quot;unknown&quot;,
+        &quot;fluffiness&quot;: 5,
+        &quot;cuteness&quot;: 10
+}
 </pre></div>
 </div>
 <div class="toctree-wrapper compound">
@@ -174,7 +178,7 @@ ID                          The ID of the team to retrieve
   </nav>
   <nav id="breadcrumbs">
     <ul>
-      <li><a href="../index.html">Battelrite 0.2 documentation</a></li> 
+      <li><a href="../index.html">Battlerite 1.0 documentation</a></li> 
     </ul>
   </nav>
   </div>
