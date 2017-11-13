@@ -76,17 +76,31 @@ winningTeam        int             Winning Team
 Rosters Object
 ---------------------------
 
-=================  ==============  ============================
+=================  ==============  =================================
 Variable    	   Type            Description
-=================  ==============  ============================
+=================  ==============  =================================
 id                 str             ID of Roster
 type               str             Roster
 participants       obj             See Participants
-stats              obj             See Rosters.stats
+stats              obj             See Rosters.stats (coming soon)
 team               obj             See Rosters.team
 won                str             Indiciates if a roster won
 shardId            str             Region Shard
-=================  ==============  ============================
+=================  ==============  =================================
+
+**Rosters.team**
+
+=================  ==============  ================================
+Variable    	   Type            Description
+=================  ==============  ================================
+id                 str             ID of Team or None
+name               str             Name of Team or None
+type               str             team
+titleId            str             Identifies the studio and game
+shardId            str             Region Shard
+createdAt          str (iso8601)   Team creation time
+assets             obj             Same structure as Match.assets
+=================  ==============  ================================
 
 Participants Object
 ---------------------------
@@ -103,9 +117,9 @@ type               str             participants
 
 **Participants.player**
 
-=================  ==============  ===========================
+=================  ==============  ================================
 Variable    	   Type            Description
-=================  ==============  ===========================
+=================  ==============  ================================
 id                 str             UID of player
 name               str             IGN of player
 stats              map             Player Stats
@@ -113,9 +127,9 @@ type               str             Player
 titleId            str             The studio and game title
 shardId            str             Region Shard
 createdAt          str (iso8601)   Player signup date
-assets             obj             Same as Match.assets
+assets             obj             Same structure as Match.assets
 patchVersion       str             Version of the game
-=================  ==============  ===========================
+=================  ==============  ================================
 
 **Participants.stats**
 

@@ -32,12 +32,11 @@
 	<div class="menu-top-outer clearfix">
 		<div class="wrapper clearfix">
 			<a href="/" id="site-logo"></a>
-			<span id="logSignBtn" class="btn">Login / Signup</span>
+			<a href="https://developer.battlerite.com/users/sign_in"><span id="logSignBtn" class="btn">Login / Signup</span></a>
 			<nav id="mainMenu" class="main-menu-con">
 				<ul class="main-menu clearfix">
-					<li><a class="active" href="guides.html">Documentation</a></li>
-					<li><a href="faq.html">Faqs</a></li>
-					<li><a href="creations.html">Creations</a></li>
+					<li><a class="active" href="index.html">Documentation</a></li>
+					<li><a href="https://developer.battlerite.com/faq">Faqs</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -276,9 +275,9 @@
 <h2>Rosters Object<a class="headerlink" href="#rosters-object" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="29%" />
-<col width="24%" />
-<col width="47%" />
+<col width="27%" />
+<col width="22%" />
+<col width="52%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Variable</th>
@@ -301,7 +300,7 @@
 </tr>
 <tr class="row-odd"><td>stats</td>
 <td>obj</td>
-<td>See Rosters.stats</td>
+<td>See Rosters.stats (coming soon)</td>
 </tr>
 <tr class="row-even"><td>team</td>
 <td>obj</td>
@@ -314,6 +313,50 @@
 <tr class="row-even"><td>shardId</td>
 <td>str</td>
 <td>Region Shard</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rosters.team</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="22%" />
+<col width="51%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>id</td>
+<td>str</td>
+<td>ID of Team or None</td>
+</tr>
+<tr class="row-odd"><td>name</td>
+<td>str</td>
+<td>Name of Team or None</td>
+</tr>
+<tr class="row-even"><td>type</td>
+<td>str</td>
+<td>team</td>
+</tr>
+<tr class="row-odd"><td>titleId</td>
+<td>str</td>
+<td>Identifies the studio and game</td>
+</tr>
+<tr class="row-even"><td>shardId</td>
+<td>str</td>
+<td>Region Shard</td>
+</tr>
+<tr class="row-odd"><td>createdAt</td>
+<td>str (iso8601)</td>
+<td>Team creation time</td>
+</tr>
+<tr class="row-even"><td>assets</td>
+<td>obj</td>
+<td>Same structure as Match.assets</td>
 </tr>
 </tbody>
 </table>
@@ -358,9 +401,9 @@
 <p><strong>Participants.player</strong></p>
 <table border="1" class="docutils">
 <colgroup>
-<col width="29%" />
-<col width="24%" />
-<col width="47%" />
+<col width="27%" />
+<col width="22%" />
+<col width="51%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Variable</th>
@@ -399,7 +442,7 @@
 </tr>
 <tr class="row-odd"><td>assets</td>
 <td>obj</td>
-<td>Same as Match.assets</td>
+<td>Same structure as Match.assets</td>
 </tr>
 <tr class="row-even"><td>patchVersion</td>
 <td>str</td>
