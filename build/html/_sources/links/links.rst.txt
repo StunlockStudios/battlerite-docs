@@ -3,6 +3,7 @@
 Links
 ======
 
+
 Get a Link
 ---------------------------
 
@@ -19,7 +20,6 @@ This endpoint checks to see if a link object exists for a given code.
 	curl "https://api.dc01.gamelockerapp.com/shards/<region>/link/{id}" \
 	-H "Authorization: Bearer <api-key>" \
 	-H "Accept: application/vnd.api+json"
-
 
 
 Post a Link
@@ -47,8 +47,6 @@ code        none      The verification code
 	curl -XPOST "https://api.dc01.gamelockerapp.com/shards/<region>/link/{player_id}" \
 	-H "Authorization: Bearer <api-key>" \
 	-H "Accept: application/vnd.api+json"
-
-
 
 
 Player Link

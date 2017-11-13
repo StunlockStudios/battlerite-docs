@@ -71,7 +71,7 @@
             
   <div class="section" id="telemetry">
 <span id="id1"></span><h1>Telemetry<a class="headerlink" href="#telemetry" title="Permalink to this headline">¶</a></h1>
-<p>The telemtry data provides us with insights into a match. It gives us details of various events that happened in the match alongwith the time when they happened. Some of the events also have location which can be plotted on a Battlerite Game map. Telemetry is very useful to generate a timeline visualtions of how the match went for replays, or create heatmaps of where a certin hero or ability is most useful. These are just some of the exmaples of where Telemtry can be used.</p>
+<p>The telemtry data provides us with insights into a match. It gives us details of various events that happened in the match, along with the time when they happened. Some of the events also have a location which can be plotted on a Battlerite Game map. Telemetry is very useful to generate a timeline visualtions of how the match went for replays, or create heatmaps of where a certin hero or ability is most useful. These are just some of the exmaples of where Telemtry can be used.</p>
 <div class="section" id="to-get-telemetry-data">
 <h2>To get Telemetry Data<a class="headerlink" href="#to-get-telemetry-data" title="Permalink to this headline">¶</a></h2>
 <p>You start by pulling a list of matches using the matches endopoint.</p>
@@ -83,7 +83,7 @@
 -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
 </div>
-<p>The above command returns JSON structured like this:</p>
+<p>The above commands returns JSON structured like this:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>{
   &quot;data&quot;: [
     {
@@ -127,7 +127,7 @@
 }
 </pre></div>
 </div>
-<p>You need to look for Assets JSON node which points to telemetry. Check for the following in the response:</p>
+<p>You need to look for an <code class="docutils literal"><span class="pre">Assets</span></code> JSON node which points to telemetry. Check for the following in the response:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>&quot;relationships&quot;: {
   &quot;assets&quot;: {
     &quot;data&quot;: [

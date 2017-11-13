@@ -77,7 +77,9 @@ Participant objects track each member in a Roster. Participants may be anonymous
 Get a Collection of Matches
 ---------------------------
 
-This endpoint retrieves data from matches. Bulk scraping matches is prohibited.
+This endpoint retrieves data from matches.
+
+*Please keep in mind that bulk scraping matches is prohibited.*
 
 **HTTP Request**
 
@@ -87,7 +89,7 @@ This endpoint retrieves data from matches. Bulk scraping matches is prohibited.
 Parameter                 Default     Description                                               
 ========================= =========== =================================================================================================================
 page[offset]              0           Allows paging over results                                     
-page[limit ]              50          The default (and current maximum) is 50.Values less than 50 and great than 2 are supported.             
+page[limit ]              5           The default (and current maximum) is 5. Values less than 5 and great than 1 are supported.             
 sort                      createdAt   By default, Matches are sorted by creation time ascending.
 filter[createdAt-start]   3hrs ago    Must occur before end time. Format is iso8601 Usage: filter[createdAt-start]=2017-01-01T08:25:30Z
 filter[createdAt-end]     Now         Queries search the last 3 hrs. Format is iso8601 i.e.filter[createdAt-end]=2017-01-01T13:25:30Z
@@ -218,7 +220,7 @@ ID          none      The ID of the match to retrieve
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
-The above command returns JSON structured like this:
+The above commands returns JSON structured like this:
 
 .. code-block:: none
 

@@ -98,8 +98,8 @@
 <td>Allows paging over results</td>
 </tr>
 <tr class="row-odd"><td>page[limit ]</td>
-<td>50</td>
-<td>The default (and current maximum) is 50.Values less than 50 and great than 2 are supported.</td>
+<td>6</td>
+<td>The default (and current maximum) is 6. Values less than 6 and great than 1 are supported.</td>
 </tr>
 <tr class="row-even"><td>sort</td>
 <td>createdAt</td>
@@ -121,14 +121,14 @@
 -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
 </div>
-<p>The above command returns JSON structured like this:</p>
+<p>The above commands returns JSON structured like this:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>{
   &quot;type&quot;: &quot;sample&quot;,
   &quot;id&quot;: &quot;sample-2017-02-28T07:15:30Z&quot;,
   &quot;attributes&quot;: {
     &quot;URL&quot;: &quot;URL of Sample Matches&quot;,
     &quot;createdAt&quot;: &quot;2017-02-28T07:15:30Z&quot;,
-    &quot;shardId&quot;: &quot;...&quot;,
+    &quot;shardId&quot;: &quot;na&quot;,
     &quot;t0&quot;: &quot;2017-02-28T07:15:30Z&quot;,
     &quot;t1&quot;: &quot;2017-02-28T08:15:30Z&quot;,
     &quot;titleId&quot;: &quot;stunlock-battlerite&quot;

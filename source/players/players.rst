@@ -6,7 +6,6 @@ Players
 Player objects contain aggregated lifetime information about each Player. At this time Players are fairly sparse, but there are plans to add much richer data as it becomes available.
 
 
-
 Get a Single Player
 --------------------
 
@@ -39,7 +38,7 @@ ID          none      The ID of the player to retrieve
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
-**The above command returns JSON structured like this:**
+**The above commands returns JSON structured like this:**
 
 .. code-block:: none
 
@@ -60,10 +59,11 @@ ID          none      The ID of the player to retrieve
     }
   }
 
+
 Get a Collection of Players
 ---------------------------
 
-This endpoint retrieves a collection of up to 6 players, filtered by name. Player names are specific to each region. If a player has changed names, it is possible that there are multiple ID's for a single player name.
+This endpoint retrieves a collection of up to 6 players, filtered by name. Player names are specific to each region.
 
 **HTTP Request**
 

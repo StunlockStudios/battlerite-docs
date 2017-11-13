@@ -3,12 +3,13 @@
 Receiving Responses
 ====================
 
+
 Payload
 ---------------------------
 
 All Server responses contain a root JSON object.
 
-A response will contain at least one of the following top-level members:
+Each response will contain at least one of the following top-level members:
 
 * ``data`` : the response's “primary data”
 * ``errors`` : an array of error objects
@@ -42,6 +43,7 @@ The following primary data is a single resource object:
       "id": "1"
     }
   }
+
 
 Rate Limits
 ---------------------------

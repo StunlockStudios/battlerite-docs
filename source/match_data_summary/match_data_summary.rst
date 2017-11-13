@@ -8,22 +8,23 @@ Special thanks to Kashz for helping to create this! GitHub: iAm-Kashif
 Match Object
 ---------------------------
 
-=================  ==============  ===========================
+=================  ==============  ==================================
 Variable    	   Type            Description
-=================  ==============  ===========================
+=================  ==============  ==================================
 Type               str             Match
 ID                 str             Match ID
 createdAt          str (iso8601)   Time of Match Played
 duration           int             Time of match in seconds
 gameMode           str             Game Mode
-patchVersion       str             Version of API
+patchVersion       str             Version of the game
 shardID            str             Match Shard
 stats              map             See Match.stats
 assets             obj             See Match.assets
 rosters            obj             See Rosters
 rounds             obj             See Rounds
 spectators         obj             Participants that are spectating
-=================  ==============  ===========================
+titleId            string          Identifies the studio and game
+=================  ==============  ==================================
 
 
 **Match.stats (End of game statistics)**
@@ -49,6 +50,7 @@ id                 str             ID of Asset
 contentType        str             application/json
 name               map             telemetry
 url                obj             Link to Telemetry.json file
+shardId            str             Region Shard
 =================  ==============  ===========================
 
 Rounds Object
@@ -74,15 +76,17 @@ winningTeam        int             Winning Team
 Rosters Object
 ---------------------------
 
-=================  ==============  ===========================
+=================  ==============  ============================
 Variable    	   Type            Description
-=================  ==============  ===========================
+=================  ==============  ============================
 id                 str             ID of Roster
 type               str             Roster
 participants       obj             See Participants
 stats              obj             See Rosters.stats
 team               obj             See Rosters.team
-=================  ==============  ===========================
+won                str             Indiciates if a roster won
+shardId            str             Region Shard
+=================  ==============  ============================
 
 Participants Object
 ---------------------------
@@ -106,6 +110,11 @@ id                 str             UID of player
 name               str             IGN of player
 stats              map             Player Stats
 type               str             Player
+titleId            str             The studio and game title
+shardId            str             Region Shard
+createdAt          str (iso8601)   Player signup date
+assets             obj             Same as Match.assets
+patchVersion       str             Version of the game
 =================  ==============  ===========================
 
 **Participants.stats**

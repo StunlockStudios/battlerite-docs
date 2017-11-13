@@ -134,7 +134,8 @@
 </div>
 <div class="section" id="get-a-collection-of-matches">
 <h2>Get a Collection of Matches<a class="headerlink" href="#get-a-collection-of-matches" title="Permalink to this headline">¶</a></h2>
-<p>This endpoint retrieves data from matches. Bulk scraping matches is prohibited.</p>
+<p>This endpoint retrieves data from matches.</p>
+<p><em>Please keep in mind that bulk scraping matches is prohibited.</em></p>
 <p><strong>HTTP Request</strong></p>
 <p><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/matches</span></code></p>
 <table border="1" class="docutils">
@@ -155,8 +156,8 @@
 <td>Allows paging over results</td>
 </tr>
 <tr class="row-odd"><td>page[limit ]</td>
-<td>50</td>
-<td>The default (and current maximum) is 50.Values less than 50 and great than 2 are supported.</td>
+<td>5</td>
+<td>The default (and current maximum) is 5. Values less than 5 and great than 1 are supported.</td>
 </tr>
 <tr class="row-even"><td>sort</td>
 <td>createdAt</td>
@@ -307,7 +308,7 @@
 -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
 </div>
-<p>The above command returns JSON structured like this:</p>
+<p>The above commands returns JSON structured like this:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>{
   &quot;data&quot;: {
     &quot;type&quot;: &quot;match&quot;,

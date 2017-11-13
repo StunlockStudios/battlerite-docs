@@ -21,7 +21,7 @@ This endpoint retrieves a collection of randomly selected matches.
 Parameter                   Default          Description
 =========================== ================ ===================================================================================================================
 page[offset]                0                Allows paging over results
-page[limit ]                50               The default (and current maximum) is 50.Values less than 50 and great than 2 are supported.
+page[limit ]                6                The default (and current maximum) is 6. Values less than 6 and great than 1 are supported.
 sort                        createdAt        By default, Matches are sorted by creation time ascending.
 filter[createdAt-start]     none             Must occur before end time. Format is iso8601 Usage: filter[createdAt-start]=2017-01-01T08:25:30Z
 filter[createdAt-end]       none             Queries search the last 3 hrs. Format is iso8601 i.e.filter[createdAt-end]=2017-01-01T13:25:30Z
@@ -35,7 +35,7 @@ filter[createdAt-end]       none             Queries search the last 3 hrs. Form
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
-The above command returns JSON structured like this:
+The above commands returns JSON structured like this:
 
 .. code-block:: none
 

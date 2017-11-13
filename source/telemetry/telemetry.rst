@@ -3,12 +3,11 @@
 Telemetry
 =========
 
-The telemtry data provides us with insights into a match. It gives us details of various events that happened in the match alongwith the time when they happened. Some of the events also have location which can be plotted on a Battlerite Game map. Telemetry is very useful to generate a timeline visualtions of how the match went for replays, or create heatmaps of where a certin hero or ability is most useful. These are just some of the exmaples of where Telemtry can be used.
+The telemtry data provides us with insights into a match. It gives us details of various events that happened in the match, along with the time when they happened. Some of the events also have a location which can be plotted on a Battlerite Game map. Telemetry is very useful to generate a timeline visualtions of how the match went for replays, or create heatmaps of where a certin hero or ability is most useful. These are just some of the exmaples of where Telemtry can be used.
 
 
 To get Telemetry Data
 ---------------------------
-
 
 You start by pulling a list of matches using the matches endopoint.
 
@@ -24,7 +23,7 @@ You start by pulling a list of matches using the matches endopoint.
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
-The above command returns JSON structured like this:
+The above commands returns JSON structured like this:
 
 .. code-block:: none
 
@@ -70,7 +69,7 @@ The above command returns JSON structured like this:
     ]
   }
 
-You need to look for Assets JSON node which points to telemetry. Check for the following in the response:
+You need to look for an ``Assets`` JSON node which points to telemetry. Check for the following in the response:
 
 .. code-block:: none
 
