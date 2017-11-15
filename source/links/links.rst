@@ -17,7 +17,7 @@ This endpoint checks to see if a link object exists for a given code.
 
 .. code-block:: shell
 
-	curl "https://api.dc01.gamelockerapp.com/shards/<region>/link/{id}" \
+	curl "https://api.dc01.gamelockerapp.com/shards/global/link/{id}" \
 	-H "Authorization: Bearer <api-key>" \
 	-H "Accept: application/vnd.api+json"
 
@@ -44,7 +44,7 @@ code        none      The verification code
 
 .. code-block:: shell
 
-	curl -XPOST "https://api.dc01.gamelockerapp.com/shards/<region>/link/{player_id}" \
+	curl -XPOST "https://api.dc01.gamelockerapp.com/shards/global/link/{player_id}" \
 	-H "Authorization: Bearer <api-key>" \
 	-H "Accept: application/vnd.api+json"
 

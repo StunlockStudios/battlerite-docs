@@ -34,6 +34,7 @@ Variable    	   Type            Description
 =================  ==============  ===========================
 mapID              str             Map ID
 type               str             Type of Match Played
+region             str             Game server region
 =================  ==============  ===========================
 
 

@@ -13,13 +13,13 @@ You start by pulling a list of matches using the matches endopoint.
 
 **HTTP Request**
 
-``GET https://api.dc01.gamelockerapp.com/shards/na/matches``
+``GET https://api.dc01.gamelockerapp.com/shards/global/matches``
 
 **Shell:**
 
 .. code-block:: shell
 
-  curl "https://api.dc01.gamelockerapp.com/shards/na/matches" \
+  curl "https://api.dc01.gamelockerapp.com/shards/global/matches" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -37,10 +37,11 @@ The above commands returns JSON structured like this:
           "duration": 1482195372,
           "gameMode": "...",
           "patchVersion": "0.14",
-          "shardId": "na",
+          "shardId": "global",
           "stats": {
             "mapID": "417DE573937D74E39BF40EB6CF82670B",
-            "type": "VSAI"
+            "type": "VSAI",
+            "region": "..."
           }
         },
         "relationships": {
@@ -92,7 +93,7 @@ Once you have located this ID, you now have to search for the following JSON seg
     "type": "asset",
     "id": "b900c179-0aaa-11e7-bb12-0242ac110005",
     "titleId": "stunlock-battlerite",
-    "shardId": "na",
+    "shardId": "global",
     "attributes": {
       "URL": "https://gl-prod-us-east-1.s3.amazonaws.com/assets/stunlock-battlerite/na/2017/11/10/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json",
       "contentType": "application/json",

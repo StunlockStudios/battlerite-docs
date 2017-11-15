@@ -13,7 +13,7 @@ This endpoint retrieves a collection of randomly selected matches.
 
 **HTTP Request**
 
-|  ``GET https://api.dc01.gamelockerapp.com/shards/na/samples``
+|  ``GET https://api.dc01.gamelockerapp.com/shards/global/samples``
 
 **Query Parameters**
 
@@ -31,7 +31,7 @@ filter[createdAt-end]       none             Queries search the last 3 hrs. Form
 
 .. code-block:: shell
 
-  curl "https://api.dc01.gamelockerapp.com/shards/na/samples" \
+  curl "https://api.dc01.gamelockerapp.com/shards/global/samples" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -45,7 +45,7 @@ The above commands returns JSON structured like this:
     "attributes": {
       "URL": "URL of Sample Matches",
       "createdAt": "2017-02-28T07:15:30Z",
-      "shardId": "na",
+      "shardId": "global",
       "t0": "2017-02-28T07:15:30Z",
       "t1": "2017-02-28T08:15:30Z",
       "titleId": "stunlock-battlerite"
