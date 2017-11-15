@@ -31,7 +31,7 @@
 <header id="BTT" role="banner">
 	<div class="menu-top-outer clearfix">
 		<div class="wrapper clearfix">
-			<a href="/" id="site-logo"></a>
+			<a href="https://developer.battlerite.com" id="site-logo"></a>
 			<a href="https://developer.battlerite.com/users/sign_in"><span id="logSignBtn" class="btn">Login / Signup</span></a>
 			<nav id="mainMenu" class="main-menu-con">
 				<ul class="main-menu clearfix">
@@ -75,9 +75,9 @@
 <h2>To get Telemetry Data<a class="headerlink" href="#to-get-telemetry-data" title="Permalink to this headline">¶</a></h2>
 <p>You start by pulling a list of matches using the matches endopoint.</p>
 <p><strong>HTTP Request</strong></p>
-<p><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/matches</span></code></p>
+<p><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/global/matches</span></code></p>
 <p><strong>Shell:</strong></p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/matches&quot;</span> <span class="se">\</span>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/global/matches&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
@@ -93,10 +93,11 @@
         &quot;duration&quot;: 1482195372,
         &quot;gameMode&quot;: &quot;...&quot;,
         &quot;patchVersion&quot;: &quot;0.14&quot;,
-        &quot;shardId&quot;: &quot;na&quot;,
+        &quot;shardId&quot;: &quot;global&quot;,
         &quot;stats&quot;: {
           &quot;mapID&quot;: &quot;417DE573937D74E39BF40EB6CF82670B&quot;,
-          &quot;type&quot;: &quot;VSAI&quot;
+          &quot;type&quot;: &quot;VSAI&quot;,
+          &quot;region&quot;: &quot;...&quot;
         }
       },
       &quot;relationships&quot;: {
@@ -144,7 +145,7 @@
   &quot;type&quot;: &quot;asset&quot;,
   &quot;id&quot;: &quot;b900c179-0aaa-11e7-bb12-0242ac110005&quot;,
   &quot;titleId&quot;: &quot;stunlock-battlerite&quot;,
-  &quot;shardId&quot;: &quot;na&quot;,
+  &quot;shardId&quot;: &quot;global&quot;,
   &quot;attributes&quot;: {
     &quot;URL&quot;: &quot;https://gl-prod-us-east-1.s3.amazonaws.com/assets/stunlock-battlerite/na/2017/11/10/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json&quot;,
     &quot;contentType&quot;: &quot;application/json&quot;,

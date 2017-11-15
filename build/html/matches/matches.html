@@ -31,7 +31,7 @@
 <header id="BTT" role="banner">
 	<div class="menu-top-outer clearfix">
 		<div class="wrapper clearfix">
-			<a href="/" id="site-logo"></a>
+			<a href="https://developer.battlerite.com" id="site-logo"></a>
 			<a href="https://developer.battlerite.com/users/sign_in"><span id="logSignBtn" class="btn">Login / Signup</span></a>
 			<nav id="mainMenu" class="main-menu-con">
 				<ul class="main-menu clearfix">
@@ -83,7 +83,7 @@
       &quot;score&quot;: 3
     },
     &quot;won&quot;: &quot;true&quot;,
-    &quot;shardId&quot;: &quot;na&quot;
+    &quot;shardId&quot;: &quot;globalobal&quot;
   },
   &quot;relationships&quot;: {
     &quot;team&quot;: {
@@ -120,7 +120,7 @@
       &quot;etc...&quot;
     },
     &quot;actor&quot;: &quot;Ashka&quot;,
-    &quot;shardId&quot;: &quot;na&quot;
+    &quot;shardId&quot;: &quot;globalobal&quot;
   }
   &quot;relationships&quot;: {
     &quot;player&quot;: {
@@ -136,7 +136,7 @@
 <p>This endpoint retrieves data from matches.</p>
 <p><em>Please keep in mind that bulk scraping matches is prohibited.</em></p>
 <p><strong>HTTP Request</strong></p>
-<p><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/matches</span></code></p>
+<p><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/global/matches</span></code></p>
 <table border="1" class="docutils">
 <colgroup>
 <col width="17%" />
@@ -190,7 +190,7 @@
 </table>
 <p><em>Remember — a happy match is an authenticated match!</em></p>
 <p><strong>Shell:</strong></p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/matches?sort=createdAt&amp;page[limit]=3&amp;filter[createdAt-start]=2017-11-10T13:25:30Z&amp;filter[playerNames]=&lt;playerName&gt;&quot;</span> <span class="se">\</span>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/global/matches?sort=createdAt&amp;page[limit]=3&amp;filter[createdAt-start]=2017-11-10T13:25:30Z&amp;filter[playerNames]=&lt;playerName&gt;&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
@@ -198,7 +198,7 @@
 <p><strong>Python:</strong></p>
 <div class="highlight-python"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/matches&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/global/matches&quot;</span>
 
 <span class="n">header</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;api-key&gt;&quot;</span><span class="p">,</span>
@@ -236,10 +236,11 @@
         &quot;duration&quot;: 1482195372,
         &quot;gameMode&quot;: &quot;...&quot;,
         &quot;patchVersion&quot;: &quot;0.14&quot;,
-        &quot;shardId&quot;: &quot;na&quot;,
+        &quot;shardId&quot;: &quot;globalobal&quot;,
         &quot;stats&quot;: {
           &quot;mapID&quot;: &quot;417DE573937D74E39BF40EB6CF82670B&quot;,
-          &quot;type&quot;: &quot;VSAI&quot;
+          &quot;type&quot;: &quot;VSAI&quot;,
+          &quot;region&quot;: &quot;...&quot;
         }
       },
       &quot;relationships&quot;: {
@@ -280,7 +281,7 @@
 <h2>Get a Single Match<a class="headerlink" href="#get-a-single-match" title="Permalink to this headline">¶</a></h2>
 <p>This endpoint retrieves a specific match.</p>
 <p><strong>HTTP Request</strong></p>
-<p><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/matches/&lt;ID&gt;</span></code></p>
+<p><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/global/matches/&lt;ID&gt;</span></code></p>
 <p><strong>URL Parameters</strong></p>
 <table border="1" class="docutils">
 <colgroup>
@@ -302,7 +303,7 @@
 </tbody>
 </table>
 <p><strong>Shell:</strong></p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/matches/&lt;matchID&gt;&quot;</span> <span class="se">\</span>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/global/matches/&lt;matchID&gt;&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
@@ -317,10 +318,11 @@
       &quot;duration&quot;: 1482195372,
       &quot;gameMode&quot;: &quot;...&quot;,
       &quot;patchVersion&quot;: &quot;0.14&quot;,
-      &quot;shardId&quot;: &quot;na&quot;,
+      &quot;shardId&quot;: &quot;global&quot;,
       &quot;stats&quot;: {
-        mapID&quot;: &quot;417DE573937D74E39BF40EB6CF82670B&quot;,
-        &quot;type&quot;: &quot;VSAI&quot;
+        &quot;mapID&quot;: &quot;417DE573937D74E39BF40EB6CF82670B&quot;,
+        &quot;type&quot;: &quot;VSAI&quot;,
+        &quot;region&quot;: &quot;...&quot;
       }
     },
     &quot;relationships&quot;: {

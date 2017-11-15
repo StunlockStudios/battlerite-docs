@@ -34,7 +34,7 @@ ID          none      The ID of the player to retrieve
 
 .. code-block:: shell
 
-  curl "https://api.dc01.gamelockerapp.com/shards/na/players/<ID>" \
+  curl "https://api.dc01.gamelockerapp.com/shards/global/players/<ID>" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -52,7 +52,7 @@ ID          none      The ID of the player to retrieve
           ...
         },
         "titleId": "stunlock-battlerite",
-        "shardId": "na",
+        "shardId": "global",
         "createdAt": "2017-11-02T19:52:48.623Z",
         "patchVersion": "0.14"
       },
@@ -67,7 +67,7 @@ This endpoint retrieves a collection of up to 6 players, filtered by name. Playe
 
 **HTTP Request**
 
-|  ``GET https://api.dc01.gamelockerapp.com/shards/na/players``
+|  ``GET https://api.dc01.gamelockerapp.com/shards/global/players``
 
 
 **Query Parameters**
@@ -83,7 +83,7 @@ filter[playerNames]   none      Filters by player names. Usage: filter[playerNam
 
 .. code-block:: shell
 
-  curl "https://api.dc01.gamelockerapp.com/shards/na/players?filter[playerNames]=player1,player2" \
+  curl "https://api.dc01.gamelockerapp.com/shards/global/players?filter[playerNames]=player1,player2" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 

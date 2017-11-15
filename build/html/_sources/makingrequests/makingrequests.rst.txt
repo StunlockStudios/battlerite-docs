@@ -14,24 +14,34 @@ The Server will respond with a ``Content-Type`` header that mirrors the format r
 Regions
 ---------------------------
 
-The Battlerite Game Data Service currently supports the following regions:
-
-*General Region Shards:* To find data regarding live servers, where all data is found, please use the following shards.
-
-* **North America:** ``na``
-* **Europe:** ``eu``
-* **South America:** ``south_america``
-* **Asia:** ``asia``
-* **oceania:** ``oce``
-
-*Please note: Choosing a specific region is currently required*
-
-To specify a region, use this code:
+Requests to the Battlerite Game Data Service are done using the "global" region shard. 
 
 .. code-block:: none
 
-  "...gamelockerapp.com/shards/<region>/..."
+  "...gamelockerapp.com/shards/global/..."
 
+The actual server regions will be included in the stats object as part of a match. The following regions are supported:
+
+* **US East**
+* **US South-East**
+* **US South-West**
+* **US West**
+* **EU North**
+* **EU East**
+* **EU West**
+* **Spain**
+* **Poland**
+* **Japan**
+* **Chile**
+* **Peru**
+* **South America**
+* **India**
+* **India East**
+* **Hong Kong**
+* **Asia**
+* **Australia**
+* **Asia**
+* **South Africa**
 
 
 GZIP
@@ -86,7 +96,7 @@ Note that the above values are also the maximum values for ``limit``.
 
 .. code-block:: shell
 
-  curl -g "https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&page[offset]=3" \
+  curl -g "https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&page[offset]=3" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -95,9 +105,9 @@ At the end of the JSON returned by the above command you will find links to the 
 .. code-block:: none
 
   "links": {
-    "first": "https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&page[offset]=0",
-    "next": "https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&page[offset]=8",
-    "self": "https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&page[offset]=3"
+    "first": "https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&page[offset]=0",
+    "next": "https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&page[offset]=8",
+    "self": "https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&page[offset]=3"
   },
 
 There will also be a "previous" page link when appropriate.

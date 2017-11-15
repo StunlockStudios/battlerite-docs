@@ -31,7 +31,7 @@
 <header id="BTT" role="banner">
 	<div class="menu-top-outer clearfix">
 		<div class="wrapper clearfix">
-			<a href="/" id="site-logo"></a>
+			<a href="https://developer.battlerite.com" id="site-logo"></a>
 			<a href="https://developer.battlerite.com/users/sign_in"><span id="logSignBtn" class="btn">Login / Signup</span></a>
 			<nav id="mainMenu" class="main-menu-con">
 				<ul class="main-menu clearfix">
@@ -77,20 +77,33 @@
 </div>
 <div class="section" id="regions">
 <h2>Regions<a class="headerlink" href="#regions" title="Permalink to this headline">¶</a></h2>
-<p>The Battlerite Game Data Service currently supports the following regions:</p>
-<p><em>General Region Shards:</em> To find data regarding live servers, where all data is found, please use the following shards.</p>
-<ul class="simple">
-<li><strong>North America:</strong> <code class="docutils literal"><span class="pre">na</span></code></li>
-<li><strong>Europe:</strong> <code class="docutils literal"><span class="pre">eu</span></code></li>
-<li><strong>South America:</strong> <code class="docutils literal"><span class="pre">south_america</span></code></li>
-<li><strong>Asia:</strong> <code class="docutils literal"><span class="pre">asia</span></code></li>
-<li><strong>oceania:</strong> <code class="docutils literal"><span class="pre">oce</span></code></li>
-</ul>
-<p><em>Please note: Choosing a specific region is currently required</em></p>
-<p>To specify a region, use this code:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>&quot;...gamelockerapp.com/shards/&lt;region&gt;/...&quot;
+<p>Requests to the Battlerite Game Data Service are done using the “global” region shard.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&quot;...gamelockerapp.com/shards/global/...&quot;
 </pre></div>
 </div>
+<p>The actual server regions will be included in the stats object as part of a match. The following regions are supported:</p>
+<ul class="simple">
+<li><strong>US East</strong></li>
+<li><strong>US South-East</strong></li>
+<li><strong>US South-West</strong></li>
+<li><strong>US West</strong></li>
+<li><strong>EU North</strong></li>
+<li><strong>EU East</strong></li>
+<li><strong>EU West</strong></li>
+<li><strong>Spain</strong></li>
+<li><strong>Poland</strong></li>
+<li><strong>Japan</strong></li>
+<li><strong>Chile</strong></li>
+<li><strong>Peru</strong></li>
+<li><strong>South America</strong></li>
+<li><strong>India</strong></li>
+<li><strong>India East</strong></li>
+<li><strong>Hong Kong</strong></li>
+<li><strong>Asia</strong></li>
+<li><strong>Australia</strong></li>
+<li><strong>Asia</strong></li>
+<li><strong>South Africa</strong></li>
+</ul>
 </div>
 <div class="section" id="gzip">
 <h2>GZIP<a class="headerlink" href="#gzip" title="Permalink to this headline">¶</a></h2>
@@ -123,16 +136,16 @@
 <div class="line">players/samples: 6</div>
 </div>
 <p>Note that the above values are also the maximum values for <code class="docutils literal"><span class="pre">limit</span></code>.</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&amp;page[offset]=3&quot;</span> <span class="se">\</span>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&amp;page[offset]=3&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
 </div>
 <p>At the end of the JSON returned by the above command you will find links to the first, next, and current pages:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>&quot;links&quot;: {
-  &quot;first&quot;: &quot;https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&amp;page[offset]=0&quot;,
-  &quot;next&quot;: &quot;https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&amp;page[offset]=8&quot;,
-  &quot;self&quot;: &quot;https://api.dc01.gamelockerapp.com/shards/na/matches?page[limit]=5&amp;page[offset]=3&quot;
+  &quot;first&quot;: &quot;https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&amp;page[offset]=0&quot;,
+  &quot;next&quot;: &quot;https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&amp;page[offset]=8&quot;,
+  &quot;self&quot;: &quot;https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&amp;page[offset]=3&quot;
 },
 </pre></div>
 </div>

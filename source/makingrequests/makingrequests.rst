@@ -22,26 +22,26 @@ Requests to the Battlerite Game Data Service are done using the "global" region 
 
 The actual server regions will be included in the stats object as part of a match. The following regions are supported:
 
-* **US East
-* **US South-East
-* **US South-West
-* **US West
-* **EU North
-* **EU East
-* **EU West
-* **Spain
-* **Poland
-* **Japan
-* **Chile
-* **Peru
-* **South America
-* **India
-* **India East
-* **Hong Kong
-* **Asia
-* **Australia
-* **Asia
-* **South Africa
+* **US East**
+* **US South-East**
+* **US South-West**
+* **US West**
+* **EU North**
+* **EU East**
+* **EU West**
+* **Spain**
+* **Poland**
+* **Japan**
+* **Chile**
+* **Peru**
+* **South America**
+* **India**
+* **India East**
+* **Hong Kong**
+* **Asia**
+* **Australia**
+* **Asia**
+* **South Africa**
 
 
 GZIP

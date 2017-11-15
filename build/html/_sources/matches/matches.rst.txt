@@ -22,7 +22,7 @@ Rosters track the scores of each opposing group of Participants. If players ente
         "score": 3
       },
       "won": "true",
-      "shardId": "na"
+      "shardId": "globalobal"
     },
     "relationships": {
       "team": {
@@ -63,7 +63,7 @@ Participant objects track each member in a Roster. Participants may be anonymous
         "etc..." 
       },
       "actor": "Ashka",
-      "shardId": "na"
+      "shardId": "globalobal"
     }
     "relationships": {
       "player": {
@@ -83,7 +83,7 @@ This endpoint retrieves data from matches.
 
 **HTTP Request**
 
-``GET https://api.dc01.gamelockerapp.com/shards/na/matches``
+``GET https://api.dc01.gamelockerapp.com/shards/global/matches``
 
 ========================= =========== =================================================================================================================
 Parameter                 Default     Description                                               
@@ -105,7 +105,7 @@ filter[gameMode]          none        Filter by gameMode Usage: filter[gameMode]
 
 .. code-block:: shell
 
-  curl -g "https://api.dc01.gamelockerapp.com/shards/na/matches?sort=createdAt&page[limit]=3&filter[createdAt-start]=2017-11-10T13:25:30Z&filter[playerNames]=<playerName>" \
+  curl -g "https://api.dc01.gamelockerapp.com/shards/global/matches?sort=createdAt&page[limit]=3&filter[createdAt-start]=2017-11-10T13:25:30Z&filter[playerNames]=<playerName>" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -115,7 +115,7 @@ filter[gameMode]          none        Filter by gameMode Usage: filter[gameMode]
 
   import requests
 
-  url = "https://api.dc01.gamelockerapp.com/shards/na/matches"
+  url = "https://api.dc01.gamelockerapp.com/shards/global/matches"
 
   header = {
     "Authorization": "<api-key>",
@@ -157,10 +157,11 @@ The above commands returns JSON structured like this:
           "duration": 1482195372,
           "gameMode": "...",
           "patchVersion": "0.14",
-          "shardId": "na",
+          "shardId": "globalobal",
           "stats": {
             "mapID": "417DE573937D74E39BF40EB6CF82670B",
-            "type": "VSAI"
+            "type": "VSAI",
+            "region": "..."
           }
         },
         "relationships": {
@@ -202,7 +203,7 @@ This endpoint retrieves a specific match.
 
 **HTTP Request**
 
-``GET https://api.dc01.gamelockerapp.com/shards/na/matches/<ID>``
+``GET https://api.dc01.gamelockerapp.com/shards/global/matches/<ID>``
 
 **URL Parameters**
 
@@ -216,7 +217,7 @@ ID          none      The ID of the match to retrieve
 
 .. code-block:: shell
 
-  curl "https://api.dc01.gamelockerapp.com/shards/na/matches/<matchID>" \
+  curl "https://api.dc01.gamelockerapp.com/shards/global/matches/<matchID>" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -233,10 +234,11 @@ The above commands returns JSON structured like this:
         "duration": 1482195372,
         "gameMode": "...",
         "patchVersion": "0.14",
-        "shardId": "na",
+        "shardId": "global",
         "stats": {
-          mapID": "417DE573937D74E39BF40EB6CF82670B",
-          "type": "VSAI"
+          "mapID": "417DE573937D74E39BF40EB6CF82670B",
+          "type": "VSAI",
+          "region": "..."
         }
       },
       "relationships": {
