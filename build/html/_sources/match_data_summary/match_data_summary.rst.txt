@@ -43,14 +43,14 @@ region             str             Game server region
 =================  ==============  ===========================
 Variable    	   Type            Description
 =================  ==============  ===========================
-Type               string          asset
+Type               str             asset
 createdAt          str (iso8601)   Time of Telemtry creation
 description        str             " "
 filename           str             telemetry.json
 id                 str             ID of Asset
 contentType        str             application/json
 name               map             telemetry
-url                obj             Link to Telemetry.json file
+url                str             Link to Telemetry.json file
 shardId            str             Region Shard
 =================  ==============  ===========================
 
@@ -62,6 +62,7 @@ Variable    	   Type            Description
 =================  ==============  ===========================
 id                 str             Round ID
 ordinal            int64           Round Index
+participants       obj             List of participants
 stats              map             See Rounds.stats
 duration           int64           Length of the Match
 =================  ==============  ===========================

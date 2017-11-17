@@ -22,7 +22,7 @@ Rosters track the scores of each opposing group of Participants. If players ente
         "score": 3
       },
       "won": "true",
-      "shardId": "globalobal"
+      "shardId": "global"
     },
     "relationships": {
       "team": {
@@ -63,7 +63,7 @@ Participant objects track each member in a Roster. Participants may be anonymous
         "etc..." 
       },
       "actor": "Ashka",
-      "shardId": "globalobal"
+      "shardId": "global"
     }
     "relationships": {
       "player": {
@@ -157,10 +157,10 @@ The above commands returns JSON structured like this:
           "duration": 1482195372,
           "gameMode": "...",
           "patchVersion": "0.14",
-          "shardId": "globalobal",
+          "shardId": "global",
           "stats": {
             "mapID": "417DE573937D74E39BF40EB6CF82670B",
-            "type": "VSAI",
+            "type": "QUICK2V2 ",
             "region": "..."
           }
         },
@@ -237,7 +237,7 @@ The above commands returns JSON structured like this:
         "shardId": "global",
         "stats": {
           "mapID": "417DE573937D74E39BF40EB6CF82670B",
-          "type": "VSAI",
+          "type": "QUICK2V2 ",
           "region": "..."
         }
       },

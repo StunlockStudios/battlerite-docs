@@ -11,9 +11,6 @@ Get a Single Player
 
 This endpoint retrieves a specific player.
 
-* If a player has changed names, it is possible that there are multiple ID's for a single player name.
-* Player renames do not trigger a change on this endpoint. A minimum of 1 match after the rename is required to view the change.
-
 *Please Note: Changes Coming! - Player resources are not fully defined at this point, but are included so that consumers can get basic info (name, etc.) This object will have additional data added over the next few months, and may change slightly as data moves from the `attributes.stats` object to the main `attributes` object.*
 
 **HTTP Request**

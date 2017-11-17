@@ -62,29 +62,7 @@
 <div class="highlight-none"><div class="highlight"><pre><span></span>&quot;...gamelockerapp.com/shards/global/...&quot;
 </pre></div>
 </div>
-<p>The actual server regions will be included in the stats object as part of a match. The following regions are supported:</p>
-<ul class="simple">
-<li><strong>US East</strong></li>
-<li><strong>US South-East</strong></li>
-<li><strong>US South-West</strong></li>
-<li><strong>US West</strong></li>
-<li><strong>EU North</strong></li>
-<li><strong>EU East</strong></li>
-<li><strong>EU West</strong></li>
-<li><strong>Spain</strong></li>
-<li><strong>Poland</strong></li>
-<li><strong>Japan</strong></li>
-<li><strong>Chile</strong></li>
-<li><strong>Peru</strong></li>
-<li><strong>South America</strong></li>
-<li><strong>India</strong></li>
-<li><strong>India East</strong></li>
-<li><strong>Hong Kong</strong></li>
-<li><strong>Asia</strong></li>
-<li><strong>Australia</strong></li>
-<li><strong>Asia</strong></li>
-<li><strong>South Africa</strong></li>
-</ul>
+<p>The actual server regions will be included in the stats object as part of a match.</p>
 </div>
 <div class="section" id="gzip">
 <h2>GZIP<a class="headerlink" href="#gzip" title="Permalink to this headline">¶</a></h2>
@@ -159,14 +137,6 @@
 </pre></div>
 </div>
 </div>
-<div class="section" id="json-p-callbacks">
-<h2>JSON-P Callbacks<a class="headerlink" href="#json-p-callbacks" title="Permalink to this headline">¶</a></h2>
-<p>You can send a <code class="docutils literal"><span class="pre">?callback</span></code> parameter to any GET call to have the results wrapped in a JSON function. This is typically used when browsers want to embed content in web pages by getting around cross domain issues. The response includes the same data output as the regular API, plus the relevant HTTP Header information.</p>
-<p><strong>Shell:</strong></p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/status?callback=foo&quot;</span>
-</pre></div>
-</div>
-</div>
 <div class="section" id="cross-origin-resource-sharing">
 <h2>Cross Origin Resource Sharing<a class="headerlink" href="#cross-origin-resource-sharing" title="Permalink to this headline">¶</a></h2>
 <p>The API supports Cross Origin Resource Sharing (CORS) for AJAX requests from any origin. You can read the CORS W3C Recommendation <a class="reference external" href="https://www.w3.org/TR/cors/">here</a>.</p>
@@ -213,7 +183,6 @@ Access-Control-Max-Age: <span class="m">86400</span>
 <li class="toctree-l2"><a class="reference internal" href="#pagination">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#search-time">Search Time</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#sorting">Sorting</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#json-p-callbacks">JSON-P Callbacks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cross-origin-resource-sharing">Cross Origin Resource Sharing</a></li>
 </ul>
 </li>
@@ -221,9 +190,7 @@ Access-Control-Max-Age: <span class="m">86400</span>
 <li class="toctree-l1"><a class="reference internal" href="../matches/matches.html">Matches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../match_data_summary/match_data_summary.html">Match Data Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../samples/samples.html">Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../links/links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog/changelog.html">Changelog</a></li>

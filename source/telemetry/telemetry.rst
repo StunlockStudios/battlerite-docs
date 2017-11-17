@@ -40,7 +40,7 @@ The above commands returns JSON structured like this:
           "shardId": "global",
           "stats": {
             "mapID": "417DE573937D74E39BF40EB6CF82670B",
-            "type": "VSAI",
+            "type": "QUICK2V2 ",
             "region": "..."
           }
         },
@@ -111,19 +111,12 @@ You can download the data with following commands. Please note that you do not n
   curl "https://gl-prod-us-east-1.s3.amazonaws.com/assets/stunlock-battlerite/na/2017/03/17/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json" \
  	-H "Accept: application/vnd.api+json"
 
-This request will return you a response as follows:
+This request will return you a response with lines strutured as follows:
 
 .. code-block:: none
 
-  {
-    "time": "2017-02-18T06:37:15+0000",
-    "type": "DealDamage",
-    "payload": {
-      ...
-    }
-  }
-
-
+  {"cursor":499303,"type":"com.stunlock.service.matchmaking.avro.QueueEvent","dataObject":{"time":1509652368501,"userId":"867669421479563264","teamId":"926118591642865664","sessionId":"79DED2DF8F365B2978A57071E9E9028C","season":6,"eventType":"MATCH","timeJoinedQueue":"34506717429220767","timeInQueue":2.0009074,"character":543520739,"characterArchetype":8,"queueTypes":["QUICK2V2"],"limitMatchmakingRange":false,"regionSamples":[{"region":"eu-west","latencyMS":32},{"region":"na-northeast","latencyMS":110}],"preferredRegion":"eu-west","rankingType":"UNRANKED","league":0,"division":2,"divisionRating":0,"teamSize":1,"teamMembers":[],"placementGamesLeft":6,"matchId":"7260797FD85648B295DF0AA16E17A80D","matchRegion":"eu-west","teamSide":1,"autoMatchmaking":true}}
+  ...
 
 .. toctree::
   :maxdepth: 2

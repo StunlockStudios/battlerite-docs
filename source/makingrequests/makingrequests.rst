@@ -20,29 +20,7 @@ Requests to the Battlerite Game Data Service are done using the "global" region 
 
   "...gamelockerapp.com/shards/global/..."
 
-The actual server regions will be included in the stats object as part of a match. The following regions are supported:
-
-* **US East**
-* **US South-East**
-* **US South-West**
-* **US West**
-* **EU North**
-* **EU East**
-* **EU West**
-* **Spain**
-* **Poland**
-* **Japan**
-* **Chile**
-* **Peru**
-* **South America**
-* **India**
-* **India East**
-* **Hong Kong**
-* **Asia**
-* **Australia**
-* **Asia**
-* **South Africa**
-
+The actual server regions will be included in the stats object as part of a match.
 
 GZIP
 ---------------------------
@@ -148,18 +126,6 @@ The example below will return the newest articles first:
 .. code-block:: none
 
   ".../matches?sort=-createdAt"
-
-
-JSON-P Callbacks
----------------------------
-
-You can send a ``?callback`` parameter to any GET call to have the results wrapped in a JSON function. This is typically used when browsers want to embed content in web pages by getting around cross domain issues. The response includes the same data output as the regular API, plus the relevant HTTP Header information.
-
-**Shell:**
-
-.. code-block:: shell
-
-  curl -g "https://api.dc01.gamelockerapp.com/status?callback=foo"
 
 
 Cross Origin Resource Sharing

@@ -63,9 +63,9 @@
 <ul class="simple">
 <li><code class="docutils literal"><span class="pre">links</span></code>: a links object related to the primary data.</li>
 <li><code class="docutils literal"><span class="pre">included</span></code>: an array of resource objects that are related to the primary data and/or each other (“included resources”).</li>
+<li><code class="docutils literal"><span class="pre">meta</span></code>: not currently used.</li>
 </ul>
 <p>If a document does not contain a top-level data key, the included member will not be present either.</p>
-<p>The following primary data is a single resource object:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>{
   &quot;data&quot;: {
     &quot;type&quot;: &quot;match&quot;,
@@ -76,13 +76,12 @@
     &quot;relationships&quot;: {
       // ... this matches relationships
     }
-  }
-}
-{
-  &quot;data&quot;: {
-    &quot;type&quot;: &quot;match&quot;,
-    &quot;id&quot;: &quot;1&quot;
-  }
+  },
+  &quot;included&quot;: [
+    {...},
+    ...
+  ],
+  &quot;meta&quot;: {}
 }
 </pre></div>
 </div>
@@ -125,7 +124,6 @@ X-RateLimit-Reset - The remaining window before the rate limit is refilled in UT
 <li class="toctree-l1"><a class="reference internal" href="../matches/matches.html">Matches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../match_data_summary/match_data_summary.html">Match Data Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../samples/samples.html">Samples</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../links/links.html">Links</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>

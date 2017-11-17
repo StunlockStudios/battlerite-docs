@@ -9,8 +9,6 @@ JWTs are passed as bearer tokens in the ``Authorization`` header, and look like 
 
 ``Authorization: <Enter your API Key>``
 
-In some cases an X-API-KEY will give you more access to information, and in all cases it means that you are operating under a per-token rate limit.
-
 To specify the Headers, use this code:
 
 **Shell**

@@ -18,10 +18,9 @@ A response may contain any of these top-level members:
 
 * ``links``: a links object related to the primary data.
 * ``included``: an array of resource objects that are related to the primary data and/or each other (“included resources”).
+* ``meta``: not currently used.
 
 If a document does not contain a top-level data key, the included member will not be present either.
-
-The following primary data is a single resource object:
 
 .. code-block:: none
 
@@ -35,13 +34,12 @@ The following primary data is a single resource object:
       "relationships": {
         // ... this matches relationships
       }
-    }
-  }
-  {
-    "data": {
-      "type": "match",
-      "id": "1"
-    }
+    },
+    "included": [
+      {...},
+      ...
+    ],
+    "meta": {}
   }
 
 
