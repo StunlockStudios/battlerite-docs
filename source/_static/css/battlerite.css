@@ -419,8 +419,8 @@ main-wrapper:after,
       font-weight: 400; }
       @media (max-width: 950px) {
         ::-webkit-input-placeholder {
-          font-size: 14px;
-          font-size: 1.4rem; } }
+          font-size: 11px;
+          /*font-size: 1.4rem;*/ } }
 
     :-moz-placeholder {
       /* Firefox 18- */
@@ -431,8 +431,8 @@ main-wrapper:after,
       font-weight: 400; }
       @media (max-width: 950px) {
         :-moz-placeholder {
-          font-size: 14px;
-          font-size: 1.4rem; } }
+          font-size: 11px;
+          /*font-size: 1.4rem*/; } }
 
     ::-moz-placeholder {
       /* Firefox 19+ */
@@ -443,8 +443,8 @@ main-wrapper:after,
       font-weight: 400; }
       @media (max-width: 950px) {
         ::-moz-placeholder {
-          font-size: 14px;
-          font-size: 1.4rem; } }
+          font-size: 11px;
+          /*font-size: 1.4rem*/; } }
 
     :-ms-input-placeholder {
       font-size: 11px;
@@ -454,8 +454,8 @@ main-wrapper:after,
       font-weight: 400; }
       @media (max-width: 950px) {
         :-ms-input-placeholder {
-          font-size: 14px;
-          font-size: 1.4rem; } }
+          font-size: 11px;
+          /*font-size: 1.4rem;*/ } }
 
 
 
