@@ -416,7 +416,7 @@ main-wrapper:after,
       font-size: 1.4rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
-      font-weight: 700; }
+      font-weight: 400; }
       @media (max-width: 950px) {
         ::-webkit-input-placeholder {
           font-size: 14px;
@@ -428,7 +428,7 @@ main-wrapper:after,
       font-size: 1.4rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
-      font-weight: 700; }
+      font-weight: 400; }
       @media (max-width: 950px) {
         :-moz-placeholder {
           font-size: 14px;
@@ -440,7 +440,7 @@ main-wrapper:after,
       font-size: 1.4rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
-      font-weight: 700; }
+      font-weight: 400; }
       @media (max-width: 950px) {
         ::-moz-placeholder {
           font-size: 14px;
@@ -451,7 +451,7 @@ main-wrapper:after,
       font-size: 1.4rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
-      font-weight: 700; }
+      font-weight: 400; }
       @media (max-width: 950px) {
         :-ms-input-placeholder {
           font-size: 14px;
