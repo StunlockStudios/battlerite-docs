@@ -411,51 +411,52 @@ main-wrapper:after,
         .btn.alt:hover, .alt[type="submit"]:hover, .btn.alt:focus, .alt[type="submit"]:focus {
           color: #7e1a01 !important; }
 
-    ::-webkit-input-placeholder {
+    /*::-webkit-input-placeholder {
       font-size: 11px;
-      /*font-size: 1.4rem;*/
+      font-size: 1.4rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
       font-weight: 400; }
       @media (max-width: 950px) {
         ::-webkit-input-placeholder {
           font-size: 11px;
-          /*font-size: 1.4rem;*/ } }
+          font-size: 1.4rem; } }
 
     :-moz-placeholder {
       /* Firefox 18- */
-      font-size: 11px;
-      /*font-size: 1.4rem;*/
+      /*font-size: 11px;
+      font-size: 1.4rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
       font-weight: 400; }
       @media (max-width: 950px) {
         :-moz-placeholder {
           font-size: 11px;
-          /*font-size: 1.4rem*/; } }
+          font-size: 1.4rem; } }
 
     ::-moz-placeholder {
       /* Firefox 19+ */
-      font-size: 11px;
-      /*font-size: 1.4rem;*/
+      /*font-size: 11px;
+      font-size: 1.4rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
       font-weight: 400; }
       @media (max-width: 950px) {
         ::-moz-placeholder {
           font-size: 11px;
-          /*font-size: 1.4rem*/; } }
+          font-size: 1.4rem; } }
 
     :-ms-input-placeholder {
       font-size: 11px;
-      /*font-size: 1.4rem;*/
+      font-size: 1.4rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
       font-weight: 400; }
       @media (max-width: 950px) {
         :-ms-input-placeholder {
           font-size: 11px;
-          /*font-size: 1.4rem;*/ } }
+          font-size: 1.4rem; } }*/
+
 
 
 
