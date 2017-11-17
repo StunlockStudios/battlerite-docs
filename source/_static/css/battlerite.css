@@ -412,8 +412,8 @@ main-wrapper:after,
           color: #7e1a01 !important; }
 
     ::-webkit-input-placeholder {
-      font-size: 13.33px;
-      /*font-size: 1.6rem;*/
+      font-size: 14px;
+      font-size: 1.4rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
       font-weight: 700; }
@@ -424,8 +424,8 @@ main-wrapper:after,
 
     :-moz-placeholder {
       /* Firefox 18- */
-      font-size: 16px;
-      font-size: 1.6rem;
+      font-size: 14px;
+      font-size: 1.4rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
       font-weight: 700; }
@@ -436,8 +436,8 @@ main-wrapper:after,
 
     ::-moz-placeholder {
       /* Firefox 19+ */
-      font-size: 16px;
-      font-size: 1.6rem;
+      font-size: 14px;
+      font-size: 1.4rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
       font-weight: 700; }
@@ -447,8 +447,8 @@ main-wrapper:after,
           font-size: 1.4rem; } }
 
     :-ms-input-placeholder {
-      font-size: 16px;
-      font-size: 1.6rem;
+      font-size: 14px;
+      font-size: 1.4rem;
       color: #191a1b;
       font-family: "PT Serif", serif;
       font-weight: 700; }
