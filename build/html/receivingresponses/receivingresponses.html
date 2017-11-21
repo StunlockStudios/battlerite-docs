@@ -24,7 +24,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Matches" href="../matches/matches.html" />
-    <link rel="prev" title="Making Requests" href="../makingrequests/makingrequests.html" />
+    <link rel="prev" title="Rate Limits" href="../ratelimits/ratelimits.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -86,19 +86,6 @@
 }
 </pre></div>
 </div>
-</div>
-<div class="section" id="rate-limits">
-<h2>Rate Limits<a class="headerlink" href="#rate-limits" title="Permalink to this headline">¶</a></h2>
-<p>Be nice. If you’re sending too many requests too quickly, we’ll send back a <code class="docutils literal"><span class="pre">429</span></code> error code (server unavailable).</p>
-<p><strong>Please note: The default rate limit is 10 requests per minute for testing/development purposes! To increase your rate limit, log into your admin dashboard, find the app you would like a higher rate limit for, and click “request a higher rate limit”</strong></p>
-<p>The rate limit headers are defined as follows:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>X-RateLimit-Limit - Request limit per day / per minute
-X-RateLimit-Remaining - The number of requests left for the time window
-X-RateLimit-Reset - The remaining window before the rate limit is refilled in UTC epoch nanoseconds.
-
-* Limit tokens are incrementally filled by 60(sec)/ rate limit. ex: 60(sec)/10(rate) gets rate token every 6 seconds up to max rate limit.
-</pre></div>
-</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -117,9 +104,9 @@ X-RateLimit-Reset - The remaining window before the rate limit is refilled in UT
 <li class="toctree-l1"><a class="reference internal" href="../authorization/authorization.html">Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../titles/titles.html">Titles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../makingrequests/makingrequests.html">Making Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ratelimits/ratelimits.html">Rate Limits</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Receiving Responses</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#payload">Payload</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#rate-limits">Rate Limits</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../matches/matches.html">Matches</a></li>
@@ -140,7 +127,7 @@ X-RateLimit-Reset - The remaining window before the rate limit is refilled in UT
     <ul>
         <li>
           &larr;
-          <a href="../makingrequests/makingrequests.html" title="Previous document">Making Requests</a>
+          <a href="../ratelimits/ratelimits.html" title="Previous document">Rate Limits</a>
         </li>
         <li>
           <a href="../matches/matches.html" title="Next document">Matches</a>

@@ -9,6 +9,7 @@ Gamelocker Documentation
   authorization/authorization
   titles/titles
   makingrequests/makingrequests
+  ratelimits/ratelimits
   receivingresponses/receivingresponses
   matches/matches
   match_data_summary/match_data_summary
