@@ -69,43 +69,30 @@
   &quot;data&quot;: [
     {
       &quot;type&quot;: &quot;match&quot;,
-      &quot;id&quot;: &quot;02b90214-c64d-11e6-9f6b-062445d3d668&quot;,
-      &quot;attributes&quot;: {
-        &quot;createdAt&quot;: &quot;2017-11-10T20:30:08Z&quot;,
-        &quot;duration&quot;: 1482195372,
-        &quot;gameMode&quot;: &quot;...&quot;,
-        &quot;patchVersion&quot;: &quot;0.14&quot;,
-        &quot;shardId&quot;: &quot;global&quot;,
-        &quot;stats&quot;: {
-          &quot;mapID&quot;: &quot;417DE573937D74E39BF40EB6CF82670B&quot;,
-          &quot;type&quot;: &quot;QUICK2V2 &quot;,
-          &quot;region&quot;: &quot;...&quot;
-        }
-      },
+      &quot;id&quot;: &quot;D005654E95174996B303A17B979DC016&quot;,
+      &quot;attributes&quot;: {...},
       &quot;relationships&quot;: {
-        &quot;data&quot;: [
-          &quot;rounds&quot;: [
-            {...},
-            ...
-          ]
-        ],
-        &quot;rosters&quot;: {
+        &quot;assets&quot; {
           &quot;data&quot;: [
-            {...},
-            ...
-          ]
-        },
-        &quot;assets&quot;: {
-          &quot;data&quot; [
             {
               &quot;type&quot;: &quot;asset&quot;,
               &quot;id&quot;: &quot;b900c179-0aaa-11e7-bb12-0242ac110005&quot;
             }
           ]
-        }
+        },
+        &quot;rosters&quot;: {...},
+        &quot;rounds&quot;: {...},
+        &quot;spectators&quot;: {...}
       }
+      &quot;links&quot;: {...}
     }
   ]
+  &quot;included&quot;: [
+    {...}, //Player, Roster, Participant, and Round structures
+    ...
+  ],
+  &quot;links&quot;: {...},
+  &quot;meta&quot;: {}
 }
 </pre></div>
 </div>
@@ -125,22 +112,18 @@
 <p>Once you have located this ID, you now have to search for the following JSON segment in the response object. The following response object will provide you a link to the Telemtry data</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>{
   &quot;type&quot;: &quot;asset&quot;,
-  &quot;id&quot;: &quot;b900c179-0aaa-11e7-bb12-0242ac110005&quot;,
-  &quot;titleId&quot;: &quot;stunlock-battlerite&quot;,
-  &quot;shardId&quot;: &quot;global&quot;,
+  &quot;id&quot;: &quot;1ad97f85-cf9b-11e7-b84e-0a586460f004&quot;,
   &quot;attributes&quot;: {
-    &quot;URL&quot;: &quot;https://gl-prod-us-east-1.s3.amazonaws.com/assets/stunlock-battlerite/na/2017/11/10/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json&quot;,
-    &quot;contentType&quot;: &quot;application/json&quot;,
-    &quot;createdAt&quot;: &quot;2017-03-17T00:43:22Z&quot;,
+    &quot;URL&quot;: &quot;https://cdn.gamelockerapp.com/stunlock-studios-battlerite/global/2017/11/22/15/37/1ad97f85-cf9b-11e7-b84e-0a586460f004-telemetry.json&quot;,
+    &quot;createdAt&quot;: &quot;2017-11-22T15:37:53Z&quot;,
     &quot;description&quot;: &quot;&quot;,
-    &quot;filename&quot;: &quot;telemetry.json&quot;,
     &quot;name&quot;: &quot;telemetry&quot;
   }
 },
 </pre></div>
 </div>
 <p>You can download the data with following commands. Please note that you do not need API Key to get this data.</p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://gl-prod-us-east-1.s3.amazonaws.com/assets/stunlock-battlerite/na/2017/03/17/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json&quot;</span> <span class="se">\</span>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://gl-prod-us-east-1.s3.amazonaws.com/assets/stunlock-studios-battlerite/na/2017/03/17/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json&quot;</span> <span class="se">\</span>
       -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
 </div>

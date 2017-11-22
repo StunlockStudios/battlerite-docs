@@ -27,9 +27,9 @@ If a document does not contain a top-level data key, the included member will no
   {
     "data": {
       "type": "match",
-      "id": "fe793a44-d7da-11e6-b845-0671096b3e30",
+      "id": "D005654E95174996B303A17B979DC016",
       "attributes": {
-        // ... this matches attributes
+        // ... this match's attributes
       },
       "relationships": {
         // ... this matches relationships

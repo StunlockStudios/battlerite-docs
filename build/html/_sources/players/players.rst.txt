@@ -40,17 +40,23 @@ ID          none      The ID of the player to retrieve
   {
     "data": {
       "type": "player",
-      "id": "6abb30de-7cb8-11e4-8bd3-06eb725f8a76"
+      "id": "931405258914193408"
       "attributes": {
-        "name": "..."
-        "stats": {
-          ...
-        },
-        "titleId": "stunlock-battlerite",
-        "shardId": "global",
-        "createdAt": "2017-11-02T19:52:48.623Z",
-        "patchVersion": "0.14"
+        "name": ""
+        "patchVersion": ""
+        "shardId": "",
+        "stats": null,
+        "titleId": ""
       },
+      "relationships" {
+        "assets": {
+          "data": []
+        }
+      },
+      "links": {
+        "schema": "https://raw.githubusercontent.com/madglory/gamelocker-/master/schemas//player_index.json",
+        "self": "https://api.dc01.gamelockerapp.com/shards//players/931405258914193408"
+      }
     }
   }
 

@@ -60,20 +60,14 @@
   &quot;type&quot;: &quot;roster&quot;,
   &quot;id&quot;: &quot;eca49808-d510-11e6-bf26-cec0c932ce01&quot;,
   &quot;attributes&quot;: {
+    &quot;shardId&quot;: &quot;global&quot;
     &quot;stats&quot;: {
-      &quot;side&quot;: 1,
       &quot;score&quot;: 3
+      &quot;side&quot;: 1,
     },
     &quot;won&quot;: &quot;true&quot;,
-    &quot;shardId&quot;: &quot;global&quot;
   },
   &quot;relationships&quot;: {
-    &quot;team&quot;: {
-      &quot;data&quot;: {
-        &quot;type&quot;: &quot;team&quot;,
-        &quot;id&quot;: &quot;753d464c-d511-11e6-bf26-cec0c932ce01&quot;
-      }
-    },
     &quot;participants&quot;: {
       &quot;data&quot;: [
         {
@@ -83,6 +77,9 @@
         &quot;etc...&quot;
       ]
     }
+    &quot;team&quot;: {
+      &quot;data&quot;: {...}
+    },
   }
 }
 </pre></div>
@@ -95,18 +92,21 @@
   &quot;type&quot;: &quot;participant&quot;,
   &quot;id&quot;: &quot;ea77c3a7-d44e-11e6-8f77-0242ac130004&quot;,
   &quot;attributes&quot;: {
-    &quot;stats&quot;: {
-      &quot;kills&quot;: 1,
-      &quot;deaths&quot;: 0,
-      &quot;score&quot;: 744,
-      &quot;etc...&quot;
-    },
-    &quot;actor&quot;: &quot;Ashka&quot;,
+    &quot;actor&quot;: &quot;65687534&quot;,
     &quot;shardId&quot;: &quot;global&quot;
+    &quot;stats&quot;: {
+      &quot;attachment&quot;: 578166028,
+      &quot;emote&quot;: 1505065066,
+      &quot;mount&quot;: 1302058678,
+      &quot;outfit&quot;: 1890030881
+    },
   }
   &quot;relationships&quot;: {
     &quot;player&quot;: {
-      ...
+      &quot;data&quot;: {
+        &quot;type&quot;: &quot;player&quot;,
+        &quot;id&quot;: &quot;932723402744184832&quot;
+      }
     }
   }
 }
@@ -213,49 +213,64 @@
   &quot;data&quot;: [
     {
       &quot;type&quot;: &quot;match&quot;,
-      &quot;id&quot;: &quot;02b90214-c64d-11e6-9f6b-062445d3d668&quot;,
+      &quot;id&quot;: &quot;D005654E95174996B303A17B979DC016&quot;,
       &quot;attributes&quot;: {
         &quot;createdAt&quot;: &quot;2017-11-10T20:30:08Z&quot;,
-        &quot;duration&quot;: 1482195372,
-        &quot;gameMode&quot;: &quot;...&quot;,
-        &quot;patchVersion&quot;: &quot;0.14&quot;,
+        &quot;duration&quot;: 492,
+        &quot;gameMode&quot;: &quot;1733162751&quot;,
+        &quot;patchVersion&quot;: &quot;1.0&quot;,
         &quot;shardId&quot;: &quot;global&quot;,
         &quot;stats&quot;: {
           &quot;mapID&quot;: &quot;417DE573937D74E39BF40EB6CF82670B&quot;,
           &quot;type&quot;: &quot;QUICK2V2 &quot;,
-          &quot;region&quot;: &quot;...&quot;
-        }
+        },
+        &quot;titleId&quot;: &quot;stunlock-studios-battlerite&quot;
       },
       &quot;relationships&quot;: {
-        &quot;rounds&quot;: [
-          {
-            &quot;type&quot;: &quot;round&quot;,
-            &quot;id&quot;: &quot;729cf263-08a7-43a2-9c0c-21c73ecd45af&quot;
-            &quot;attributes&quot;: {
-              &quot;Ordinal&quot;: 0,
-              &quot;stats&quot;: {
-                &quot;WinningTeam&quot;: 1
-              },
-              &quot;duration&quot;: 64
+        &quot;assets&quot; {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;asset&quot;,
+              &quot;id&quot;: &quot;1ad97f85-cf9b-11e7-b84e-0a586460f004&quot;
             }
-          }
-          ...
-        ],
+          ]
+        },
         &quot;rosters&quot;: {
           &quot;data&quot;: [
             {
               &quot;type&quot;: &quot;roster&quot;,
               &quot;id&quot;: &quot;ea77c2eb-d44e-11e6-8f77-0242ac130004&quot;
             },
-            {
-              &quot;type&quot;: &quot;roster&quot;,
-              &quot;id&quot;: &quot;dc2c14b4-d50c-11e6-bf26-cec0c932ce01&quot;
-            }
+            ...
           ]
+        },
+        &quot;rounds&quot;: {
+          &quot;data&quot;: [
+            {
+              &quot;type&quot;: &quot;round&quot;,
+              &quot;id&quot;: &quot;b7326b70-1473-48b4-a30b-3eb9bb319541&quot;
+            }
+            ...
+          ]
+        },
+        &quot;spectators&quot;: {
+          &quot;data&quot;: []
         }
+      }
+      &quot;links&quot;: {
+        &quot;schema&quot;: &quot;schema&quot;: &quot;https://raw.githubusercontent.com/madglory/gamelocker-stunlock-studios-battlerite/master/schemas/1.0/match_index.json&quot;,
+        &quot;self&quot;: &quot;https://api.dc01.gamelockerapp.com/shards/global/matches/D005654E95174996B303A17B979DC016&quot;
       }
     }
   ]
+  &quot;included&quot;: [
+    {...}, //Player, Roster, Participant, asset, and Round structures
+    ...
+  ],
+  &quot;links&quot;: {
+    ...
+  },
+  &quot;meta&quot;: {}
 }
 </pre></div>
 </div>
@@ -293,50 +308,18 @@
 </div>
 <p>The above commands returns JSON structured like this:</p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>{
-  &quot;data&quot;: {
-    &quot;type&quot;: &quot;match&quot;,
-    &quot;id&quot;: &quot;02b90214-c64d-11e6-9f6b-062445d3d668&quot;,
-    &quot;attributes&quot;: {
-      &quot;createdAt&quot;: &quot;2017-11-10T20:30:08Z&quot;,
-      &quot;duration&quot;: 1482195372,
-      &quot;gameMode&quot;: &quot;...&quot;,
-      &quot;patchVersion&quot;: &quot;0.14&quot;,
-      &quot;shardId&quot;: &quot;global&quot;,
-      &quot;stats&quot;: {
-        &quot;mapID&quot;: &quot;417DE573937D74E39BF40EB6CF82670B&quot;,
-        &quot;type&quot;: &quot;QUICK2V2 &quot;,
-        &quot;region&quot;: &quot;...&quot;
-      }
-    },
-    &quot;relationships&quot;: {
-      &quot;rounds&quot;: [
-        {
-          &quot;type&quot;: &quot;round&quot;,
-          &quot;id&quot;: &quot;729cf263-08a7-43a2-9c0c-21c73ecd45af&quot;
-          &quot;attributes&quot;: {
-            &quot;Ordinal&quot;: 0,
-            &quot;stats&quot;: {
-              &quot;WinningTeam&quot;: 1
-            },
-            &quot;duration&quot;: 64
-          }
-        }
-        ...
-      ],
-      &quot;rosters&quot;: {
-        &quot;data&quot;: [
-          {
-            &quot;type&quot;: &quot;roster&quot;,
-            &quot;id&quot;: &quot;ea77c2eb-d44e-11e6-8f77-0242ac130004&quot;
-          },
-          {
-            &quot;type&quot;: &quot;roster&quot;,
-            &quot;id&quot;: &quot;dc2c14b4-d50c-11e6-bf26-cec0c932ce01&quot;
-          }
-        ]
-      }
-    }
-  }
+  &quot;data&quot;: [
+    {...}, //Match structures
+    ...
+  ]
+  &quot;included&quot;: [
+    {...}, //Player, Roster, Participant, asset, and Round structures
+    ...
+  ],
+  &quot;links&quot;: {
+    ...
+  },
+  &quot;meta&quot;: {}
 }
 </pre></div>
 </div>

@@ -31,43 +31,30 @@ The above commands returns JSON structured like this:
     "data": [
       {
         "type": "match",
-        "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
-        "attributes": {
-          "createdAt": "2017-11-10T20:30:08Z",
-          "duration": 1482195372,
-          "gameMode": "...",
-          "patchVersion": "0.14",
-          "shardId": "global",
-          "stats": {
-            "mapID": "417DE573937D74E39BF40EB6CF82670B",
-            "type": "QUICK2V2 ",
-            "region": "..."
-          }
-        },
+        "id": "D005654E95174996B303A17B979DC016",
+        "attributes": {...},
         "relationships": {
-          "data": [
-            "rounds": [
-              {...},
-              ...
-            ]
-          ],
-          "rosters": {
+          "assets" {
             "data": [
-              {...},
-              ...
-            ]
-          },
-          "assets": {
-            "data" [
               {
                 "type": "asset",
                 "id": "b900c179-0aaa-11e7-bb12-0242ac110005"
               }
             ]
-          }
+          },
+          "rosters": {...},
+          "rounds": {...},
+          "spectators": {...}
         }
+        "links": {...}
       }
     ]
+    "included": [
+      {...}, //Player, Roster, Participant, and Round structures
+      ...
+    ],
+    "links": {...},
+    "meta": {}
   }
 
 You need to look for an ``Assets`` JSON node which points to telemetry. Check for the following in the response:
@@ -91,15 +78,11 @@ Once you have located this ID, you now have to search for the following JSON seg
 
   {
     "type": "asset",
-    "id": "b900c179-0aaa-11e7-bb12-0242ac110005",
-    "titleId": "stunlock-battlerite",
-    "shardId": "global",
+    "id": "1ad97f85-cf9b-11e7-b84e-0a586460f004",
     "attributes": {
-      "URL": "https://gl-prod-us-east-1.s3.amazonaws.com/assets/stunlock-battlerite/na/2017/11/10/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json",
-      "contentType": "application/json",
-      "createdAt": "2017-03-17T00:43:22Z",
+      "URL": "https://cdn.gamelockerapp.com/stunlock-studios-battlerite/global/2017/11/22/15/37/1ad97f85-cf9b-11e7-b84e-0a586460f004-telemetry.json",
+      "createdAt": "2017-11-22T15:37:53Z",
       "description": "",
-      "filename": "telemetry.json",
       "name": "telemetry"
     }
   },
@@ -108,7 +91,7 @@ You can download the data with following commands. Please note that you do not n
 
 .. code-block:: shell
 
-  curl "https://gl-prod-us-east-1.s3.amazonaws.com/assets/stunlock-battlerite/na/2017/03/17/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json" \
+  curl "https://gl-prod-us-east-1.s3.amazonaws.com/assets/stunlock-studios-battlerite/na/2017/03/17/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json" \
  	-H "Accept: application/vnd.api+json"
 
 This request will return you a response with lines strutured as follows:

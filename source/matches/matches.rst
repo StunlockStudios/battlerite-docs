@@ -17,20 +17,14 @@ Rosters track the scores of each opposing group of Participants. If players ente
     "type": "roster",
     "id": "eca49808-d510-11e6-bf26-cec0c932ce01",
     "attributes": {
+      "shardId": "global"
       "stats": {
-        "side": 1,
         "score": 3
+        "side": 1,
       },
       "won": "true",
-      "shardId": "global"
     },
     "relationships": {
-      "team": {
-        "data": {
-          "type": "team",
-          "id": "753d464c-d511-11e6-bf26-cec0c932ce01"
-        }
-      },
       "participants": {
         "data": [
           {
@@ -40,6 +34,9 @@ Rosters track the scores of each opposing group of Participants. If players ente
           "etc..."
         ]
       }
+      "team": {
+        "data": {...}
+      },
     }
   }
 
@@ -56,18 +53,21 @@ Participant objects track each member in a Roster. Participants may be anonymous
     "type": "participant",
     "id": "ea77c3a7-d44e-11e6-8f77-0242ac130004",
     "attributes": {
-      "stats": {
-        "kills": 1,
-        "deaths": 0,
-        "score": 744,
-        "etc..." 
-      },
-      "actor": "Ashka",
+      "actor": "65687534",
       "shardId": "global"
+      "stats": {
+        "attachment": 578166028,
+        "emote": 1505065066,
+        "mount": 1302058678,
+        "outfit": 1890030881
+      },
     }
     "relationships": {
       "player": {
-        ...
+        "data": {
+          "type": "player",
+          "id": "932723402744184832"
+        }
       }
     }
   }
@@ -153,49 +153,64 @@ The above commands returns JSON structured like this:
     "data": [
       {
         "type": "match",
-        "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
+        "id": "D005654E95174996B303A17B979DC016",
         "attributes": {
           "createdAt": "2017-11-10T20:30:08Z",
-          "duration": 1482195372,
-          "gameMode": "...",
-          "patchVersion": "0.14",
+          "duration": 492,
+          "gameMode": "1733162751",
+          "patchVersion": "1.0",
           "shardId": "global",
           "stats": {
             "mapID": "417DE573937D74E39BF40EB6CF82670B",
             "type": "QUICK2V2 ",
-            "region": "..."
-          }
+          },
+          "titleId": "stunlock-studios-battlerite"
         },
         "relationships": {
-          "rounds": [
-            {
-              "type": "round",
-              "id": "729cf263-08a7-43a2-9c0c-21c73ecd45af"
-              "attributes": {
-                "Ordinal": 0,
-                "stats": {
-                  "WinningTeam": 1
-                },
-                "duration": 64
+          "assets" {
+            "data": [
+              {
+                "type": "asset",
+                "id": "1ad97f85-cf9b-11e7-b84e-0a586460f004"
               }
-            }
-            ...
-          ],
+            ]
+          },
           "rosters": {
             "data": [
               {
                 "type": "roster",
                 "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
-              }, 
-              {
-                "type": "roster",
-                "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
-              }
+              },
+              ...
             ]
+          },
+          "rounds": {
+            "data": [
+              {
+                "type": "round",
+                "id": "b7326b70-1473-48b4-a30b-3eb9bb319541"
+              }
+              ...
+            ]
+          },
+          "spectators": {
+            "data": []
           }
+        }
+        "links": {
+          "schema": "schema": "https://raw.githubusercontent.com/madglory/gamelocker-stunlock-studios-battlerite/master/schemas/1.0/match_index.json",
+          "self": "https://api.dc01.gamelockerapp.com/shards/global/matches/D005654E95174996B303A17B979DC016"
         }
       }
     ]
+    "included": [
+      {...}, //Player, Roster, Participant, asset, and Round structures
+      ...
+    ],
+    "links": {
+      ...
+    },
+    "meta": {}
   }
 
 Get a Single Match
@@ -228,50 +243,18 @@ The above commands returns JSON structured like this:
 .. code-block:: none
 
   {
-    "data": {
-      "type": "match",
-      "id": "02b90214-c64d-11e6-9f6b-062445d3d668",
-      "attributes": {
-        "createdAt": "2017-11-10T20:30:08Z",
-        "duration": 1482195372,
-        "gameMode": "...",
-        "patchVersion": "0.14",
-        "shardId": "global",
-        "stats": {
-          "mapID": "417DE573937D74E39BF40EB6CF82670B",
-          "type": "QUICK2V2 ",
-          "region": "..."
-        }
-      },
-      "relationships": {
-        "rounds": [
-          {
-            "type": "round",
-            "id": "729cf263-08a7-43a2-9c0c-21c73ecd45af"
-            "attributes": {
-              "Ordinal": 0,
-              "stats": {
-                "WinningTeam": 1
-              },
-              "duration": 64
-            }
-          }
-          ...
-        ],
-        "rosters": {
-          "data": [
-            {
-              "type": "roster",
-              "id": "ea77c2eb-d44e-11e6-8f77-0242ac130004"
-            },
-            {
-              "type": "roster",
-              "id": "dc2c14b4-d50c-11e6-bf26-cec0c932ce01"
-            }
-          ]
-        }
-      }
-    }
+    "data": [
+      {...}, //Match structures
+      ...
+    ]
+    "included": [
+      {...}, //Player, Roster, Participant, asset, and Round structures
+      ...
+    ],
+    "links": {
+      ...
+    },
+    "meta": {}
   }
 
 .. toctree::
