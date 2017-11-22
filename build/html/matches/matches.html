@@ -113,6 +113,28 @@
 </pre></div>
 </div>
 </div>
+<div class="section" id="rounds">
+<h2>Rounds<a class="headerlink" href="#rounds" title="Permalink to this headline">¶</a></h2>
+<p>Round objects contain an overview of a round played, including information such as the round’s duration, order in a match, participants, and the winning team. Round objects are only meaningful within the context of a Match and are not exposed as a standalone resource.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+  &quot;type&quot;: &quot;round&quot;,
+  &quot;id&quot;: &quot;b93e40bf-f488-4e16-a277-f53deda4e3fb&quot;,
+  &quot;attributes&quot;: {
+    &quot;duration&quot;: 95,
+    &quot;ordinal&quot;: 2,
+    &quot;stats&quot;: {
+      &quot;winningTeam&quot;: 2
+    }
+  },
+  &quot;relationships&quot;: {
+    &quot;participants&quot;: {
+      &quot;data&quot;: []
+    }
+  }
+},
+</pre></div>
+</div>
+</div>
 <div class="section" id="get-a-collection-of-matches">
 <h2>Get a Collection of Matches<a class="headerlink" href="#get-a-collection-of-matches" title="Permalink to this headline">¶</a></h2>
 <p>This endpoint retrieves data from matches.</p>
@@ -346,6 +368,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Matches</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#rosters">Rosters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#participants">Participants</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rounds">Rounds</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-a-collection-of-matches">Get a Collection of Matches</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-a-single-match">Get a Single Match</a></li>
 </ul>

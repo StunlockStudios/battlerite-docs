@@ -73,6 +73,30 @@ Participant objects track each member in a Roster. Participants may be anonymous
   }
 
 
+Rounds
+---------------------------
+
+Round objects contain an overview of a round played, including information such as the round's duration, order in a match, participants, and the winning team. Round objects are only meaningful within the context of a Match and are not exposed as a standalone resource.
+
+.. code-block:: none
+
+  {
+    "type": "round",
+    "id": "b93e40bf-f488-4e16-a277-f53deda4e3fb",
+    "attributes": {
+      "duration": 95,
+      "ordinal": 2,
+      "stats": {
+        "winningTeam": 2
+      }
+    },
+    "relationships": {
+      "participants": {
+        "data": []
+      }
+    }
+  },
+
 
 Get a Collection of Matches
 ---------------------------
