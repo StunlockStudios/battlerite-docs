@@ -3,22 +3,20 @@
 Match Data Summary
 ==================
 
-Special thanks to Kashz for helping to create this! GitHub: iAm-Kashif
-
 Match Object
 ---------------------------
 
 =================  ==============  ==================================
 Variable    	   Type            Description
 =================  ==============  ==================================
-Type               str             Match
-ID                 str             Match ID
+type               str             Match
+id                 str             Match ID
 createdAt          str (iso8601)   Time of Match Played
-duration           int             Time of match in seconds
+duration           int             Duration of match in seconds
 gameMode           str             Game Mode
 patchVersion       str             Version of the game
-shardID            str             Match Shard
-stats              map             See Match.stats
+shardID            str             Region Shard
+stats              map             Stats particular to the match
 assets             obj             See Match.assets
 rosters            obj             See Rosters
 rounds             obj             See Rounds
@@ -27,53 +25,34 @@ titleId            string          Identifies the studio and game
 =================  ==============  ==================================
 
 
-**Match.stats (End of game statistics)**
-
-=================  ==============  ===========================
-Variable    	   Type            Description
-=================  ==============  ===========================
-mapID              str             Map ID
-type               str             Type of Match Played
-region             str             Game server region
-=================  ==============  ===========================
-
-
 **Match.assets (Telemetry Data)**
 
 =================  ==============  ===========================
 Variable    	   Type            Description
 =================  ==============  ===========================
-Type               str             asset
+type               str             Asset
 createdAt          str (iso8601)   Time of Telemtry creation
-description        str             " "
+description        str             NA
 filename           str             telemetry.json
 id                 str             ID of Asset
 contentType        str             application/json
-name               map             telemetry
-url                str             Link to Telemetry.json file
+name               map             Telemetry
+URL                str             Link to Telemetry.json file
 shardId            str             Region Shard
 =================  ==============  ===========================
 
 Rounds Object
 ---------------------------
 
-=================  ==============  ===========================
+=================  ==============  ===============================
 Variable    	   Type            Description
-=================  ==============  ===========================
+=================  ==============  ===============================
 id                 str             Round ID
 ordinal            int64           Round Index
 participants       obj             List of participants
-stats              map             See Rounds.stats
+stats              map             Stats particular to the round
 duration           int64           Length of the Match
-=================  ==============  ===========================
-
-**Rounds.stats**
-
-=================  ==============  ===========================
-Variable    	   Type            Description
-=================  ==============  ===========================
-winningTeam        int             Winning Team
-=================  ==============  ===========================
+=================  ==============  ===============================
 
 Rosters Object
 ---------------------------
@@ -84,9 +63,9 @@ Variable    	   Type            Description
 id                 str             ID of Roster
 type               str             Roster
 participants       obj             See Participants
-stats              obj             See Rosters.stats (coming soon)
+stats              obj             Stats particular to rosters
 team               obj             See Rosters.team
-won                str             Indiciates if a roster won
+won                str             Indicates if a roster won
 shardId            str             Region Shard
 =================  ==============  =================================
 
@@ -97,11 +76,10 @@ Variable    	   Type            Description
 =================  ==============  ================================
 id                 str             ID of Team or None
 name               str             Name of Team or None
-type               str             team
+type               str             Team
 titleId            str             Identifies the studio and game
 shardId            str             Region Shard
-createdAt          str (iso8601)   Team creation time
-assets             obj             Same structure as Match.assets
+assets             obj             NA
 =================  ==============  ================================
 
 Participants Object
@@ -123,35 +101,8 @@ type               str             participants
 Variable    	   Type            Description
 =================  ==============  ================================
 id                 str             UID of player
-name               str             IGN of player
-stats              map             Player Stats
 type               str             Player
-titleId            str             The studio and game title
-shardId            str             Region Shard
-createdAt          str (iso8601)   Player signup date
-assets             obj             Same structure as Match.assets
-patchVersion       str             Version of the game
 =================  ==============  ================================
-
-**Participants.stats**
-
-=================  ======================  
-Variable    	   Type            
-=================  ======================
-kills              int
-deaths             int
-score              int
-damageDone         int
-damageReceived     int
-healingDone        int
-healingReceived    int
-disablesDone       int
-disablesReceived   int
-energyGained       int
-energyUsed         int
-timeAlive          int
-abilityUses        int
-=================  ======================
 
 .. toctree::
   :maxdepth: 2

@@ -89,11 +89,11 @@
 </div>
 <div class="section" id="pagination">
 <h2>Pagination<a class="headerlink" href="#pagination" title="Permalink to this headline">¶</a></h2>
-<p>Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the <code class="docutils literal"><span class="pre">limit</span></code> and <code class="docutils literal"><span class="pre">offset</span></code> parameters. To fetch items 3 through 5 you would specify a <code class="docutils literal"><span class="pre">limit</span></code> of 5 and an <code class="docutils literal"><span class="pre">offset</span></code> of 3:</p>
+<p>Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the <code class="docutils literal"><span class="pre">limit</span></code> and <code class="docutils literal"><span class="pre">offset</span></code> parameters. To fetch items 3 through 5 you would specify a <code class="docutils literal"><span class="pre">limit</span></code> of 2 and an <code class="docutils literal"><span class="pre">offset</span></code> of 3:</p>
 <p>If not specified, the server will default to an <code class="docutils literal"><span class="pre">offset</span></code> of 0, and the following values for <code class="docutils literal"><span class="pre">limit</span></code> depending on the endpoint:</p>
 <div class="line-block">
-<div class="line">Matches: 5</div>
-<div class="line">players/samples: 6</div>
+<div class="line">/matches: 5</div>
+<div class="line">/players: 6</div>
 </div>
 <p>Note that the above values are also the maximum values for <code class="docutils literal"><span class="pre">limit</span></code>.</p>
 <div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&amp;page[offset]=3&quot;</span> <span class="se">\</span>
@@ -117,10 +117,10 @@
 <ul class="simple">
 <li>Data retention period is 120 days</li>
 <li>The max search time span between createdAt-start and createdAt-end is 28 days.</li>
-<li>If you don’t specify createdAt-start, the default is 28 days.</li>
-<li>If you don’t specify createdAt-end, the default is now.</li>
-<li>If you search for a time &gt; now, the default is now.</li>
-<li>If you search for a time before the retention period, the default is the retention period (now - 120 days).</li>
+<li>If you don’t specify createdAt-start, the default is now() - 28 days.</li>
+<li>If you don’t specify createdAt-end, the default is now().</li>
+<li>If you search for a time &gt; now, the default is now().</li>
+<li>If you search for a time before the retention period, the default is the retention period (now() - 120 days).</li>
 <li>If createdAt-start &gt;= createdAt-end, you will receive an error.</li>
 </ul>
 </div>

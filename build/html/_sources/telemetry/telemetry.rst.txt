@@ -3,13 +3,13 @@
 Telemetry
 =========
 
-The telemtry data provides us with insights into a match. It gives us details of various events that happened in the match, along with the time when they happened. Some of the events also have a location which can be plotted on a Battlerite Game map. Telemetry is very useful to generate a timeline visualtions of how the match went for replays, or create heatmaps of where a certin hero or ability is most useful. These are just some of the exmaples of where Telemtry can be used.
+Telemetry provides further insight into a match.
 
 
-To get Telemetry Data
+To retrieve Telemetry Data
 ---------------------------
 
-You start by pulling a list of matches using the matches endopoint.
+You start by pulling a list of matches using the matches endpoint.
 
 **HTTP Request**
 

@@ -52,7 +52,6 @@
             
   <div class="section" id="match-data-summary">
 <span id="id1"></span><h1>Match Data Summary<a class="headerlink" href="#match-data-summary" title="Permalink to this headline">¶</a></h1>
-<p>Special thanks to Kashz for helping to create this! GitHub: iAm-Kashif</p>
 <div class="section" id="match-object">
 <h2>Match Object<a class="headerlink" href="#match-object" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
@@ -68,11 +67,11 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Type</td>
+<tr class="row-even"><td>type</td>
 <td>str</td>
 <td>Match</td>
 </tr>
-<tr class="row-odd"><td>ID</td>
+<tr class="row-odd"><td>id</td>
 <td>str</td>
 <td>Match ID</td>
 </tr>
@@ -82,7 +81,7 @@
 </tr>
 <tr class="row-odd"><td>duration</td>
 <td>int</td>
-<td>Time of match in seconds</td>
+<td>Duration of match in seconds</td>
 </tr>
 <tr class="row-even"><td>gameMode</td>
 <td>str</td>
@@ -94,11 +93,11 @@
 </tr>
 <tr class="row-even"><td>shardID</td>
 <td>str</td>
-<td>Match Shard</td>
+<td>Region Shard</td>
 </tr>
 <tr class="row-odd"><td>stats</td>
 <td>map</td>
-<td>See Match.stats</td>
+<td>Stats particular to the match</td>
 </tr>
 <tr class="row-even"><td>assets</td>
 <td>obj</td>
@@ -122,34 +121,6 @@
 </tr>
 </tbody>
 </table>
-<p><strong>Match.stats (End of game statistics)</strong></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="29%" />
-<col width="24%" />
-<col width="47%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Variable</th>
-<th class="head">Type</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>mapID</td>
-<td>str</td>
-<td>Map ID</td>
-</tr>
-<tr class="row-odd"><td>type</td>
-<td>str</td>
-<td>Type of Match Played</td>
-</tr>
-<tr class="row-even"><td>region</td>
-<td>str</td>
-<td>Game server region</td>
-</tr>
-</tbody>
-</table>
 <p><strong>Match.assets (Telemetry Data)</strong></p>
 <table border="1" class="docutils">
 <colgroup>
@@ -164,9 +135,9 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>Type</td>
+<tr class="row-even"><td>type</td>
 <td>str</td>
-<td>asset</td>
+<td>Asset</td>
 </tr>
 <tr class="row-odd"><td>createdAt</td>
 <td>str (iso8601)</td>
@@ -174,7 +145,7 @@
 </tr>
 <tr class="row-even"><td>description</td>
 <td>str</td>
-<td>” “</td>
+<td>NA</td>
 </tr>
 <tr class="row-odd"><td>filename</td>
 <td>str</td>
@@ -190,9 +161,9 @@
 </tr>
 <tr class="row-even"><td>name</td>
 <td>map</td>
-<td>telemetry</td>
+<td>Telemetry</td>
 </tr>
-<tr class="row-odd"><td>url</td>
+<tr class="row-odd"><td>URL</td>
 <td>str</td>
 <td>Link to Telemetry.json file</td>
 </tr>
@@ -207,9 +178,9 @@
 <h2>Rounds Object<a class="headerlink" href="#rounds-object" title="Permalink to this headline">¶</a></h2>
 <table border="1" class="docutils">
 <colgroup>
-<col width="29%" />
-<col width="24%" />
-<col width="47%" />
+<col width="27%" />
+<col width="23%" />
+<col width="50%" />
 </colgroup>
 <thead valign="bottom">
 <tr class="row-odd"><th class="head">Variable</th>
@@ -232,31 +203,11 @@
 </tr>
 <tr class="row-odd"><td>stats</td>
 <td>map</td>
-<td>See Rounds.stats</td>
+<td>Stats particular to the round</td>
 </tr>
 <tr class="row-even"><td>duration</td>
 <td>int64</td>
 <td>Length of the Match</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Rounds.stats</strong></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="29%" />
-<col width="24%" />
-<col width="47%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Variable</th>
-<th class="head">Type</th>
-<th class="head">Description</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>winningTeam</td>
-<td>int</td>
-<td>Winning Team</td>
 </tr>
 </tbody>
 </table>
@@ -290,7 +241,7 @@
 </tr>
 <tr class="row-odd"><td>stats</td>
 <td>obj</td>
-<td>See Rosters.stats (coming soon)</td>
+<td>Stats particular to rosters</td>
 </tr>
 <tr class="row-even"><td>team</td>
 <td>obj</td>
@@ -298,7 +249,7 @@
 </tr>
 <tr class="row-odd"><td>won</td>
 <td>str</td>
-<td>Indiciates if a roster won</td>
+<td>Indicates if a roster won</td>
 </tr>
 <tr class="row-even"><td>shardId</td>
 <td>str</td>
@@ -330,7 +281,7 @@
 </tr>
 <tr class="row-even"><td>type</td>
 <td>str</td>
-<td>team</td>
+<td>Team</td>
 </tr>
 <tr class="row-odd"><td>titleId</td>
 <td>str</td>
@@ -340,13 +291,9 @@
 <td>str</td>
 <td>Region Shard</td>
 </tr>
-<tr class="row-odd"><td>createdAt</td>
-<td>str (iso8601)</td>
-<td>Team creation time</td>
-</tr>
-<tr class="row-even"><td>assets</td>
+<tr class="row-odd"><td>assets</td>
 <td>obj</td>
-<td>Same structure as Match.assets</td>
+<td>NA</td>
 </tr>
 </tbody>
 </table>
@@ -406,90 +353,9 @@
 <td>str</td>
 <td>UID of player</td>
 </tr>
-<tr class="row-odd"><td>name</td>
-<td>str</td>
-<td>IGN of player</td>
-</tr>
-<tr class="row-even"><td>stats</td>
-<td>map</td>
-<td>Player Stats</td>
-</tr>
 <tr class="row-odd"><td>type</td>
 <td>str</td>
 <td>Player</td>
-</tr>
-<tr class="row-even"><td>titleId</td>
-<td>str</td>
-<td>The studio and game title</td>
-</tr>
-<tr class="row-odd"><td>shardId</td>
-<td>str</td>
-<td>Region Shard</td>
-</tr>
-<tr class="row-even"><td>createdAt</td>
-<td>str (iso8601)</td>
-<td>Player signup date</td>
-</tr>
-<tr class="row-odd"><td>assets</td>
-<td>obj</td>
-<td>Same structure as Match.assets</td>
-</tr>
-<tr class="row-even"><td>patchVersion</td>
-<td>str</td>
-<td>Version of the game</td>
-</tr>
-</tbody>
-</table>
-<p><strong>Participants.stats</strong></p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="44%" />
-<col width="56%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">Variable</th>
-<th class="head">Type</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>kills</td>
-<td>int</td>
-</tr>
-<tr class="row-odd"><td>deaths</td>
-<td>int</td>
-</tr>
-<tr class="row-even"><td>score</td>
-<td>int</td>
-</tr>
-<tr class="row-odd"><td>damageDone</td>
-<td>int</td>
-</tr>
-<tr class="row-even"><td>damageReceived</td>
-<td>int</td>
-</tr>
-<tr class="row-odd"><td>healingDone</td>
-<td>int</td>
-</tr>
-<tr class="row-even"><td>healingReceived</td>
-<td>int</td>
-</tr>
-<tr class="row-odd"><td>disablesDone</td>
-<td>int</td>
-</tr>
-<tr class="row-even"><td>disablesReceived</td>
-<td>int</td>
-</tr>
-<tr class="row-odd"><td>energyGained</td>
-<td>int</td>
-</tr>
-<tr class="row-even"><td>energyUsed</td>
-<td>int</td>
-</tr>
-<tr class="row-odd"><td>timeAlive</td>
-<td>int</td>
-</tr>
-<tr class="row-even"><td>abilityUses</td>
-<td>int</td>
 </tr>
 </tbody>
 </table>

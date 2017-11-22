@@ -3,7 +3,7 @@
 Matches
 =======
 
-Match records are created every time players complete a game session. Each Match contains high level information about the game session, including info like duration, gameMode, and more. Each Match has two Rosters.
+Match records are created every time players complete a game session. Each Match contains high level information about the game session, i.e. duration, gameMode, etc. Each Match has two Rosters.
 
 
 Rosters
@@ -85,13 +85,15 @@ This endpoint retrieves data from matches.
 
 ``GET https://api.dc01.gamelockerapp.com/shards/global/matches``
 
+**Query Parameters**
+
 ========================= =========== =================================================================================================================
-Parameter                 Default     Description                                               
+Parameter                 Default     Description
 ========================= =========== =================================================================================================================
-page[offset]              0           Allows paging over results                                     
-page[limit ]              5           The default (and current maximum) is 5. Values less than 5 and great than 1 are supported.             
+page[offset]              0           Allows paging over results
+page[limit]               5           The default (and current maximum) is 5. Values less than 5 and greater than 1 are supported.
 sort                      createdAt   By default, Matches are sorted by creation time ascending.
-filter[createdAt-start]   3hrs ago    Must occur before end time. Format is iso8601 Usage: filter[createdAt-start]=2017-01-01T08:25:30Z
+filter[createdAt-start]   Now-28days  Must occur before end time. Format is iso8601 Usage: filter[createdAt-start]=2017-01-01T08:25:30Z
 filter[createdAt-end]     Now         Queries search the last 3 hrs. Format is iso8601 i.e.filter[createdAt-end]=2017-01-01T13:25:30Z
 filter[playerNames]       none        Filters by player name. Usage: filter[playerNames]=player1,player2,...
 filter[playerIds]         none        Filters by player Id. Usage:filter[playerIds]=playerId,playerId,...

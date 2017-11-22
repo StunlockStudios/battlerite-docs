@@ -52,11 +52,10 @@
             
   <div class="section" id="players">
 <span id="id1"></span><h1>Players<a class="headerlink" href="#players" title="Permalink to this headline">¶</a></h1>
-<p>Player objects contain aggregated lifetime information about each Player. At this time Players are fairly sparse, but there are plans to add much richer data as it becomes available.</p>
+<p>Player objects contain aggregated lifetime information about each Player.</p>
 <div class="section" id="get-a-single-player">
 <h2>Get a Single Player<a class="headerlink" href="#get-a-single-player" title="Permalink to this headline">¶</a></h2>
 <p>This endpoint retrieves a specific player.</p>
-<p><em>Please Note: Changes Coming! - Player resources are not fully defined at this point, but are included so that consumers can get basic info (name, etc.) This object will have additional data added over the next few months, and may change slightly as data moves from the `attributes.stats` object to the main `attributes` object.</em></p>
 <p><strong>HTTP Request</strong></p>
 <div class="line-block">
 <div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/players/&lt;ID&gt;</span></code></div>
@@ -109,7 +108,7 @@
 </div>
 <div class="section" id="get-a-collection-of-players">
 <h2>Get a Collection of Players<a class="headerlink" href="#get-a-collection-of-players" title="Permalink to this headline">¶</a></h2>
-<p>This endpoint retrieves a collection of up to 6 players, filtered by name. Player names are specific to each region.</p>
+<p>This endpoint retrieves a collection of up to 6 players, filtered by name or id. Player names are specific to each region.</p>
 <p><strong>HTTP Request</strong></p>
 <div class="line-block">
 <div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/global/players</span></code></div>
@@ -131,6 +130,10 @@
 <tr class="row-even"><td>filter[playerNames]</td>
 <td>none</td>
 <td>Filters by player names. Usage: filter[playerNames]=player1,player2</td>
+</tr>
+<tr class="row-odd"><td>filter[playerIds]</td>
+<td>none</td>
+<td>Filter by player ids. Usage: filter[playerIds]=id1,id2,…</td>
 </tr>
 </tbody>
 </table>

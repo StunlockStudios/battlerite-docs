@@ -3,15 +3,13 @@
 Players
 =======
 
-Player objects contain aggregated lifetime information about each Player. At this time Players are fairly sparse, but there are plans to add much richer data as it becomes available.
+Player objects contain aggregated lifetime information about each Player.
 
 
 Get a Single Player
 --------------------
 
 This endpoint retrieves a specific player.
-
-*Please Note: Changes Coming! - Player resources are not fully defined at this point, but are included so that consumers can get basic info (name, etc.) This object will have additional data added over the next few months, and may change slightly as data moves from the `attributes.stats` object to the main `attributes` object.*
 
 **HTTP Request**
 
@@ -60,7 +58,7 @@ ID          none      The ID of the player to retrieve
 Get a Collection of Players
 ---------------------------
 
-This endpoint retrieves a collection of up to 6 players, filtered by name. Player names are specific to each region.
+This endpoint retrieves a collection of up to 6 players, filtered by name or id. Player names are specific to each region.
 
 **HTTP Request**
 
@@ -73,6 +71,7 @@ This endpoint retrieves a collection of up to 6 players, filtered by name. Playe
 Parameter             Default   Description
 ===================== ========= =====================================================================
 filter[playerNames]   none      Filters by player names. Usage: filter[playerNames]=player1,player2
+filter[playerIds]     none      Filter by player ids. Usage: filter[playerIds]=id1,id2,...
 ===================== ========= =====================================================================
 
 

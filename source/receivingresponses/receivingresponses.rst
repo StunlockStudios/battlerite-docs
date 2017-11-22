@@ -27,18 +27,20 @@ If a document does not contain a top-level data key, the included member will no
   {
     "data": {
       "type": "match",
-      "id": "skarn",
+      "id": "fe793a44-d7da-11e6-b845-0671096b3e30",
       "attributes": {
         // ... this matches attributes
       },
       "relationships": {
         // ... this matches relationships
       }
+      "links": {}
     },
     "included": [
       {...},
       ...
     ],
+    "links": {}
     "meta": {}
   }
 

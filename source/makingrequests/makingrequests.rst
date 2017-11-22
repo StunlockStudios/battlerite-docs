@@ -63,12 +63,12 @@ To specify the header Accept-Encoding, use this code:
 Pagination
 ---------------------------
 
-Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the ``limit`` and ``offset`` parameters. To fetch items 3 through 5 you would specify a ``limit`` of 5 and an ``offset`` of 3:
+Where applicable, the server allows requests to limit the number of results returned via pagination. To paginate the primary data, supply pagination information to the query portion of the request using the ``limit`` and ``offset`` parameters. To fetch items 3 through 5 you would specify a ``limit`` of 2 and an ``offset`` of 3:
 
 If not specified, the server will default to an ``offset`` of 0, and the following values for ``limit`` depending on the endpoint:
 
-| Matches: 5
-| players/samples: 6
+| /matches: 5
+| /players: 6
 
 Note that the above values are also the maximum values for ``limit``.
 
@@ -99,10 +99,10 @@ Search Time
 
 * Data retention period is 120 days
 * The max search time span between createdAt-start and createdAt-end is 28 days.
-* If you don't specify createdAt-start, the default is 28 days.
-* If you don't specify createdAt-end, the default is now.
-* If you search for a time > now, the default is now.
-* If you search for a time before the retention period, the default is the retention period (now - 120 days).
+* If you don't specify createdAt-start, the default is now() - 28 days.
+* If you don't specify createdAt-end, the default is now().
+* If you search for a time > now, the default is now().
+* If you search for a time before the retention period, the default is the retention period (now() - 120 days).
 * If createdAt-start >= createdAt-end, you will receive an error.
 
 
