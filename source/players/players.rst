@@ -1,7 +1,7 @@
 .. _players:
 
 Players (Coming Soon!)
-=======
+======================
 
 Player objects contain aggregated lifetime information about each Player.
 
