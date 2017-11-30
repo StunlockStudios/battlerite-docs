@@ -59,7 +59,7 @@
 <p>This endpoint retrieves a specific player.</p>
 <p><strong>HTTP Request</strong></p>
 <div class="line-block">
-<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/na/players/&lt;ID&gt;</span></code></div>
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/global/players/&lt;ID&gt;</span></code></div>
 </div>
 <p><strong>URL Parameters</strong></p>
 <table border="1" class="docutils">
@@ -105,8 +105,8 @@
       }
     },
     &quot;links&quot;: {
-      &quot;schema&quot;: &quot;https://raw.githubusercontent.com/madglory/gamelocker-/master/schemas//player_index.json&quot;,
-      &quot;self&quot;: &quot;https://api.dc01.gamelockerapp.com/shards//players/931405258914193408&quot;
+      &quot;schema&quot;: &quot;https://raw.githubusercontent.com/madglory/gamelocker-/master/schemas/player_index.json&quot;,
+      &quot;self&quot;: &quot;https://api.dc01.gamelockerapp.com/shards/global/players/931405258914193408&quot;
     }
   }
 }
@@ -115,7 +115,7 @@
 </div>
 <div class="section" id="get-a-collection-of-players">
 <h2>Get a Collection of Players<a class="headerlink" href="#get-a-collection-of-players" title="Permalink to this headline">¶</a></h2>
-<p>This endpoint retrieves a collection of up to 6 players, filtered by name or id. Player names are specific to each region.</p>
+<p>This endpoint retrieves a collection of up to 6 players, filtered by id.</p>
 <p><strong>HTTP Request</strong></p>
 <div class="line-block">
 <div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/global/players</span></code></div>
@@ -134,18 +134,14 @@
 </tr>
 </thead>
 <tbody valign="top">
-<tr class="row-even"><td>filter[playerNames]</td>
-<td>none</td>
-<td>Filters by player names. Usage: filter[playerNames]=player1,player2</td>
-</tr>
-<tr class="row-odd"><td>filter[playerIds]</td>
+<tr class="row-even"><td>filter[playerIds]</td>
 <td>none</td>
 <td>Filter by player ids. Usage: filter[playerIds]=id1,id2,…</td>
 </tr>
 </tbody>
 </table>
 <p><strong>Shell:</strong></p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/global/players?filter[playerNames]=player1,player2&quot;</span> <span class="se">\</span>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/global/players?filter[playerIds]=player1Id,player2Id&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>

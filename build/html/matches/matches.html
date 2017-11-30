@@ -176,19 +176,15 @@
 <td>Now</td>
 <td>Queries search the last 3 hrs. Format is iso8601 i.e.filter[createdAt-end]=2017-01-01T13:25:30Z</td>
 </tr>
-<tr class="row-odd"><td>filter[playerNames]</td>
-<td>none</td>
-<td>Filters by player name. Usage: filter[playerNames]=player1,player2,…</td>
-</tr>
-<tr class="row-even"><td>filter[playerIds]</td>
+<tr class="row-odd"><td>filter[playerIds]</td>
 <td>none</td>
 <td>Filters by player Id. Usage:filter[playerIds]=playerId,playerId,…</td>
 </tr>
-<tr class="row-odd"><td>filter[teamNames]</td>
+<tr class="row-even"><td>filter[teamNames]</td>
 <td>none</td>
 <td>Filters by team names. Team names are the same as the in game team tags. Usage: filter[teamNames]=TSM,team2,…</td>
 </tr>
-<tr class="row-even"><td>filter[gameMode]</td>
+<tr class="row-odd"><td>filter[gameMode]</td>
 <td>none</td>
 <td>Filter by gameMode Usage: filter[gameMode]=casual,ranked,…</td>
 </tr>
@@ -196,7 +192,7 @@
 </table>
 <p><em>Remember — a happy match is an authenticated match!</em></p>
 <p><strong>Shell:</strong></p>
-<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/global/matches?sort=createdAt&amp;page[limit]=3&amp;filter[createdAt-start]=2017-11-10T13:25:30Z&amp;filter[playerNames]=&lt;playerName&gt;&quot;</span> <span class="se">\</span>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/global/matches?sort=createdAt&amp;page[limit]=3&amp;filter[createdAt-start]=2017-11-10T13:25:30Z&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
 -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
@@ -213,7 +209,6 @@
 
 <span class="n">query</span> <span class="o">=</span> <span class="p">{</span>
   <span class="s2">&quot;sort&quot;</span><span class="p">:</span> <span class="s2">&quot;createdAt&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;filter[playerNames]&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;playerName&gt;&quot;</span><span class="p">,</span>
   <span class="s2">&quot;filter[createdAt-start]&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-11-10T13:25:30Z&quot;</span><span class="p">,</span>
   <span class="s2">&quot;page[limit]&quot;</span><span class="p">:</span> <span class="s2">&quot;3&quot;</span>
 <span class="p">}</span>
@@ -224,7 +219,6 @@
 <p><strong>Go:</strong></p>
 <div class="highlight-go"><div class="highlight"><pre><span></span><span class="nx">q</span> <span class="o">:=</span> <span class="nx">req</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nx">Query</span><span class="p">()</span>
 <span class="nx">q</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="s">&quot;sort&quot;</span><span class="p">,</span> <span class="s">&quot;createdAt&quot;</span><span class="p">)</span>
-<span class="nx">q</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="s">&quot;filter[playerNames]&quot;</span><span class="p">,</span> <span class="s">&quot;&lt;playerName&gt;&quot;</span><span class="p">)</span>
 <span class="nx">q</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="s">&quot;filter[createdAt-start]&quot;</span><span class="p">,</span> <span class="s">&quot;2017-11-10T13:25:30Z&quot;</span><span class="p">)</span>
 <span class="nx">q</span><span class="p">.</span><span class="nx">Add</span><span class="p">(</span><span class="s">&quot;page[limit]&quot;</span><span class="p">,</span> <span class="s">&quot;3&quot;</span><span class="p">)</span>
 <span class="nx">req</span><span class="p">.</span><span class="nx">URL</span><span class="p">.</span><span class="nx">RawQuery</span> <span class="p">=</span> <span class="nx">q</span><span class="p">.</span><span class="nx">Encode</span><span class="p">()</span>

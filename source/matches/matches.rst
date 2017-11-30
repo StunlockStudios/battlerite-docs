@@ -119,7 +119,6 @@ page[limit]               5           The default (and current maximum) is 5. Va
 sort                      createdAt   By default, Matches are sorted by creation time ascending.
 filter[createdAt-start]   Now-28days  Must occur before end time. Format is iso8601 Usage: filter[createdAt-start]=2017-01-01T08:25:30Z
 filter[createdAt-end]     Now         Queries search the last 3 hrs. Format is iso8601 i.e.filter[createdAt-end]=2017-01-01T13:25:30Z
-filter[playerNames]       none        Filters by player name. Usage: filter[playerNames]=player1,player2,...
 filter[playerIds]         none        Filters by player Id. Usage:filter[playerIds]=playerId,playerId,...
 filter[teamNames]         none        Filters by team names. Team names are the same as the in game team tags. Usage: filter[teamNames]=TSM,team2,...
 filter[gameMode]          none        Filter by gameMode Usage: filter[gameMode]=casual,ranked,...
@@ -131,7 +130,7 @@ filter[gameMode]          none        Filter by gameMode Usage: filter[gameMode]
 
 .. code-block:: shell
 
-  curl -g "https://api.dc01.gamelockerapp.com/shards/global/matches?sort=createdAt&page[limit]=3&filter[createdAt-start]=2017-11-10T13:25:30Z&filter[playerNames]=<playerName>" \
+  curl -g "https://api.dc01.gamelockerapp.com/shards/global/matches?sort=createdAt&page[limit]=3&filter[createdAt-start]=2017-11-10T13:25:30Z" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -150,7 +149,6 @@ filter[gameMode]          none        Filter by gameMode Usage: filter[gameMode]
 
   query = {
     "sort": "createdAt",
-    "filter[playerNames]": "<playerName>",
     "filter[createdAt-start]": "2017-11-10T13:25:30Z",
     "page[limit]": "3"
   }
@@ -163,7 +161,6 @@ filter[gameMode]          none        Filter by gameMode Usage: filter[gameMode]
 
   q := req.URL.Query()
   q.Add("sort", "createdAt")
-  q.Add("filter[playerNames]", "<playerName>")
   q.Add("filter[createdAt-start]", "2017-11-10T13:25:30Z")
   q.Add("page[limit]", "3")
   req.URL.RawQuery = q.Encode()

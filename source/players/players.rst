@@ -13,7 +13,7 @@ This endpoint retrieves a specific player.
 
 **HTTP Request**
 
-|  ``GET https://api.dc01.gamelockerapp.com/shards/na/players/<ID>``
+|  ``GET https://api.dc01.gamelockerapp.com/shards/global/players/<ID>``
 
 
 **URL Parameters**
@@ -54,8 +54,8 @@ ID          none      The ID of the player to retrieve
         }
       },
       "links": {
-        "schema": "https://raw.githubusercontent.com/madglory/gamelocker-/master/schemas//player_index.json",
-        "self": "https://api.dc01.gamelockerapp.com/shards//players/931405258914193408"
+        "schema": "https://raw.githubusercontent.com/madglory/gamelocker-/master/schemas/player_index.json",
+        "self": "https://api.dc01.gamelockerapp.com/shards/global/players/931405258914193408"
       }
     }
   }
@@ -64,7 +64,7 @@ ID          none      The ID of the player to retrieve
 Get a Collection of Players
 ---------------------------
 
-This endpoint retrieves a collection of up to 6 players, filtered by name or id. Player names are specific to each region.
+This endpoint retrieves a collection of up to 6 players, filtered by id.
 
 **HTTP Request**
 
@@ -76,7 +76,6 @@ This endpoint retrieves a collection of up to 6 players, filtered by name or id.
 ===================== ========= =====================================================================
 Parameter             Default   Description
 ===================== ========= =====================================================================
-filter[playerNames]   none      Filters by player names. Usage: filter[playerNames]=player1,player2
 filter[playerIds]     none      Filter by player ids. Usage: filter[playerIds]=id1,id2,...
 ===================== ========= =====================================================================
 
@@ -85,7 +84,7 @@ filter[playerIds]     none      Filter by player ids. Usage: filter[playerIds]=i
 
 .. code-block:: shell
 
-  curl "https://api.dc01.gamelockerapp.com/shards/global/players?filter[playerNames]=player1,player2" \
+  curl "https://api.dc01.gamelockerapp.com/shards/global/players?filter[playerIds]=player1Id,player2Id" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
