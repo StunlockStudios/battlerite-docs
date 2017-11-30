@@ -72,7 +72,7 @@ You need to look for an ``Assets`` JSON node which points to telemetry. Check fo
     }
   }
 
-Once you have located this ID, you now have to search for the following JSON segment in the response object. The following response object will provide you a link to the Telemtry data
+Once you have located this ID, you now have to search for the following JSON segment in the response object. The following response object will provide you a link to the Telemetry data
 
 .. code-block:: none
 

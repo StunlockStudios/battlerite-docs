@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Datacenters &#8212; Battlerite 1.0 documentation</title>
+    <title>Status &#8212; Battlerite 1.0 documentation</title>
     <link rel="stylesheet" href="../_static/css/battlerite.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,8 +23,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Authorization" href="../authorization/authorization.html" />
-    <link rel="prev" title="Introduction" href="../introduction.html" />
+    <link rel="next" title="Community SDKs" href="../community_sdks/community_sdks.html" />
+    <link rel="prev" title="Telemetry" href="../telemetry/telemetry.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -51,9 +51,28 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="datacenters">
-<span id="id1"></span><h1>Datacenters<a class="headerlink" href="#datacenters" title="Permalink to this headline">¶</a></h1>
-<p>We operate several Datacenters around the world. Each datacenter holds all information for one or more regions of the game. Currently all data is located in DC01, but this may change in the future. Users will be notified prior to the change and an API endpoint will be made available to provide metadata describing where each region’s data can be found.</p>
+  <div class="section" id="status">
+<span id="id1"></span><h1>Status<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h1>
+<p>The status endpoint can be called to verify that the API is up and running. It also provides the most recent release date and version of the Gamelocker service itself.</p>
+<p>The following command can be used to call the status endpoint:</p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl -g <span class="s2">&quot;https://api.dc01.gamelockerapp.com/status&quot;</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api key&gt;&quot;</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+</pre></div>
+</div>
+<p>The above command will return the following JSON:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+  &quot;data&quot;: {
+    &quot;type&quot;: &quot;status&quot;,
+    &quot;id&quot;: &quot;gamelocker&quot;,
+    &quot;attributes&quot;: {
+      &quot;releasedAt&quot;: &quot;2017-11-22T20:25:05Z&quot;,
+      &quot;version&quot;: &quot;v7.5.1&quot;
+    }
+  }
+}
+</pre></div>
+</div>
 <div class="toctree-wrapper compound">
 </div>
 </div>
@@ -67,9 +86,7 @@
 <h3><a href="../index.html">Table Of Contents</a></h3>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Datacenters</a><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../datacenters/datacenters.html">Datacenters</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../authorization/authorization.html">Authorization</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../titles/titles.html">Titles</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../makingrequests/makingrequests.html">Making Requests</a></li>
@@ -79,7 +96,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../match_data_summary/match_data_summary.html">Match Data Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players (Coming Soon!)</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../status/status.html">Status</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Status</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Errors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../changelog/changelog.html">Changelog</a></li>
@@ -94,10 +113,10 @@
     <ul>
         <li>
           &larr;
-          <a href="../introduction.html" title="Previous document">Introduction</a>
+          <a href="../telemetry/telemetry.html" title="Previous document">Telemetry</a>
         </li>
         <li>
-          <a href="../authorization/authorization.html" title="Next document">Authorization</a>
+          <a href="../community_sdks/community_sdks.html" title="Next document">Community SDKs</a>
           &rarr;
         </li>
     </ul>
