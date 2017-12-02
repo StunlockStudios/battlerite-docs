@@ -40,15 +40,15 @@ ID          none      The ID of the player to retrieve
   {
     "data": {
       "type": "player",
-      "id": "931405258914193408"
+      "id": "931405258914193408",
       "attributes": {
-        "name": ""
-        "patchVersion": ""
+        "name": "",
+        "patchVersion": "",
         "shardId": "",
         "stats": null,
         "titleId": ""
       },
-      "relationships" {
+      "relationships": {
         "assets": {
           "data": []
         }
