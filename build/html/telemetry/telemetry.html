@@ -128,11 +128,9 @@
       -H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
 </pre></div>
 </div>
-<p>This request will return you a response with lines strutured as follows:</p>
-<div class="highlight-none"><div class="highlight"><pre><span></span>{&quot;cursor&quot;:499303,&quot;type&quot;:&quot;com.stunlock.service.matchmaking.avro.QueueEvent&quot;,&quot;dataObject&quot;:{&quot;time&quot;:1509652368501,&quot;userId&quot;:&quot;867669421479563264&quot;,&quot;teamId&quot;:&quot;926118591642865664&quot;,&quot;sessionId&quot;:&quot;79DED2DF8F365B2978A57071E9E9028C&quot;,&quot;season&quot;:6,&quot;eventType&quot;:&quot;MATCH&quot;,&quot;timeJoinedQueue&quot;:&quot;34506717429220767&quot;,&quot;timeInQueue&quot;:2.0009074,&quot;character&quot;:543520739,&quot;characterArchetype&quot;:8,&quot;queueTypes&quot;:[&quot;QUICK2V2&quot;],&quot;limitMatchmakingRange&quot;:false,&quot;regionSamples&quot;:[{&quot;region&quot;:&quot;eu-west&quot;,&quot;latencyMS&quot;:32},{&quot;region&quot;:&quot;na-northeast&quot;,&quot;latencyMS&quot;:110}],&quot;preferredRegion&quot;:&quot;eu-west&quot;,&quot;rankingType&quot;:&quot;UNRANKED&quot;,&quot;league&quot;:0,&quot;division&quot;:2,&quot;divisionRating&quot;:0,&quot;teamSize&quot;:1,&quot;teamMembers&quot;:[],&quot;placementGamesLeft&quot;:6,&quot;matchId&quot;:&quot;7260797FD85648B295DF0AA16E17A80D&quot;,&quot;matchRegion&quot;:&quot;eu-west&quot;,&quot;teamSide&quot;:1,&quot;autoMatchmaking&quot;:true}}
-...
-</pre></div>
-</div>
+<p>This request will return you a response containing a JSON array:</p>
+<p>Each element of the array may have a different structure for its dataObject field,
+depending on the value of the type field. For details, check <a class="reference internal" href="../telemetry_data_summary/telemetry_data_summary.html#telemetry-data-summary"><span class="std std-ref">Telemetry Data Summary</span></a></p>
 <div class="toctree-wrapper compound">
 </div>
 </div>

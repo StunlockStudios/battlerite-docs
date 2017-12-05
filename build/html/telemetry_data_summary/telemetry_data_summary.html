@@ -1,0 +1,879 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Telemetry Data Summary &#8212; Battlerite 1.0 documentation</title>
+    <link rel="stylesheet" href="../_static/css/battlerite.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Status" href="../status/status.html" />
+    <link rel="prev" title="Telemetry" href="../telemetry/telemetry.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  </head>
+  <body>
+<header id="BTT" role="banner">
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+	<div class="menu-top-outer clearfix">
+		<div class="wrapper clearfix">
+			<a href="https://developer.battlerite.com" id="site-logo"></a>
+			<a href="https://developer.battlerite.com/users/sign_in"><span id="logSignBtn" class="btn">Login / Signup</span></a>
+			<nav id="mainMenu" class="main-menu-con">
+				<ul class="main-menu clearfix">
+					<li><a class="active" href="http://battlerite-docs.readthedocs.io/en/latest/introduction.html">Documentation</a></li>
+					<li><a href="https://developer.battlerite.com/faq">Faq</a></li>
+					<li><a href="http://battlerite-docs.readthedocs.io/en/latest/changelog/changelog.html">Changelog</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="telemetry-data-summary">
+<span id="id1"></span><h1>Telemetry Data Summary<a class="headerlink" href="#telemetry-data-summary" title="Permalink to this headline">¶</a></h1>
+<p>The telemetry.json file contains an array of TelemetryData objects, each of which
+has a different structure based on its type. You can find the type of a TelemetryData
+object looking at its “type” field. Below are the descriptions of the various
+TelemetryData types and the structure of their “dataObject” field.</p>
+<div class="section" id="roundevent">
+<h2>RoundEvent<a class="headerlink" href="#roundevent" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">type=&quot;Structures.RoundEvent&quot;</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="19%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>time</td>
+<td>int</td>
+<td>timestamp telling when the event happened</td>
+</tr>
+<tr class="row-odd"><td>matchID</td>
+<td>str</td>
+<td>ID of the match</td>
+</tr>
+<tr class="row-even"><td>externalMatchID</td>
+<td>str</td>
+<td>empty string</td>
+</tr>
+<tr class="row-odd"><td>userID</td>
+<td>str</td>
+<td>UID of the player</td>
+</tr>
+<tr class="row-even"><td>round</td>
+<td>int</td>
+<td>round in which the event happened</td>
+</tr>
+<tr class="row-odd"><td>character</td>
+<td>int</td>
+<td>ID of the Champion</td>
+</tr>
+<tr class="row-even"><td>type</td>
+<td>str</td>
+<td>type of the event</td>
+</tr>
+<tr class="row-odd"><td>value</td>
+<td>int</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>timeIntoRound</td>
+<td>int</td>
+<td>time from the beginning of the round</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="userroundspell">
+<h2>UserRoundSpell<a class="headerlink" href="#userroundspell" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">type=&quot;Structures.UserRoundSpell&quot;</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="19%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>time</td>
+<td>int</td>
+<td>timestamp telling when the event happened</td>
+</tr>
+<tr class="row-odd"><td>accountId</td>
+<td>str</td>
+<td>UID of the player</td>
+</tr>
+<tr class="row-even"><td>matchID</td>
+<td>str</td>
+<td>ID of the match</td>
+</tr>
+<tr class="row-odd"><td>round</td>
+<td>int</td>
+<td>round in which the event happened</td>
+</tr>
+<tr class="row-even"><td>character</td>
+<td>int</td>
+<td>ID of the Champion</td>
+</tr>
+<tr class="row-odd"><td>typeId</td>
+<td>int</td>
+<td>ID of the type of event</td>
+</tr>
+<tr class="row-even"><td>sourceTypeId</td>
+<td>int</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>scoreType</td>
+<td>str</td>
+<td>“ENERGY_RECEIVED”,”DAMAGE_RECEIVED”,…</td>
+</tr>
+<tr class="row-even"><td>value</td>
+<td>int</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="deathevent">
+<h2>DeathEvent<a class="headerlink" href="#deathevent" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">type=&quot;Structures.DeathEvent&quot;</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="19%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>time</td>
+<td>int</td>
+<td>timestamp telling when the event happened</td>
+</tr>
+<tr class="row-odd"><td>matchID</td>
+<td>str</td>
+<td>ID of the match</td>
+</tr>
+<tr class="row-even"><td>externalMatchID</td>
+<td>str</td>
+<td>empty string</td>
+</tr>
+<tr class="row-odd"><td>userID</td>
+<td>str</td>
+<td>UID of the player</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="matchreserveduser">
+<h2>MatchReservedUser<a class="headerlink" href="#matchreserveduser" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">type=&quot;Structures.MatchReservedUser&quot;</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="18%" />
+<col width="57%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>time</td>
+<td>int</td>
+<td>timestamp telling when the event happened</td>
+</tr>
+<tr class="row-odd"><td>accountId</td>
+<td>str</td>
+<td>UID of the player</td>
+</tr>
+<tr class="row-even"><td>matchID</td>
+<td>str</td>
+<td>ID of the match</td>
+</tr>
+<tr class="row-odd"><td>serverType</td>
+<td>str</td>
+<td>Type of the match (eg. “QUICK3V3”)</td>
+</tr>
+<tr class="row-even"><td>characterLevel</td>
+<td>int</td>
+<td>level of the Champion selected</td>
+</tr>
+<tr class="row-odd"><td>teamId</td>
+<td>str</td>
+<td>ID of the team</td>
+</tr>
+<tr class="row-even"><td>totalTimePlayed</td>
+<td>int</td>
+<td>time the user has played the game for</td>
+</tr>
+<tr class="row-odd"><td>characterTimePlayed</td>
+<td>int</td>
+<td>time the user played with selected champion</td>
+</tr>
+<tr class="row-even"><td>character</td>
+<td>int</td>
+<td>ID of the Champion</td>
+</tr>
+<tr class="row-odd"><td>team</td>
+<td>int</td>
+<td>team of the player in the match, 1 or 2</td>
+</tr>
+<tr class="row-even"><td>rankingType</td>
+<td>str</td>
+<td>“RANKED” or “UNRANKED”</td>
+</tr>
+<tr class="row-odd"><td>mount</td>
+<td>int</td>
+<td>ID of the equipped mount</td>
+</tr>
+<tr class="row-even"><td>attachment</td>
+<td>int</td>
+<td>ID of the equipped weapon</td>
+</tr>
+<tr class="row-odd"><td>outfit</td>
+<td>int</td>
+<td>ID of the equipped outfit</td>
+</tr>
+<tr class="row-even"><td>emote</td>
+<td>into</td>
+<td>ID of the equipped victory pose</td>
+</tr>
+<tr class="row-odd"><td>legue</td>
+<td>int</td>
+<td>League of the player</td>
+</tr>
+<tr class="row-even"><td>division</td>
+<td>int</td>
+<td>Division of the player</td>
+</tr>
+<tr class="row-odd"><td>divisionRating</td>
+<td>int</td>
+<td>rating points inside the division</td>
+</tr>
+<tr class="row-even"><td>seasonId</td>
+<td>int</td>
+<td>number of season of the match</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="queueevent">
+<h2>QueueEvent<a class="headerlink" href="#queueevent" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">type=&quot;com.stunlock.service.matchmaking.avro.QueueEvent&quot;</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="18%" />
+<col width="54%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>time</td>
+<td>int</td>
+<td>timestamp telling when the event happened</td>
+</tr>
+<tr class="row-odd"><td>userId</td>
+<td>str</td>
+<td>UID of the player</td>
+</tr>
+<tr class="row-even"><td>teamId</td>
+<td>str</td>
+<td>ID of the team</td>
+</tr>
+<tr class="row-odd"><td>sessionId</td>
+<td>str</td>
+<td>ID of the session</td>
+</tr>
+<tr class="row-even"><td>season</td>
+<td>int</td>
+<td>number of season of the match</td>
+</tr>
+<tr class="row-odd"><td>eventType</td>
+<td>str</td>
+<td>“MATCH”</td>
+</tr>
+<tr class="row-even"><td>timeJoinedQueue</td>
+<td>str</td>
+<td>timestamp telling when ready was pressed</td>
+</tr>
+<tr class="row-odd"><td>timeInQueue</td>
+<td>float</td>
+<td>time in queue</td>
+</tr>
+<tr class="row-even"><td>character</td>
+<td>int</td>
+<td>ID of the Champion</td>
+</tr>
+<tr class="row-odd"><td>characterArchetype</td>
+<td>int</td>
+<td>2 = melee, 4 = ranged, 8 = support</td>
+</tr>
+<tr class="row-even"><td>queueTypes</td>
+<td>str[]</td>
+<td>queue types (eg. “QUICK3V3UNRANKED”)</td>
+</tr>
+<tr class="row-odd"><td>limitMatchmakingRange</td>
+<td>bool</td>
+<td>strict matchmaking</td>
+</tr>
+<tr class="row-even"><td>regionSamples</td>
+<td>RegionSample[]</td>
+<td>ping in selected servers</td>
+</tr>
+<tr class="row-odd"><td>preferredRegion</td>
+<td>str</td>
+<td>preferred region</td>
+</tr>
+<tr class="row-even"><td>rankingType</td>
+<td>str</td>
+<td>“RANKED” or “UNRANKED”</td>
+</tr>
+<tr class="row-odd"><td>legue</td>
+<td>int</td>
+<td>League of the player</td>
+</tr>
+<tr class="row-even"><td>division</td>
+<td>int</td>
+<td>Division of the player</td>
+</tr>
+<tr class="row-odd"><td>divisionRating</td>
+<td>int</td>
+<td>rating points inside the division</td>
+</tr>
+<tr class="row-even"><td>teamSize</td>
+<td>int</td>
+<td>team size</td>
+</tr>
+<tr class="row-odd"><td>teamMembers</td>
+<td>int[]</td>
+<td>team members*</td>
+</tr>
+<tr class="row-even"><td>placementGamesLeft</td>
+<td>int</td>
+<td>placement games left</td>
+</tr>
+<tr class="row-odd"><td>matchID</td>
+<td>str</td>
+<td>ID of the match</td>
+</tr>
+<tr class="row-even"><td>matchRegion</td>
+<td>str</td>
+<td>match region</td>
+</tr>
+<tr class="row-odd"><td>teamSide</td>
+<td>int</td>
+<td>team in the match, 1 or 2</td>
+</tr>
+<tr class="row-even"><td>autoMatchmaking</td>
+<td>bool</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>*bugged rigth now</p>
+<div class="section" id="regionsample">
+<h3>RegionSample<a class="headerlink" href="#regionsample" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="27%" />
+<col width="19%" />
+<col width="55%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>region</td>
+<td>str</td>
+<td>“eu_west”, “spain”, …</td>
+</tr>
+<tr class="row-odd"><td>latencyMS</td>
+<td>int</td>
+<td>latency (ping) in MS</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="teamupdateevent">
+<h2>TeamUpdateEvent<a class="headerlink" href="#teamupdateevent" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">type=&quot;com.stunlock.battlerite.team.TeamUpdateEvent&quot;</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="28%" />
+<col width="18%" />
+<col width="54%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>time</td>
+<td>int</td>
+<td>timestamp telling when the event happened</td>
+</tr>
+<tr class="row-odd"><td>season</td>
+<td>int</td>
+<td>number of season of the match</td>
+</tr>
+<tr class="row-even"><td>teamId</td>
+<td>str</td>
+<td>ID of the team</td>
+</tr>
+<tr class="row-odd"><td>matchID</td>
+<td>str</td>
+<td>ID of the match</td>
+</tr>
+<tr class="row-even"><td>externalMatchID</td>
+<td>str</td>
+<td>empty string</td>
+</tr>
+<tr class="row-odd"><td>userIDs</td>
+<td>str[]</td>
+<td>IDs of the players</td>
+</tr>
+<tr class="row-even"><td>mode</td>
+<td>str</td>
+<td>“RANKED” or “UNRANKED”</td>
+</tr>
+<tr class="row-odd"><td>league</td>
+<td>int</td>
+<td>current League of the player</td>
+</tr>
+<tr class="row-even"><td>prevLegue</td>
+<td>int</td>
+<td>previous League of the player</td>
+</tr>
+<tr class="row-odd"><td>prevDivision</td>
+<td>int</td>
+<td>previous Division of the player</td>
+</tr>
+<tr class="row-even"><td>division</td>
+<td>int</td>
+<td>current Division of the player</td>
+</tr>
+<tr class="row-odd"><td>prevDivisionRating</td>
+<td>int</td>
+<td>current rating points inside the division</td>
+</tr>
+<tr class="row-even"><td>divisionRating</td>
+<td>int</td>
+<td>previous rating points inside the division</td>
+</tr>
+<tr class="row-odd"><td>prevWins</td>
+<td>int</td>
+<td>wining streak before the match</td>
+</tr>
+<tr class="row-even"><td>wins</td>
+<td>int</td>
+<td>winning streak after the match</td>
+</tr>
+<tr class="row-odd"><td>prevlosses</td>
+<td>int</td>
+<td>loosing streak before the match</td>
+</tr>
+<tr class="row-even"><td>losses</td>
+<td>int</td>
+<td>loosing streak after the match</td>
+</tr>
+<tr class="row-odd"><td>rankingChangeType</td>
+<td>str</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>prevPlacementGamesLeft</td>
+<td>int</td>
+<td>placement games left berfore the match</td>
+</tr>
+<tr class="row-odd"><td>placementGamesLeft</td>
+<td>int</td>
+<td>placement games left after the match</td>
+</tr>
+<tr class="row-even"><td>matchRegion</td>
+<td>str</td>
+<td>match region</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="servershutdown">
+<h2>ServerShutdown<a class="headerlink" href="#servershutdown" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">type=&quot;Structures.ServerShutdown&quot;</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="18%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>time</td>
+<td>int</td>
+<td>timestamp telling when the event happened</td>
+</tr>
+<tr class="row-odd"><td>matchID</td>
+<td>str</td>
+<td>ID of the match</td>
+</tr>
+<tr class="row-even"><td>externalMatchID</td>
+<td>str</td>
+<td>empty string</td>
+</tr>
+<tr class="row-odd"><td>matchTime</td>
+<td>int</td>
+<td>duration of the match</td>
+</tr>
+<tr class="row-even"><td>reason</td>
+<td>str</td>
+<td>reason</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="roundfinishedevent">
+<h2>RoundFinishedEvent<a class="headerlink" href="#roundfinishedevent" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">type=&quot;Structures.RoundFinishedEvent&quot;</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="18%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>time</td>
+<td>int</td>
+<td>timestamp telling when the event happened</td>
+</tr>
+<tr class="row-odd"><td>matchID</td>
+<td>str</td>
+<td>ID of the match</td>
+</tr>
+<tr class="row-even"><td>externalMatchID</td>
+<td>str</td>
+<td>empty string</td>
+</tr>
+<tr class="row-odd"><td>round</td>
+<td>int</td>
+<td>number of round, starts from 0</td>
+</tr>
+<tr class="row-even"><td>roundLength</td>
+<td>int</td>
+<td>duration of the round</td>
+</tr>
+<tr class="row-odd"><td>winningTeam</td>
+<td>int</td>
+<td>winning team</td>
+</tr>
+<tr class="row-even"><td>playerStats</td>
+<td>PlayerStats[]</td>
+<td>player stats</td>
+</tr>
+</tbody>
+</table>
+<div class="section" id="playerstats-object">
+<h3>PlayerStats Object<a class="headerlink" href="#playerstats-object" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="18%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>userID</td>
+<td>str</td>
+<td>ID of the player</td>
+</tr>
+<tr class="row-odd"><td>kills</td>
+<td>int</td>
+<td>number of kills</td>
+</tr>
+<tr class="row-even"><td>deaths</td>
+<td>int</td>
+<td>number of deaths</td>
+</tr>
+<tr class="row-odd"><td>score</td>
+<td>int</td>
+<td>total score</td>
+</tr>
+<tr class="row-even"><td>damageDone</td>
+<td>int</td>
+<td>damage score</td>
+</tr>
+<tr class="row-odd"><td>damageReceived</td>
+<td>int</td>
+<td>damage received</td>
+</tr>
+<tr class="row-even"><td>healingDone</td>
+<td>int</td>
+<td>healing score</td>
+</tr>
+<tr class="row-odd"><td>healingReceived</td>
+<td>int</td>
+<td>healing received</td>
+</tr>
+<tr class="row-even"><td>disablesDone</td>
+<td>int</td>
+<td>disables score</td>
+</tr>
+<tr class="row-odd"><td>disablesReceived</td>
+<td>int</td>
+<td>disablesReceived</td>
+</tr>
+<tr class="row-even"><td>energyGained</td>
+<td>int</td>
+<td>energy gained</td>
+</tr>
+<tr class="row-odd"><td>energyUsed</td>
+<td>int</td>
+<td>energy used</td>
+</tr>
+<tr class="row-even"><td>timeAlive</td>
+<td>int</td>
+<td>time alive</td>
+</tr>
+<tr class="row-odd"><td>abilityUses</td>
+<td>int</td>
+<td>number of ability used</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="matchfinishedevent">
+<h2>MatchFinishedEvent<a class="headerlink" href="#matchfinishedevent" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">type=&quot;Structures.MatchFinishedEvent&quot;</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="18%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>time</td>
+<td>int</td>
+<td>timestamp telling when the event happened</td>
+</tr>
+<tr class="row-odd"><td>teamOneScore</td>
+<td>int</td>
+<td>number of rounds won by team 1</td>
+</tr>
+<tr class="row-even"><td>teamTwoScore</td>
+<td>int</td>
+<td>number of rounds won by team 2</td>
+</tr>
+<tr class="row-odd"><td>matchLength</td>
+<td>int</td>
+<td>length of the match</td>
+</tr>
+<tr class="row-even"><td>matchID</td>
+<td>str</td>
+<td>ID of the match</td>
+</tr>
+<tr class="row-odd"><td>externalMatchID</td>
+<td>str</td>
+<td>empty string</td>
+</tr>
+<tr class="row-even"><td>leavers</td>
+<td>int[]</td>
+<td>IDs of the leavers*</td>
+</tr>
+<tr class="row-odd"><td>region</td>
+<td>str</td>
+<td>region (eg. “eu_east”)</td>
+</tr>
+</tbody>
+</table>
+<p>*bugged right now</p>
+</div>
+<div class="section" id="matchstart">
+<h2>MatchStart<a class="headerlink" href="#matchstart" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal"><span class="pre">type=&quot;Structures.MatchStart&quot;</span></code></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="29%" />
+<col width="18%" />
+<col width="53%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Variable</th>
+<th class="head">Type</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>time</td>
+<td>int</td>
+<td>timestamp telling when the event happened</td>
+</tr>
+<tr class="row-odd"><td>matchID</td>
+<td>str</td>
+<td>ID of the match</td>
+</tr>
+<tr class="row-even"><td>externalMatchID</td>
+<td>str</td>
+<td>empty string</td>
+</tr>
+<tr class="row-odd"><td>version</td>
+<td>str</td>
+<td>Patch the match is played in</td>
+</tr>
+<tr class="row-even"><td>type</td>
+<td>str</td>
+<td>“QUICK3V3”, “QUICK2V2”</td>
+</tr>
+<tr class="row-odd"><td>mapID</td>
+<td>str</td>
+<td>ID of the map</td>
+</tr>
+<tr class="row-even"><td>teamSize</td>
+<td>int</td>
+<td>team size</td>
+</tr>
+<tr class="row-odd"><td>region</td>
+<td>str</td>
+<td>region (eg. “eu_east”)</td>
+</tr>
+</tbody>
+</table>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h3><a href="../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../datacenters/datacenters.html">Datacenters</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../authorization/authorization.html">Authorization</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../titles/titles.html">Titles</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../makingrequests/makingrequests.html">Making Requests</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ratelimits/ratelimits.html">Rate Limits</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../receivingresponses/receivingresponses.html">Receiving Responses</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matches/matches.html">Matches</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../match_data_summary/match_data_summary.html">Match Data Summary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players (Coming Soon!)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Telemetry Data Summary</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#roundevent">RoundEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#userroundspell">UserRoundSpell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deathevent">DeathEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#matchreserveduser">MatchReservedUser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#queueevent">QueueEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#teamupdateevent">TeamUpdateEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#servershutdown">ServerShutdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#roundfinishedevent">RoundFinishedEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#matchfinishedevent">MatchFinishedEvent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#matchstart">MatchStart</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../status/status.html">Status</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Errors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/changelog.html">Changelog</a></li>
+</ul>
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  <div class="related bottom">
+  <nav id="rellinks">
+    <ul>
+        <li>
+          &larr;
+          <a href="../telemetry/telemetry.html" title="Previous document">Telemetry</a>
+        </li>
+        <li>
+          <a href="../status/status.html" title="Next document">Status</a>
+          &rarr;
+        </li>
+    </ul>
+  </nav>
+  <nav id="breadcrumbs">
+    <ul>
+      <li><a href="../index.html">Battlerite 1.0 documentation</a></li> 
+    </ul>
+  </nav>
+  </div>
+
+  </body>
+</html>
