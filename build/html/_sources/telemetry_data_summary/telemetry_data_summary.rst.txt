@@ -49,7 +49,7 @@ value              int
 DeathEvent
 --------------------------------
 
-``type=Structures.DeathEvent``
+``type="Structures.DeathEvent"``
 
 =================  ==============  =========================================
 Variable    	     Type            Description
@@ -63,7 +63,7 @@ userID             str             UID of the player
 MatchReservedUser
 -----------------------------------
 
-``type=Structures.MatchReservedUser``
+``type="Structures.MatchReservedUser"``
 
 ===================  ==============  =========================================
 Variable    	       Type            Description
