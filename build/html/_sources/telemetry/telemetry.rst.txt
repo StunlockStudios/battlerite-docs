@@ -94,12 +94,49 @@ You can download the data with following commands. Please note that you do not n
   curl "https://gl-prod-us-east-1.s3.amazonaws.com/assets/stunlock-studios-battlerite/na/2017/03/17/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json" \
  	-H "Accept: application/vnd.api+json"
 
-This request will return you a response with lines strutured as follows:
+This request will return you a response containing a JSON array:
 
 .. code-block:: none
+  [
+    {
+      "cursor":499303,
+      "type":"com.stunlock.service.matchmaking.avro.QueueEvent",
+      "dataObject":{
+        "time":1509652368501,
+        "userId":"867669421479563264",
+        "teamId":"926118591642865664",
+        "sessionId":"79DED2DF8F365B2978A57071E9E9028C",
+        "season":6,
+        "eventType":"MATCH",
+        "timeJoinedQueue":"34506717429220767",
+        "timeInQueue":2.0009074,
+        "character":543520739,
+        "characterArchetype":8,
+        "queueTypes":["QUICK2V2"],
+        "limitMatchmakingRange":false,
+        "regionSamples":[
+          {"region":"eu-west","latencyMS":32},
+          {"region":"na-northeast","latencyMS":110}
+        ],
+        "preferredRegion":"eu-west",
+        "rankingType":"UNRANKED",
+        "league":0,
+        "division":2,
+        "divisionRating":0,
+        "teamSize":1,
+        "teamMembers":[],
+        "placementGamesLeft":6,
+        "matchId":"7260797FD85648B295DF0AA16E17A80D",
+        "matchRegion":"eu-west",
+        "teamSide":1,
+        "autoMatchmaking":true
+      }
+    },
+    ...
+  ]
 
-  {"cursor":499303,"type":"com.stunlock.service.matchmaking.avro.QueueEvent","dataObject":{"time":1509652368501,"userId":"867669421479563264","teamId":"926118591642865664","sessionId":"79DED2DF8F365B2978A57071E9E9028C","season":6,"eventType":"MATCH","timeJoinedQueue":"34506717429220767","timeInQueue":2.0009074,"character":543520739,"characterArchetype":8,"queueTypes":["QUICK2V2"],"limitMatchmakingRange":false,"regionSamples":[{"region":"eu-west","latencyMS":32},{"region":"na-northeast","latencyMS":110}],"preferredRegion":"eu-west","rankingType":"UNRANKED","league":0,"division":2,"divisionRating":0,"teamSize":1,"teamMembers":[],"placementGamesLeft":6,"matchId":"7260797FD85648B295DF0AA16E17A80D","matchRegion":"eu-west","teamSide":1,"autoMatchmaking":true}}
-  ...
+Each element of the array may have a different structure for its dataObject field,
+depending on the value of the type field. For details, check :ref:`telemetry_data_summary`
 
 .. toctree::
   :maxdepth: 2

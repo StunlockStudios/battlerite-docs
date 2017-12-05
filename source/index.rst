@@ -15,6 +15,7 @@ Gamelocker Documentation
   match_data_summary/match_data_summary
   players/players
   telemetry/telemetry
+  telemetry_data_summary/telemetry_data_summary
   status/status
   community_sdks/community_sdks
   errors/errors
