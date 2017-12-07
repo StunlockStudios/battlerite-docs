@@ -5,7 +5,7 @@ Changelog
 
 [API] v1.0.1
 --------------
--- Participants should now consistently include stats data
+-- Participants now consistently include stats data
 
 
 .. toctree::
