@@ -3,6 +3,7 @@
 Players
 ======================
 
+Player objects contain aggregated lifetime information about each Player. The player endpoint isn't complete yet, but is available so users can obtain basic player information such as player name. Stay tuned, more data will be coming soon!
 
 
 Get a Single Player
