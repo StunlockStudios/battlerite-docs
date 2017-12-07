@@ -1,9 +1,9 @@
 .. _players:
 
-Players (Coming Soon!)
+Players
 ======================
 
-Player objects contain aggregated lifetime information about each Player.
+Player objects contain aggregated lifetime information about each Player. The player endpoint isn't complete yet, but is available so users can obtain basic player information such as player name. Stay tuned, more data will be coming soon!
 
 
 Get a Single Player
@@ -45,7 +45,9 @@ ID          none      The ID of the player to retrieve
         "name": ""
         "patchVersion": ""
         "shardId": "",
-        "stats": null,
+        "stats": {
+          ...
+        }
         "titleId": ""
       },
       "relationships" {

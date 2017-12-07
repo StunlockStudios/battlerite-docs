@@ -1,9 +1,8 @@
 .. _players:
 
-Players (Coming Soon!)
+Players
 ======================
 
-Player objects contain aggregated lifetime information about each Player.
 
 
 Get a Single Player
@@ -45,7 +44,9 @@ ID          none      The ID of the player to retrieve
         "name": ""
         "patchVersion": ""
         "shardId": "",
-        "stats": null,
+        "stats": {
+          ...
+        }
         "titleId": ""
       },
       "relationships" {

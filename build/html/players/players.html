@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Players (Coming Soon!) &#8212; Battlerite 1.0 documentation</title>
+    <title>Players &#8212; Battlerite 1.0 documentation</title>
     <link rel="stylesheet" href="../_static/css/battlerite.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -51,9 +51,9 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="players-coming-soon">
-<span id="players"></span><h1>Players (Coming Soon!)<a class="headerlink" href="#players-coming-soon" title="Permalink to this headline">¶</a></h1>
-<p>Player objects contain aggregated lifetime information about each Player.</p>
+  <div class="section" id="players">
+<span id="id1"></span><h1>Players<a class="headerlink" href="#players" title="Permalink to this headline">¶</a></h1>
+<p>Player objects contain aggregated lifetime information about each Player. The player endpoint isn’t complete yet, but is available so users can obtain basic player information such as player name. Stay tuned, more data will be coming soon!</p>
 <div class="section" id="get-a-single-player">
 <h2>Get a Single Player<a class="headerlink" href="#get-a-single-player" title="Permalink to this headline">¶</a></h2>
 <p>This endpoint retrieves a specific player.</p>
@@ -96,7 +96,9 @@
       &quot;name&quot;: &quot;&quot;
       &quot;patchVersion&quot;: &quot;&quot;
       &quot;shardId&quot;: &quot;&quot;,
-      &quot;stats&quot;: null,
+      &quot;stats&quot;: {
+        ...
+      }
       &quot;titleId&quot;: &quot;&quot;
     },
     &quot;relationships&quot; {
@@ -168,7 +170,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../receivingresponses/receivingresponses.html">Receiving Responses</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../matches/matches.html">Matches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../match_data_summary/match_data_summary.html">Match Data Summary</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Players (Coming Soon!)</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Players</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#get-a-single-player">Get a Single Player</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#get-a-collection-of-players">Get a Collection of Players</a></li>
 </ul>

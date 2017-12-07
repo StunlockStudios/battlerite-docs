@@ -3,9 +3,11 @@
 Changelog
 ==========
 
-[API] v1.0.1
+[API] v1.1.0
 --------------
 -- Participants now consistently include stats data
+
+-- Player endpoint is now live!
 
 
 .. toctree::
