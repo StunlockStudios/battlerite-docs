@@ -79,6 +79,7 @@ This endpoint retrieves a collection of up to 6 players, filtered by id.
 Parameter             Default   Description
 ===================== ========= =====================================================================
 filter[playerIds]     none      Filter by player ids. Usage: filter[playerIds]=id1,id2,...
+filter[steamIds]       none     Filter by player's steam ids. Usage: filter[steamIds]=id1,id2,...
 ===================== ========= =====================================================================
 
 

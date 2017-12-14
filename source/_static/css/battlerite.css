@@ -469,7 +469,7 @@ header#pageheader, footer#pagefooter, .related, .document {
 
 p {
   font-size: 14px;
-  margin-bottom: 1.95em;
+  /*margin-bottom: 1.95em;*/
   font-weight: 500;
 }
 
