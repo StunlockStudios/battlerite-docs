@@ -3,6 +3,17 @@
 Changelog
 ==========
 
+[API] v1.3.0
+--------------
+New Assets:
+
+- Mapping files for icons, names, tooltips, and tooltip variables on `GitHub <https://github.com/gamelocker/battlerite-assets>`_!
+
+Deprecated:
+
+- schema links
+- participant.attributes.stats.userId
+
 [API] v1.2.0
 --------------
 New Assets:
