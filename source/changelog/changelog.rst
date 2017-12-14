@@ -5,6 +5,14 @@ Changelog
 
 [API] v1.3.0
 --------------
+New Features:
+
+- steamId filter for players
+
+New Data:
+
+- More player stats available
+
 New Assets:
 
 - Mapping files for icons, names, tooltips, and tooltip variables on `GitHub <https://github.com/gamelocker/battlerite-assets>`_!
