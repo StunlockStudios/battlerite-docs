@@ -3,6 +3,16 @@
 Changelog
 ==========
 
+[API] v1.4.0
+--------------
+New Features:
+
+- player name filter for /players endpoint
+
+New Data:
+
+- battleritePickEvent available in telemetry
+
 [API] v1.3.0
 --------------
 New Features:
