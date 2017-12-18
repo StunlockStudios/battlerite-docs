@@ -18,6 +18,7 @@ New Data:
 New Features:
 
 - steamId filter for players
+- patchVersion filter for matches
 
 New Data:
 
