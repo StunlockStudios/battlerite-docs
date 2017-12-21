@@ -3,6 +3,12 @@
 Changelog
 ==========
 
+[API] v1.5.0
+--------------
+New Features:
+
+- /teams endpoint now available
+
 [API] v1.4.0
 --------------
 New Features:

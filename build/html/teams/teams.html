@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Changelog &#8212; Battlerite 1.0 documentation</title>
+    <title>Teams &#8212; Battlerite 1.0 documentation</title>
     <link rel="stylesheet" href="../_static/css/battlerite.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <script type="text/javascript">
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Errors" href="../errors/errors.html" />
+    <link rel="next" title="Telemetry" href="../telemetry/telemetry.html" />
+    <link rel="prev" title="Players" href="../players/players.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
@@ -50,66 +51,71 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="changelog">
-<span id="id1"></span><h1>Changelog<a class="headerlink" href="#changelog" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="api-v1-5-0">
-<h2>[API] v1.5.0<a class="headerlink" href="#api-v1-5-0" title="Permalink to this headline">¶</a></h2>
-<p>New Features:</p>
-<ul class="simple">
-<li>/teams endpoint now available</li>
-</ul>
+  <div class="section" id="teams">
+<span id="id1"></span><h1>Teams<a class="headerlink" href="#teams" title="Permalink to this headline">¶</a></h1>
+<p>This endpoint retrieves team objects.</p>
+<p><strong>HTTP Request</strong></p>
+<div class="line-block">
+<div class="line"><code class="docutils literal"><span class="pre">GET</span> <span class="pre">https://api.dc01.gamelockerapp.com/shards/global/teams?tag[season]=foo&amp;tag[playerIds]=p1,p2</span></code></div>
 </div>
-<div class="section" id="api-v1-4-0">
-<h2>[API] v1.4.0<a class="headerlink" href="#api-v1-4-0" title="Permalink to this headline">¶</a></h2>
-<p>New Features:</p>
-<ul class="simple">
-<li>player name filter for /players endpoint</li>
-</ul>
-<p>New Data:</p>
-<ul class="simple">
-<li>battleritePickEvent available in telemetry</li>
-</ul>
+<p><strong>Required URL Parameters</strong></p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="21%" />
+<col width="9%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Parameter</th>
+<th class="head">Default</th>
+<th class="head">Description</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>tag[season]</td>
+<td>none</td>
+<td>Filter by season. Usage: tag[Season]=6</td>
+</tr>
+<tr class="row-odd"><td>tag[playerIds]</td>
+<td>none</td>
+<td>Filter by playerIds in a team. Usage: tag[PlayerIds]=45,834,…</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Shell:</strong></p>
+<div class="highlight-shell"><div class="highlight"><pre><span></span>curl <span class="s2">&quot;https://api.dc01.gamelockerapp.com/shards/global/teams?tag[playerIds]=934511096860184600&amp;tag[season]=6&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Authorization: Bearer &lt;api-key&gt;&quot;</span> <span class="se">\</span>
+-H <span class="s2">&quot;Accept: application/vnd.api+json&quot;</span>
+</pre></div>
 </div>
-<div class="section" id="api-v1-3-0">
-<h2>[API] v1.3.0<a class="headerlink" href="#api-v1-3-0" title="Permalink to this headline">¶</a></h2>
-<p>New Features:</p>
-<ul class="simple">
-<li>steamId filter for players</li>
-<li>patchVersion filter for matches</li>
-</ul>
-<p>New Data:</p>
-<ul class="simple">
-<li>More player stats available</li>
-</ul>
-<p>New Assets:</p>
-<ul class="simple">
-<li>Mapping files for icons, names, tooltips, and tooltip variables on <a class="reference external" href="https://github.com/gamelocker/battlerite-assets">GitHub</a>!</li>
-</ul>
-<p>Deprecated:</p>
-<ul class="simple">
-<li>schema links</li>
-<li>participant.attributes.stats.userId</li>
-</ul>
+<p><strong>The above commands returns JSON structured like this:</strong></p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>{
+  &quot;type&quot;: &quot;team&quot;,
+  &quot;id&quot;: &quot;934514508356001792&quot;,
+  &quot;attributes&quot;: {
+    &quot;name&quot;: &quot;&quot;,
+    &quot;shardId&quot;: &quot;global&quot;,
+    &quot;stats&quot;: {
+      &quot;avatar&quot;: 0,
+      &quot;division&quot;: 5,
+      &quot;divisionRating&quot;: 0,
+      &quot;league&quot;: 0,
+      &quot;losses&quot;: 0,
+      &quot;members&quot;: [
+        934511096860184600
+      ],
+      &quot;placementGamesLeft&quot;: 6,
+      &quot;topDivision&quot;: 5,
+      &quot;topDivisionRating&quot;: 0,
+      &quot;topLeague&quot;: 0,
+      &quot;wins&quot;: 0
+    },
+    &quot;titleId&quot;: &quot;stunlock-studios-battlerite&quot;
+  }
+}
+</pre></div>
 </div>
-<div class="section" id="api-v1-2-0">
-<h2>[API] v1.2.0<a class="headerlink" href="#api-v1-2-0" title="Permalink to this headline">¶</a></h2>
-<p>New Assets:</p>
-<ul class="simple">
-<li>Mapping files for player stackables added on <a class="reference external" href="https://github.com/gamelocker/battlerite-assets">GitHub</a>!</li>
-</ul>
-</div>
-<div class="section" id="api-v1-1-0">
-<h2>[API] v1.1.0<a class="headerlink" href="#api-v1-1-0" title="Permalink to this headline">¶</a></h2>
-<p>New Features:</p>
-<ul class="simple">
-<li>Player endpoint is now live!</li>
-</ul>
-<p>Bug Fixes:</p>
-<ul class="simple">
-<li>Participants now consistently include stats data.</li>
-</ul>
 <div class="toctree-wrapper compound">
-</div>
 </div>
 </div>
 
@@ -131,19 +137,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../matches/matches.html">Matches</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../match_data_summary/match_data_summary.html">Match Data Summary</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../players/players.html">Players</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../teams/teams.html">Teams</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Teams</a><ul class="simple">
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../telemetry/telemetry.html">Telemetry</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../status/status.html">Status</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../community_sdks/community_sdks.html">Community SDKs</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../errors/errors.html">Errors</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Changelog</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#api-v1-5-0">[API] v1.5.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api-v1-4-0">[API] v1.4.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api-v1-3-0">[API] v1.3.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api-v1-2-0">[API] v1.2.0</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#api-v1-1-0">[API] v1.1.0</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/changelog.html">Changelog</a></li>
 </ul>
 
         </div>
@@ -155,7 +156,11 @@
     <ul>
         <li>
           &larr;
-          <a href="../errors/errors.html" title="Previous document">Errors</a>
+          <a href="../players/players.html" title="Previous document">Players</a>
+        </li>
+        <li>
+          <a href="../telemetry/telemetry.html" title="Next document">Telemetry</a>
+          &rarr;
         </li>
     </ul>
   </nav>
