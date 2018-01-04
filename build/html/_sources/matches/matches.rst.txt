@@ -121,6 +121,8 @@ filter[createdAt-start]   Now-28days  Must occur before end time. Format is iso8
 filter[createdAt-end]     Now         Queries search the last 3 hrs. Format is iso8601 i.e.filter[createdAt-end]=2017-01-01T13:25:30Z
 filter[playerIds]         none        Filters by player Id. Usage:filter[playerIds]=playerId,playerId,...
 filter[patchVersion]      none        Filter by Battlerite patch version. Usage: filter[patchVersion]=2.10,2.11,...
+filter[serverType]        none        Filter by match server type. Usage: filter[serverType]=QUICK2V2,QUICK3v3,...
+filter[rankingType]       none        Filter by match ranking type. Usage: filter[rankingType]=RANKED
 ========================= =========== =================================================================================================================
 
 *Remember — a happy match is an authenticated match!*
@@ -184,6 +186,10 @@ The above commands returns JSON structured like this:
             "mapID": "417DE573937D74E39BF40EB6CF82670B",
             "type": "QUICK2V2 ",
           },
+          "tags" {
+            "rankingType": "UNRANKED",
+            "serverType": "QUICK2V2"
+          }
           "titleId": "stunlock-studios-battlerite"
         },
         "relationships": {

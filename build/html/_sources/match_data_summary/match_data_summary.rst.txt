@@ -17,6 +17,7 @@ gameMode           str             Game Mode
 patchVersion       str             Version of the game
 shardID            str             Region Shard
 stats              map             Stats particular to the match
+tags               map             Searchable tags. See Match.tags
 assets             obj             See Match.assets
 rosters            obj             See Rosters
 rounds             obj             See Rounds
@@ -39,6 +40,15 @@ contentType        str             application/json
 name               map             Telemetry
 URL                str             Link to Telemetry.json file
 shardId            str             Region Shard
+=================  ==============  ===========================
+
+**Match.tags**
+
+=================  ==============  ===========================
+Variable    	   Type            Description
+=================  ==============  ===========================
+serverType         string          Match server type
+rankingType        string          Match ranking type
 =================  ==============  ===========================
 
 Rounds Object
