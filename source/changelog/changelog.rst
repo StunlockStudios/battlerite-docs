@@ -3,8 +3,17 @@
 Changelog
 ==========
 
-[API] v1.5.1
+[API] v1.6.0
 --------------
+New Features:
+
+- rankingType and serverType filters for matches
+
+New Data:
+
+- Match: rankingType
+- Match: serverType
+
 Bug Fixes:
 
 - Team member's IDs are no longer rounded
