@@ -3,6 +3,12 @@
 Changelog
 ==========
 
+[API] v1.5.1
+--------------
+Bug Fixes:
+
+- Team member's IDs are no longer rounded
+
 [API] v1.5.0
 --------------
 New Features:
