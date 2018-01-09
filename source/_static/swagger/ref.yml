@@ -1,0 +1,66 @@
+openapi: 3.0.0
+info:
+  version: '1.0.0'
+  title: 'Battlerite API Documentation'
+  description: 'Blee Blah'
+paths:
+  /matches:
+    get:
+      tags:
+      - Matches
+      summary: Get a collection of matches
+      description: 'Returns match data containing high level information about the game session, i.e. duration, gameMode, etc'
+      parameters:
+        - $ref: '#/components/parameters/sort'
+      responses:
+        200:
+          description: 'Match Response'
+        404:
+          description: 'Match(s) not found'
+  /matches/{matchId}/:
+    get:
+      tags:
+      - Matches
+      summary: Get a single match
+      responses:
+        200:
+          description: 'Match Response'
+        404:
+          description: 'Match(s) not found'
+  /players:
+    get:
+      tags:
+      - Players
+      summary: Gets players
+      description: 'players'
+      responses:
+        200:
+          description: 'Player Response'
+        404:
+          description: 'Player(s) not found'
+  /teams:
+    get:
+      tags:
+      - Teams
+      summary: Gets Teams
+      description: 'team'
+      responses:
+        200:
+          description: 'Team Response'
+        404:
+          description: 'Team(s) not found'
+  
+components:
+  parameters:
+    sort:
+      name: sort
+      in: query
+      description: "By default, Matches are sorted by creation time ascending."
+      required: false
+      style: form
+      schema:
+        type: string
+      example: "createdAt"
+servers:
+  - description: dc01 server
+    url: https://api.dc01.gamelockerapp.com/shards/global
