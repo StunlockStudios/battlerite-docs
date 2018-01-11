@@ -28,17 +28,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   </head>
   <body>
+
+<div id="logSign" class="modal form-con">
+	<div class="inner">
+		<span class="close"></span>
+		<div class="tab-container" style="border: none; position: absolute; top: 0; left: 0; right: 0; bottom: 0;">
+			<ul class="tabs">
+				<li class="tab-link active" data-tab="log-in-tab">Log In</li>
+				<li class="tab-link" data-tab="sign-up-tab">Sign Up</li>
+			</ul>
+
+			<div class="tab-content-container" style="border: none; position: absolute; top: 80px; left: 0; right: 0; bottom: 0;">
+				<iframe id="log-in-tab" class="tab-content active" style="border: none; position: relative; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+				<iframe id="sign-up-tab" class="tab-content" style="border: none; position: relative; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
+			</div>
+		</div>
+	</div>
+</div>
+
 <header id="BTT" role="banner">
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Ubuntu:regular,bold&subset=Latin">
 	<div class="menu-top-outer clearfix">
 		<div class="wrapper clearfix">
 			<a href="https://developer.battlerite.com" id="site-logo"></a>
-			<a href="https://developer.battlerite.com/users/sign_in"><span id="logSignBtn" class="btn">Login / Signup</span></a>
+			<a href="#" id="log-sign-link"><span id="logSignBtn" class="btn">My Apps</span></a>
 			<nav id="mainMenu" class="main-menu-con">
 				<ul class="main-menu clearfix">
-					<li><a class="active" href="http://battlerite-docs.readthedocs.io/en/latest/introduction.html">Documentation</a></li>
+					<li><a class="active" href="https://battlerite-docs.readthedocs.io/en/latest/introduction.html">Documentation</a></li>
 					<li><a href="https://developer.battlerite.com/faq">Faq</a></li>
-					<li><a href="http://battlerite-docs.readthedocs.io/en/latest/changelog/changelog.html">Changelog</a></li>
+					<li><a href="https://battlerite-docs.readthedocs.io/en/latest/changelog/changelog.html">Changelog</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -120,6 +138,47 @@
     </ul>
   </nav>
   </div>
+<script>
+	$(function () {
+		$('#log-in-tab').attr('src', 'https://developer.battlerite.com/simple_login?_param=' + Date.now());
+		$('#sign-up-tab').attr('src', 'https://developer.battlerite.com/simple_create_account?_param=' + Date.now());
+
+		$('#logSignBtn').click(function() {
+			$('html').addClass('modal-open');
+			$('#logSign').addClass('open');
+		});
+
+		$('.modal .close, .modal').click(function(){
+			$('.modal').removeClass('open');
+			$('html').removeClass('modal-open');
+		});
+
+		$('.modal .inner').click(function(e) { e.stopPropagation(); });
+
+		$('ul.tabs li, .tab-accordion-heading').click(function() {
+			$('.tab-content, ul.tabs li, .tab-accordion-heading').removeClass('active');
+			var $this = $(this);
+			var activeTab = $this.attr("rel");
+			$("#"+activeTab).addClass('active');
+			$(this).addClass("active");
+			$(".tab-accordion-heading[rel^='"+activeTab+"'], ul.tabs li[rel^='"+activeTab+"']").addClass("active");
+			$('#' + $this.data('tab')).addClass('active')
+		});
+
+		window.addEventListener('message', function (e) {
+			if (e && e.data === 'GL-User-Authed') {
+				$('#logSign').remove();
+				$('#log-sign-link').attr('href', 'https://developer.battlerite.com');
+			}
+		}, false);
+
+		if (location.protocol !== 'https:') {
+			var $btn = $('#logSignBtn');
+			$btn.unbind('click');
+			$btn.parent('a').attr('href', 'https://developer.battlerite.com');
+		}
+	});
+</script>
 
   </body>
 </html>
