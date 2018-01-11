@@ -7,7 +7,7 @@ Changelog
 --------------
 Bug Fixes:
 
-- Spectators will now be included correctly
+- Spectators will now be represented correctly
 
 Other:
 
