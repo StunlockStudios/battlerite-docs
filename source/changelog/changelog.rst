@@ -3,6 +3,13 @@
 Changelog
 ==========
 
+[API] v1.6.2
+--------------
+Bug Fixes:
+
+- Updated mapping files
+- createdAt and sorting bug fix
+
 [API] v1.6.1
 --------------
 Bug Fixes:
