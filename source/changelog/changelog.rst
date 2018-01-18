@@ -3,6 +3,17 @@
 Changelog
 ==========
 
+[API] v1.6.1
+--------------
+Bug Fixes:
+
+- Spectators will now be represented correctly
+
+Other:
+
+- Search stability improvements
+
+
 [API] v1.6.0
 --------------
 New Features:
