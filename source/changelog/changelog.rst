@@ -3,6 +3,16 @@
 Changelog
 ==========
 
+[API] v1.6.3
+--------------
+Bug Fixes:
+
+- match.stats.type now includes LEAGUE2V2 and LEAGUE3V3
+
+Other:
+
+- Searchable tags re-enabled
+
 [API] v1.6.2
 --------------
 Bug Fixes:
