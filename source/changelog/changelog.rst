@@ -3,6 +3,12 @@
 Changelog
 ==========
 
+[API] v1.6.4
+--------------
+Other:
+
+- /teams endpoint now uses filter[playerIds] and filter[season] as opposed to their tag[] equivalents which are still supported for backwards compatibility
+
 [API] v1.6.3
 --------------
 Bug Fixes:
