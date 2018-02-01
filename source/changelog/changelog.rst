@@ -3,6 +3,16 @@
 Changelog
 ==========
 
+[API] v1.7.0
+--------------
+New Data:
+
+- Team data added to roster objects
+
+Data Changes:
+
+- TeamUpdatedEvent user IDs are now stringified
+
 [API] v1.6.4
 --------------
 Other:
