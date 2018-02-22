@@ -3,6 +3,12 @@
 Changelog
 ==========
 
+[API] v1.7.1
+--------------
+Bug Fixes:
+
+- /teams member IDs are now stringified
+
 [API] v1.7.0
 --------------
 New Data:
