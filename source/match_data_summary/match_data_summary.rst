@@ -99,9 +99,9 @@ Participants Object
 Variable    	   Type            Description
 =================  ==============  ===========================
 actor              str             Hero
-id                 str             Same as ID of Roster
+id                 str             Participant ID
 player             obj             See Participants.player
-stats              map             See Paticipants.stats
+stats              map             Stats particular to players
 type               str             participants
 =================  ==============  ===========================
 
