@@ -18,7 +18,7 @@ Requests to the Battlerite Game Data Service are done using the "global" region 
 
 .. code-block:: none
 
-  "...gamelockerapp.com/shards/global/..."
+  "...battlerite.com/shards/global/..."
 
 The actual server regions will be included in the stats object as part of a match.
 
@@ -74,7 +74,7 @@ Note that the above values are also the maximum values for ``limit``.
 
 .. code-block:: shell
 
-  curl -g "https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&page[offset]=3" \
+  curl -g "https://api.developer.battlerite.com/shards/global/matches?page[limit]=5&page[offset]=3" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -83,9 +83,9 @@ At the end of the JSON returned by the above command you will find links to the 
 .. code-block:: none
 
   "links": {
-    "first": "https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&page[offset]=0",
-    "next": "https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&page[offset]=8",
-    "self": "https://api.dc01.gamelockerapp.com/shards/global/matches?page[limit]=5&page[offset]=3"
+    "first": "https://api.developer.battlerite.com/shards/global/matches?page[limit]=5&page[offset]=0",
+    "next": "https://api.developer.battlerite.com/shards/global/matches?page[limit]=5&page[offset]=8",
+    "self": "https://api.developer.battlerite.com/shards/global/matches?page[limit]=5&page[offset]=3"
   },
 
 There will also be a "previous" page link when appropriate.
@@ -139,7 +139,7 @@ Here's a sample request sent from a browser hitting 'example.com':
 
 .. code-block:: shell
 
-  curl -i https://api.dc01.gamelockerapp.com/status -H "Origin: http://example.com"
+  curl -i https://api.developer.battlerite.com/status -H "Origin: http://example.com"
   HTTP/1.1 200 OK
   ...
   Access-Control-Allow-Origin: *
@@ -149,7 +149,7 @@ This is what the CORS preflight request looks like:
 
 .. code-block:: shell
 
-  curl -i https://api.dc01.gamelockerapp.com/status -H "Origin: http://example.com" -X OPTIONS
+  curl -i https://api.developer.battlerite.com/status -H "Origin: http://example.com" -X OPTIONS
   HTTP/1.1 200 OK
   ...
   Access-Control-Allow-Headers: Origin,X-Title-Id,Authorization

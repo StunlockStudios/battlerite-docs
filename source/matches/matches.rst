@@ -107,7 +107,7 @@ This endpoint retrieves data from matches.
 
 **HTTP Request**
 
-``GET https://api.dc01.gamelockerapp.com/shards/global/matches``
+``GET https://api.developer.battlerite.com/shards/global/matches``
 
 **Query Parameters**
 
@@ -131,7 +131,7 @@ filter[rankingType]       none        Filter by match ranking type. Usage: filte
 
 .. code-block:: shell
 
-  curl -g "https://api.dc01.gamelockerapp.com/shards/global/matches?sort=createdAt&page[limit]=3&filter[createdAt-start]=2017-11-10T13:25:30Z" \
+  curl -g "https://api.developer.battlerite.com/shards/global/matches?sort=createdAt&page[limit]=3&filter[createdAt-start]=2017-11-10T13:25:30Z" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -141,7 +141,7 @@ filter[rankingType]       none        Filter by match ranking type. Usage: filte
 
   import requests
 
-  url = "https://api.dc01.gamelockerapp.com/shards/global/matches"
+  url = "https://api.developer.battlerite.com/shards/global/matches"
 
   header = {
     "Authorization": "<api-key>",
@@ -225,7 +225,7 @@ The above commands returns JSON structured like this:
         }
         "links": {
           "schema": "schema": "https://raw.githubusercontent.com/madglory/gamelocker-stunlock-studios-battlerite/master/schemas/1.0/match_index.json",
-          "self": "https://api.dc01.gamelockerapp.com/shards/global/matches/D005654E95174996B303A17B979DC016"
+          "self": "https://api.developer.battlerite.com/shards/global/matches/D005654E95174996B303A17B979DC016"
         }
       }
     ]
@@ -246,7 +246,7 @@ This endpoint retrieves a specific match.
 
 **HTTP Request**
 
-``GET https://api.dc01.gamelockerapp.com/shards/global/matches/<ID>``
+``GET https://api.developer.battlerite.com/shards/global/matches/<ID>``
 
 **URL Parameters**
 
@@ -260,7 +260,7 @@ ID          none      The ID of the match to retrieve
 
 .. code-block:: shell
 
-  curl "https://api.dc01.gamelockerapp.com/shards/global/matches/<matchID>" \
+  curl "https://api.developer.battlerite.com/shards/global/matches/<matchID>" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 

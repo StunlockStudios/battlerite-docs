@@ -9,7 +9,7 @@ The following command can be used to call the status endpoint:
 
 .. code-block:: shell
 
-	curl -g "https://api.dc01.gamelockerapp.com/status" 
+	curl -g "https://api.developer.battlerite.com/status" 
 	-H "Authorization: Bearer <api key>" 
 	-H "Accept: application/vnd.api+json"
 
