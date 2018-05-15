@@ -5,7 +5,6 @@ Gamelocker Documentation
   :maxdepth: 2
 
   introduction
-  datacenters/datacenters
   authorization/authorization
   titles/titles
   makingrequests/makingrequests
