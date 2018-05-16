@@ -13,13 +13,13 @@ You start by pulling a list of matches using the matches endpoint.
 
 **HTTP Request**
 
-``GET https://api.dc01.gamelockerapp.com/shards/global/matches``
+``GET https://api.developer.battlerite.com/shards/global/matches``
 
 **Shell:**
 
 .. code-block:: shell
 
-  curl "https://api.dc01.gamelockerapp.com/shards/global/matches" \
+  curl "https://api.developer.battlerite.com/shards/global/matches" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -80,7 +80,7 @@ Once you have located this ID, you now have to search for the following JSON seg
     "type": "asset",
     "id": "1ad97f85-cf9b-11e7-b84e-0a586460f004",
     "attributes": {
-      "URL": "https://cdn.gamelockerapp.com/stunlock-studios-battlerite/global/2017/11/22/15/37/1ad97f85-cf9b-11e7-b84e-0a586460f004-telemetry.json",
+      "URL": "https://cdn.developer.battlerite.com/stunlock-studios-battlerite/global/2017/11/22/15/37/1ad97f85-cf9b-11e7-b84e-0a586460f004-telemetry.json",
       "createdAt": "2017-11-22T15:37:53Z",
       "description": "",
       "name": "telemetry"
@@ -91,7 +91,7 @@ You can download the data with following commands. Please note that you do not n
 
 .. code-block:: shell
 
-  curl "https://gl-prod-us-east-1.s3.amazonaws.com/assets/stunlock-studios-battlerite/na/2017/03/17/00/43/b900c179-0aaa-11e7-bb12-0242ac110005-telemetry.json" \
+  curl "https://cdn.developer.battlerite.com/stunlock-studios-battlerite/global/2017/11/22/15/37/1ad97f85-cf9b-11e7-b84e-0a586460f004-telemetry.json" \
  	-H "Accept: application/vnd.api+json"
 
 This request will return you a response containing a JSON array:

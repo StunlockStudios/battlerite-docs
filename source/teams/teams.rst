@@ -7,7 +7,7 @@ This endpoint retrieves team objects.
 
 **HTTP Request**
 
-|  ``GET https://api.dc01.gamelockerapp.com/shards/global/teams?tag[season]=foo&tag[playerIds]=p1,p2``
+|  ``GET https://api.developer.battlerite.com/shards/global/teams?tag[season]=foo&tag[playerIds]=p1,p2``
 
 
 **Required URL Parameters**
@@ -23,7 +23,7 @@ tag[playerIds]        none      Filter by playerIds in a team. Usage: tag[Player
 
 .. code-block:: shell
 
-  curl "https://api.dc01.gamelockerapp.com/shards/global/teams?tag[playerIds]=934511096860184600&tag[season]=6" \
+  curl "https://api.developer.battlerite.com/shards/global/teams?tag[playerIds]=934511096860184600&tag[season]=6" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 

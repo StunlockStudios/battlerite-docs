@@ -13,7 +13,7 @@ This endpoint retrieves a specific player.
 
 **HTTP Request**
 
-|  ``GET https://api.dc01.gamelockerapp.com/shards/global/players/<ID>``
+|  ``GET https://api.developer.battlerite.com/shards/global/players/<ID>``
 
 
 **URL Parameters**
@@ -29,7 +29,7 @@ ID          none      The ID of the player to retrieve
 
 .. code-block:: shell
 
-  curl "https://api.dc01.gamelockerapp.com/shards/global/players/<ID>" \
+  curl "https://api.developer.battlerite.com/shards/global/players/<ID>" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
@@ -57,7 +57,7 @@ ID          none      The ID of the player to retrieve
       },
       "links": {
         "schema": "https://raw.githubusercontent.com/madglory/gamelocker-/master/schemas/player_index.json",
-        "self": "https://api.dc01.gamelockerapp.com/shards/global/players/931405258914193408"
+        "self": "https://api.developer.battlerite.com/shards/global/players/931405258914193408"
       }
     }
   }
@@ -70,7 +70,7 @@ This endpoint retrieves a collection of up to 6 players, filtered by id.
 
 **HTTP Request**
 
-|  ``GET https://api.dc01.gamelockerapp.com/shards/global/players``
+|  ``GET https://api.developer.battlerite.com/shards/global/players``
 
 
 **Query Parameters**
@@ -88,7 +88,7 @@ filter[playerNames]   none      Filter by player names. Usage: filter[playerName
 
 .. code-block:: shell
 
-  curl "https://api.dc01.gamelockerapp.com/shards/global/players?filter[playerIds]=player1Id,player2Id" \
+  curl "https://api.developer.battlerite.com/shards/global/players?filter[playerIds]=player1Id,player2Id" \
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
