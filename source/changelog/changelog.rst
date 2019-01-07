@@ -11,6 +11,8 @@ New Data:
 
 - Added a "game" field to the match object under attributes.match.stats which has the value "Arena" or "Royale"
 
+- API bugs should now be reported by using the battlerite support page at https://support.battlerite.com/hc/en-us 
+
 Assets:
 
 - Avatar images should be added to the https://github.com/StunlockStudios/battlerite-assets repository starting with the next big patch to Battlerite
