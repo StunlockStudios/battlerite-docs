@@ -78,6 +78,8 @@ Rounds
 
 Round objects contain an overview of a round played, including information such as the round's duration, order in a match, participants, and the winning team. Round objects are only meaningful within the context of a Match and are not exposed as a standalone resource.
 
+A royale match has an empty round list
+
 .. code-block:: none
 
   {
@@ -97,6 +99,9 @@ Round objects contain an overview of a round played, including information such 
     }
   },
 
+Royale
+---------------------------
+Royale matches can have the field match.tags.rankingType be "RANKED" or "UNRANKED"
 
 Get a Collection of Matches
 ---------------------------
@@ -121,7 +126,7 @@ filter[createdAt-start]   Now-28days  Must occur before end time. Format is iso8
 filter[createdAt-end]     Now         Queries search the last 3 hrs. Format is iso8601 i.e.filter[createdAt-end]=2017-01-01T13:25:30Z
 filter[playerIds]         none        Filters by player Id. Usage:filter[playerIds]=playerId,playerId,...
 filter[patchVersion]      none        Filter by Battlerite patch version. Usage: filter[patchVersion]=2.10,2.11,...
-filter[serverType]        none        Filter by match server type. Usage: filter[serverType]=QUICK2V2,QUICK3v3,...
+filter[serverType]        none        Filter by match server type. Usage: filter[serverType]=QUICK2V2,QUICK3v3,ROYALRUMBLESOLO,ROYALRUMBLEDUO 
 filter[rankingType]       none        Filter by match ranking type. Usage: filter[rankingType]=RANKED
 ========================= =========== =================================================================================================================
 
@@ -177,6 +182,7 @@ The above commands returns JSON structured like this:
         "type": "match",
         "id": "D005654E95174996B303A17B979DC016",
         "attributes": {
+          "game": "Arena"
           "createdAt": "2017-11-10T20:30:08Z",
           "duration": 492,
           "gameMode": "1733162751",
