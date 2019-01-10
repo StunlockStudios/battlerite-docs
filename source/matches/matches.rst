@@ -3,8 +3,12 @@
 Matches
 =======
 
-Match records are created every time players complete a game session. Each Match contains high level information about the game session, i.e. duration, gameMode, etc. Each Match has two Rosters.
+Match records are created every time players complete a game session. Each Match contains high level information about the game session, i.e. duration, gameMode, etc. Each Arena Match has exactly two Rosters and each Royale Match has Rosters for each player team.
 
+Royale
+---------------------------
+Royale matches have an empty list of rounds.
+Royal matcheshave the value stats.game value of "Royale"
 
 Rosters
 ----------------------
@@ -99,9 +103,6 @@ A royale match has an empty round list
     }
   },
 
-Royale
----------------------------
-Royale matches can have the field match.tags.rankingType be "RANKED" or "UNRANKED"
 
 Get a Collection of Matches
 ---------------------------
