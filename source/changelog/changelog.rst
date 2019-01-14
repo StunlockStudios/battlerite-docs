@@ -2,6 +2,11 @@
 
 Changelog
 ==========
+[API] v1.8.1
+--------------
+New Data:
+ - Royale teams can now be fetched by adding filter[gameType]=royale to a /teams request.
+ - Some champion stats added to /teams.
 
 [API] v1.8.0
 --------------
