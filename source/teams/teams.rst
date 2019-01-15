@@ -78,50 +78,52 @@ filter[gameType]         arena     Filter by gameType. Usage for royale teams: f
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
-.. code-block:: none
-**The above commands returns JSON for royale teams like this: **
+**The above commands returns JSON for royale teams like this:**
 
-{
-  "type": "team",
-  "id": "1044982893539151872",
-  "attributes": {
-    "name": "",
-    "shardId": "global",
-    "stats": {
-      "avatar": 0,
-      "champions": [
-        {
-          "championId": "1955352790",
-          "kills": 1,
-          "matchesPlayed": 2,
-          "placements": [
-            {
-              "count": 1,
-              "placement": 7
-            },
-            {
-              "count": 1,
-              "placement": 13
-            }
-          ]
-        },
-        ...
-      ],
-      "division": 5,
-      "divisionRating": 73,
-      "league": 3,
-      "members": [
-          "804750644501164032"
-      ],
-      "placementGamesLeft": 0,
-      "topDivision": 4,
-      "topDivisionRating": 37,
-      "topLeague": 3,
-      "wins": 2
-    },
-    "titleId": "stunlock-studios-royale"
+.. code-block:: none
+
+
+  {
+    "type": "team",
+    "id": "1044982893539151872",
+    "attributes": {
+      "name": "",
+      "shardId": "global",
+      "stats": {
+        "avatar": 0,
+        "champions": [
+          {
+            "championId": "1955352790",
+            "kills": 1,
+            "matchesPlayed": 2,
+            "placements": [
+              {
+                "count": 1,
+                "placement": 7
+              },
+              {
+                "count": 1,
+                "placement": 13
+              }
+            ]
+          },
+          ...
+        ],
+        "division": 5,
+        "divisionRating": 73,
+        "league": 3,
+        "members": [
+            "804750644501164032"
+        ],
+        "placementGamesLeft": 0,
+        "topDivision": 4,
+        "topDivisionRating": 37,
+        "topLeague": 3,
+        "wins": 2
+      },
+      "titleId": "stunlock-studios-royale"
+    }
   }
-}
 
 .. toctree::
   :maxdepth: 2
