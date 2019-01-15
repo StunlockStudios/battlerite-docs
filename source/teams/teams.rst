@@ -78,6 +78,7 @@ filter[gameType]         arena     Filter by gameType. Usage for royale teams: f
   -H "Authorization: Bearer <api-key>" \
   -H "Accept: application/vnd.api+json"
 
+.. code-block:: none
 **The above commands returns JSON for royale teams like this: **
 
 {
@@ -122,6 +123,5 @@ filter[gameType]         arena     Filter by gameType. Usage for royale teams: f
   }
 }
 
-.. code-block:: none
 .. toctree::
   :maxdepth: 2
